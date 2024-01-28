@@ -1,0 +1,1 @@
+page https://ibalijon.gitlab.io/MyPage
