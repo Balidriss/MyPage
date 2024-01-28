@@ -71,6 +71,10 @@ section {
     letter-spacing: 0.045rem;
 }
 
+article>* {
+    margin-bottom: 1rem;
+}
+
 /* header */
 
 header {
@@ -120,3 +124,50 @@ menu {
 
 
 /* section intro */
+
+
+
+h1 {
+
+    font-family: var(--secondaryFont);
+    font-size: 7.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 7rem;
+
+}
+
+h1 sup {
+    font-size: 2rem;
+    padding: 1.8rem 1rem;
+    font-weight: 700;
+    background-color: var(--secondaryColorWhite);
+    position: relative;
+    top: 0.5rem;
+
+}
+
+#intro-section p {
+    color: var(--secondaryColorWhite);
+    font-family: var(--primaryFont);
+    font-size: 1.375rem;
+    line-height: 2rem;
+
+}
+
+#intro-section p:first-child {
+    color: var(--primaryColorWhite);
+    font-family: var(--secondaryFont);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+
+#intro-section>*:last-child {
+    margin-bottom: 0;
+}
+
+#intro-section .cta-container {
+    margin: 4rem 0;
+}
