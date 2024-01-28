@@ -71,24 +71,41 @@ section:first-of-type {
     margin-top: 7rem;
 }
 
-h2 {
+h2,
+h3 {
     color: var(--primaryColorWhite);
-    font-family: var(--secondaryFont);
     font-size: 3rem;
     font-weight: 800;
     line-height: 3.6rem;
     letter-spacing: 0.06rem;
 }
 
+h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    letter-spacing: 0.1rem;
+    margin-left: 1rem;
+}
 
 article>* {
+    margin-bottom: 1rem;
+}
+
+
+.title p:first-child {
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
 .cta-container {
 
     background-image: var(--primaryGradientBlue);
-    padding: 0.7rem 2rem;
+    padding: 1rem 2.5rem;
     width: fit-content;
     text-transform: uppercase;
 }
@@ -96,21 +113,11 @@ article>* {
 .cta-container a {
     color: var(--primaryColorCTABlack);
     font-weight: 700;
-    font-family: var(--secondaryFont);
     letter-spacing: 0.045rem;
-}
-
-.main-text-section p:first-child {
-    font-family: var(--secondaryFont);
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
 }
 
 .main-text-section>p:last-of-type {
     color: rgba(255, 255, 255, 0.64);
-    font-family: var(--primaryFont);
     font-size: 1.25rem;
     line-height: 1.875rem;
     letter-spacing: -0.05rem;
@@ -142,7 +149,7 @@ nav li a {
     color: var(--secondaryColorWhite);
     font-weight: 500;
     font-size: 1rem;
-    font-family: var(--secondaryFont);
+
 }
 
 nav li:first-of-type {
@@ -158,7 +165,6 @@ menu {
 .logo-nav a {
 
     font-size: 3rem;
-    font-family: var(--secondaryFont);
     color: var(--primaryColorWhite);
     font-weight: 700;
     line-height: 4.5rem;
@@ -172,7 +178,7 @@ menu {
 
 h1 {
 
-    font-family: var(--secondaryFont);
+
     font-size: 7.5rem;
     font-style: normal;
     font-weight: 700;
@@ -193,7 +199,6 @@ h1 sup {
 
 #intro-section p {
     color: var(--secondaryColorWhite);
-    font-family: var(--primaryFont);
     font-size: 1.375rem;
     line-height: 2rem;
 
@@ -215,6 +220,11 @@ h1 sup {
 #intro-section .cta-container {
     margin: 4rem 0;
 }
+
+#intro-section .cta-container a {
+    font-size: 1.125rem;
+}
+
 
 #intro-section figure {
     background-color: var(--secondaryColorBlack);
@@ -239,4 +249,73 @@ h1 sup {
     background-color: var(--secondaryColorBlack);
     /* temp */
     width: 900px;
+}
+
+/* git section */
+
+#git-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#git-section .title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.git-blocks {
+    display: flex;
+    gap: 2.5rem;
+    align-items: stretch;
+    margin-bottom: 2.5rem;
+}
+
+.git-block {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--secondaryColorBlack);
+    align-items: center;
+    width: auto;
+}
+
+#git-section .git-blocks .git-block .title {
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    text-align: left;
+}
+
+#git-section .git-blocks .git-block .title p {
+
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+    letter-spacing: 0.045rem;
+
+}
+
+
+.git-block img {
+    margin: 2rem;
+
+}
+
+.git-block .cta-container {
+    padding: 1.5rem 4rem;
+    background: var(--secondaryColorBlack);
+
+}
+
+
+
+#git-section .cta-container a {
+    font-size: 1.125rem;
+}
+
+#git-section .git-block .cta-container a {
+    font-size: 1rem;
+    color: var(--primaryColorWhite);
 }
