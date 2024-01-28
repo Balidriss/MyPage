@@ -1,0 +1,122 @@
+:root {
+    --primaryFont: 'Lato', sans-serif;
+    --secondaryFont: 'Plus Jakarta Sans', sans-serif;
+    --primaryColorCTABlack: rgb(37, 37, 37);
+    --primaryColorBlack: rgb(17, 17, 17);
+    --secondaryColorBlack: rgba(255, 255, 255, 0.08);
+    --primaryColorWhite: rgb(255, 255, 255);
+    --secondaryColorWhite: rgba(255, 255, 255, 0.60);
+    --primaryColorBlue: rgb(0, 212, 252);
+    --primaryGradientBlue: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+
+    /* header spacing */
+    --marginLeftHeader: 18rem;
+    /* main margin */
+    --mainContainer: 1200px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--primaryColorWhite);
+    font-family: var(--primaryFont);
+}
+
+nav,
+main,
+footer {
+    width: var(--mainContainer);
+    margin: auto;
+}
+
+menu,
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+ul,
+menu {
+    list-style: none;
+}
+
+body {
+    background-color: var(--primaryColorBlack);
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+section {
+    margin: 7rem 0;
+
+}
+
+.cta-container {
+
+    background-image: var(--primaryGradientBlue);
+    padding: 0.7rem 2rem;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.cta-container a {
+    color: var(--primaryColorCTABlack);
+    font-weight: 700;
+    font-family: var(--secondaryFont);
+    letter-spacing: 0.045rem;
+}
+
+/* header */
+
+header {
+    background-color: var(--secondaryColorBlack);
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav li {
+
+    margin: 1rem;
+}
+
+nav li a {
+    color: var(--secondaryColorWhite);
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: var(--secondaryFont);
+}
+
+nav li:first-of-type {
+    color: var(--primaryColorWhite);
+}
+
+menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.logo-nav a {
+
+    font-size: 3rem;
+    font-family: var(--secondaryFont);
+    color: var(--primaryColorWhite);
+    font-weight: 700;
+    line-height: 4.5rem;
+    letter-spacing: 0.12rem;
+}
+
+
+/* section intro */
