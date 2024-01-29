@@ -2,6 +2,7 @@
     --primaryFont: 'Plus Jakarta Sans', sans-serif;
     --primaryColorCTABlack: rgb(37, 37, 37);
     --primaryColorBlack: rgb(17, 17, 17);
+    --mainBackgroundColor: rgb(17, 22, 23);
     --secondaryColorBlack: rgba(255, 255, 255, 0.08);
     --tertiaryColor: rgba(255, 255, 255, 0.40);
     --primaryColorWhite: rgb(255, 255, 255);
@@ -31,8 +32,8 @@
     height: 200%;
     z-index: -1;
     background: radial-gradient(circle at 0% 50%,
-            rgb(17, 22, 23) 5%,
-            rgb(17, 17, 17) 25%);
+            rgba(17, 17, 17, 1) 5%,
+            rgba(17, 22, 23, 1) 25%);
 }
 
 nav,
@@ -55,7 +56,7 @@ menu {
 }
 
 body {
-    background-color: var(--primaryColorBlack);
+    background-color: var(--mainBackgroundColor);
 }
 
 a {
@@ -352,7 +353,7 @@ h1 sup {
     opacity: 0.8;
     background-size: 120%;
     background-position: 80% 40%;
-    filter: grayscale(1);
+
     position: relative;
 }
 
@@ -362,5 +363,25 @@ h1 sup {
     bottom: 0;
     padding: 4rem;
     padding-bottom: 1rem;
-    background-color: var(--primaryColorBlack);
+    background-color: var(--mainBackgroundColor);
+}
+
+#contact-section ul {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#contact-section li {
+    display: flex;
+    align-items: center;
+    margin-right: 7rem;
+    color: var(--secondaryColorWhite);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.04rem;
+}
+
+#contact-section li img {
+    margin-right: 1rem;
 }
