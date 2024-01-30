@@ -1,0 +1,65 @@
+#git-section {
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    &>.cta-container {
+        align-self: center;
+
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .git-blocks {
+        display: flex;
+        gap: 2.5rem;
+        align-items: stretch;
+        margin-bottom: 2.5rem;
+
+        .git-block {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            background-color: $secondaryColorBlack;
+            align-items: center;
+            width: auto;
+
+            .title {
+                margin-bottom: 1rem;
+                align-self: flex-start;
+                text-align: left;
+
+                p {
+
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    line-height: 1.125rem;
+                    letter-spacing: 0.045rem;
+
+                }
+            }
+
+            img {
+                margin: 2rem;
+
+            }
+
+            .cta-container {
+                padding: 1.5rem 4rem;
+                background: $secondaryColorBlack;
+
+                a {
+                    font-size: 1.125rem;
+                    font-size: 1rem;
+                    color: $primaryColorWhite;
+                }
+            }
+
+        }
+    }
+}
