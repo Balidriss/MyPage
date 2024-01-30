@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: -1;
+  background: radial-gradient(circle at 0% 50%, rgb(17, 27, 27) 5%, rgb(17, 22, 23) 25%);
+}
+
+nav,
+main,
+footer {
+  width: 1200px;
+  margin: auto;
+}
+
+menu,
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+ul,
+menu {
+  list-style: none;
+}
+
+body {
+  background-color: rgb(17, 22, 23);
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+section {
+  display: flex;
+  margin: 15rem 0;
+}
+section:first-of-type {
+  margin-top: 7rem;
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3.6rem;
+  letter-spacing: 0.06rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0.1rem;
+  margin-left: 1rem;
+}
+
+article > * {
+  margin-bottom: 1rem;
+}
+
+.title p:first-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.cta-container {
+  background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+  padding: 1rem 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+}
+.cta-container a {
+  color: rgb(37, 37, 37);
+  font-weight: 700;
+  letter-spacing: 0.045rem;
+}
+
+.main-text-section > p:last-of-type {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  letter-spacing: -0.05rem;
+  margin-top: 2rem;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav li {
+  margin: 1rem;
+}
+header nav li a {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  font-size: 1rem;
+}
+header nav li a:first-of-type {
+  color: rgb(255, 255, 255);
+}
+header nav menu {
+  display: flex;
+  justify-content: space-around;
+}
+header .logo-nav a {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  line-height: 4.5rem;
+  letter-spacing: 0.12rem;
+}
+
+#intro-section h1 {
+  font-size: 7.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 7rem;
+}
+#intro-section h1 sup {
+  font-size: 2rem;
+  padding: 1.8rem 1rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+  top: 0.5rem;
+}
+#intro-section p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+#intro-section p:first-child {
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+#intro-section *:last-child {
+  margin-bottom: 0;
+}
+#intro-section .cta-container {
+  margin: 4rem 0;
+}
+#intro-section .cta-container a {
+  font-size: 1.125rem;
+}
+#intro-section figure {
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 900px;
+}
+
+#guess-section article {
+  margin-left: 8rem;
+}
+#guess-section figure img {
+  width: 100%;
+}
+
+#cv-section figure {
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 900px;
+}
+
+#git-section {
+  flex-direction: column;
+  justify-content: space-between;
+}
+#git-section > .cta-container {
+  align-self: center;
+}
+#git-section .title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+#git-section .git-blocks {
+  display: flex;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+}
+#git-section .git-blocks .git-block {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  align-items: center;
+  width: auto;
+}
+#git-section .git-blocks .git-block .title {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  text-align: left;
+}
+#git-section .git-blocks .git-block .title p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  letter-spacing: 0.045rem;
+}
+#git-section .git-blocks .git-block img {
+  margin: 2rem;
+}
+#git-section .git-blocks .git-block .cta-container {
+  padding: 1.5rem 4rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+#git-section .git-blocks .git-block .cta-container a {
+  font-size: 1.125rem;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+#blog-section {
+  justify-content: center;
+}
+#blog-section .title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+#contact-section article {
+  width: 100%;
+}
+#contact-section .vercingetorix {
+  width: 100%;
+  height: 400px;
+  background-image: url("../../assets/img/clermont-ferrand-vercingetorix.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  background-size: 120%;
+  background-position: 80% 40%;
+  position: relative;
+}
+#contact-section .title {
+  position: absolute;
+  right: 4rem;
+  bottom: 0;
+  padding: 4rem;
+  padding-bottom: 1rem;
+  background-color: rgb(17, 22, 23);
+}
+#contact-section ul {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: row;
+}
+#contact-section li {
+  display: flex;
+  align-items: center;
+  margin-right: 7rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.04rem;
+}
+#contact-section li img {
+  margin-right: 1rem;
+}/*# sourceMappingURL=style.css.map */
