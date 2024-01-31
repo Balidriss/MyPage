@@ -8,4 +8,21 @@
             width: 100%;
         }
     }
+
+    .slider-buttons {
+        display: flex;
+        gap: 2rem;
+        margin-top: 5rem;
+
+        img {
+
+            padding: 1rem;
+            background: $primaryGradientBlue;
+
+
+            &.button-left {
+                transform: rotate(180deg);
+            }
+        }
+    }
 }

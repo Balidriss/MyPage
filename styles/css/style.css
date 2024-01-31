@@ -177,6 +177,18 @@ header .logo-nav a {
 #guess-section figure img {
   width: 100%;
 }
+#guess-section .slider-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+#guess-section .slider-buttons img {
+  padding: 1rem;
+  background: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+}
+#guess-section .slider-buttons img.button-left {
+  transform: rotate(180deg);
+}
 
 #cv-section figure {
   background-color: rgba(255, 255, 255, 0.08);
