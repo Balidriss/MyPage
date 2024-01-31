@@ -3,7 +3,7 @@
 
     justify-content: space-between;
 
-    &>.cta-container {
+    &>.cta {
         align-self: center;
 
     }
@@ -49,15 +49,15 @@
 
             }
 
-            .cta-container {
+            .cta {
                 padding: 1.5rem 4rem;
                 background: $secondaryColorBlack;
 
-                a {
-                    font-size: 1.125rem;
-                    font-size: 1rem;
-                    color: $primaryColorWhite;
-                }
+
+                font-size: 1.125rem;
+                font-size: 1rem;
+                color: $primaryColorWhite;
+
             }
 
         }

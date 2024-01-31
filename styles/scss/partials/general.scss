@@ -90,18 +90,17 @@ article>* {
     }
 }
 
-.cta-container {
-
+.cta {
+    display: block;
+    width: fit-content;
     background-image: $primaryGradientBlue;
     padding: 1rem 2.5rem;
-    width: fit-content;
     text-transform: uppercase;
+    color: $primaryColorCTABlack;
+    font-weight: 700;
+    letter-spacing: 0.045rem;
+    margin: 1rem 0;
 
-    a {
-        color: $primaryColorCTABlack;
-        font-weight: 700;
-        letter-spacing: 0.045rem;
-    }
 }
 
 

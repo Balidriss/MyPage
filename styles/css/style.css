@@ -80,17 +80,17 @@ article > * {
   margin-bottom: 1rem;
 }
 
-.cta-container {
-  background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
-  padding: 1rem 2.5rem;
+.cta {
+  display: block;
   width: -moz-fit-content;
   width: fit-content;
+  background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
-}
-.cta-container a {
   color: rgb(37, 37, 37);
   font-weight: 700;
   letter-spacing: 0.045rem;
+  margin: 1rem 0;
 }
 
 .main-text-section > p:last-of-type {
@@ -162,10 +162,8 @@ header .logo-nav a {
 #intro-section *:last-child {
   margin-bottom: 0;
 }
-#intro-section .cta-container {
+#intro-section .cta {
   margin: 4rem 0;
-}
-#intro-section .cta-container a {
   font-size: 1.125rem;
 }
 #intro-section figure {
@@ -189,7 +187,7 @@ header .logo-nav a {
   flex-direction: column;
   justify-content: space-between;
 }
-#git-section > .cta-container {
+#git-section > .cta {
   align-self: center;
 }
 #git-section .title {
@@ -226,11 +224,9 @@ header .logo-nav a {
 #git-section .git-blocks .git-block img {
   margin: 2rem;
 }
-#git-section .git-blocks .git-block .cta-container {
+#git-section .git-blocks .git-block .cta {
   padding: 1.5rem 4rem;
   background: rgba(255, 255, 255, 0.08);
-}
-#git-section .git-blocks .git-block .cta-container a {
   font-size: 1.125rem;
   font-size: 1rem;
   color: rgb(255, 255, 255);
