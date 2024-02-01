@@ -205,9 +205,13 @@ header .logo-nav a {
 }
 #cv-section .cv-container .tabs-cv .tab-cv {
   cursor: pointer;
+  padding: 0 1rem;
   flex: 1;
   border-bottom: 0.25rem rgb(255, 255, 255) solid;
   border-right: 0.25rem rgb(255, 255, 255) solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #cv-section .cv-container .tabs-cv .tab-cv > * {
   margin-left: 1rem;
@@ -216,13 +220,16 @@ header .logo-nav a {
   letter-spacing: normal;
   text-transform: none;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
+  align-self: flex-end;
 }
 #cv-section .cv-container .tabs-cv .tab-cv p {
   font-size: 1rem;
+  margin-left: 0;
 }
 #cv-section .cv-container .tabs-cv .tab-cv p strong {
-  font-size: 2rem;
+  align-items: center;
+  font-size: 1.75rem;
 }
 #cv-section .cv-container .tabs-cv .tab-cv.hidden {
   border-bottom: 0.25rem rgba(255, 255, 255, 0.08) solid;
@@ -230,6 +237,10 @@ header .logo-nav a {
 }
 #cv-section .cv-container .tabs-cv .tab-cv.hidden * {
   color: rgba(255, 255, 255, 0.6);
+}
+#cv-section .cv-container .tabs-cv .tab-cv:hover {
+  border-bottom: 0.25rem rgb(0, 212, 252) solid;
+  border-right: 0.25rem rgb(0, 212, 252) solid;
 }
 #cv-section .cv-container article.hidden {
   display: none;

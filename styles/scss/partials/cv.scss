@@ -18,31 +18,36 @@
 
             .tab-cv {
                 cursor: pointer;
+                padding: 0 1rem;
+                flex: 1;
+                border-bottom: 0.25rem $primaryColorWhite solid;
+                border-right: 0.25rem $primaryColorWhite solid;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
                 &>* {
                     margin-left: 1rem;
                 }
 
 
-
-
-                flex: 1;
-
-                border-bottom: 0.25rem $primaryColorWhite solid;
-                border-right: 0.25rem $primaryColorWhite solid;
-
                 h3 {
                     letter-spacing: normal;
                     text-transform: none;
                     font-weight: 500;
-                    font-size: 1.2rem;
+                    font-size: 1.125rem;
+                    align-self: flex-end;
                 }
 
                 p {
+
                     font-size: 1rem;
+                    margin-left: 0;
+
 
                     strong {
-                        font-size: 2rem;
+                        align-items: center;
+                        font-size: 1.75rem;
                     }
                 }
 
@@ -54,6 +59,13 @@
                     & * {
                         color: $secondaryColorWhite;
                     }
+
+
+                }
+
+                &:hover {
+                    border-bottom: 0.25rem $primaryColorBlue solid;
+                    border-right: 0.25rem $primaryColorBlue solid;
                 }
             }
         }
