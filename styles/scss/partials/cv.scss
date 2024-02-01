@@ -80,13 +80,15 @@
 
             .grid-cv {
                 display: grid;
-                grid-template-columns: 0.2fr 0.2fr 0.6fr;
+                grid-template-columns: 0.25fr 0.20fr 0.65fr;
 
 
 
                 .date {
+                    $line-height: 1.5rem;
+                    $font-size: 1.125rem;
                     margin: 0;
-                    margin-top: -0.25rem;
+                    margin-top: $font-size - $line-height;
                     line-height: 1.25rem;
                     font-size: 1rem;
                     color: $secondaryColorWhite;
@@ -125,9 +127,11 @@
 
 
                     h4 {
+                        $line-height: 1.5rem;
+                        $font-size: 1.125rem;
                         text-transform: none;
-                        margin: 0 0 1rem 0;
-                        line-height: 1.125rem;
+                        margin: ($font-size - $line-height) 0 1rem 0;
+                        line-height: 1.5rem;
                         font-size: 1.125rem;
                     }
 
