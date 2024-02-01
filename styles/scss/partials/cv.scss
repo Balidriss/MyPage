@@ -2,65 +2,128 @@
     .cv-container {
         width: 70%;
 
+        h3 {
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            font-size: 0;
+        }
+
+        .tabs-cv {
+            display: flex;
+
+            & * {
+                margin-bottom: 1.5rem;
+            }
+
+            .tab-cv {
+                cursor: pointer;
+
+                &>* {
+                    margin-left: 1rem;
+                }
+
+
+
+
+                flex: 1;
+
+                border-bottom: 0.25rem $primaryColorWhite solid;
+                border-right: 0.25rem $primaryColorWhite solid;
+
+                h3 {
+                    letter-spacing: normal;
+                    text-transform: none;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+
+                    strong {
+                        font-size: 2rem;
+                    }
+                }
+
+                &.hidden {
+
+                    border-bottom: 0.25rem $secondaryColorBlack solid;
+                    border-right: 0.25rem $secondaryColorBlack solid;
+
+                    & * {
+                        color: $secondaryColorWhite;
+                    }
+                }
+            }
+        }
+
         article {
-            display: grid;
-            grid-template-columns: 0.2fr 0.2fr 0.6fr;
 
             &.hidden {
                 display: none;
             }
 
-            .date {
-                margin: 0;
-                margin-top: -0.25rem;
-                line-height: 1.25rem;
-                font-size: 1rem;
-                color: $secondaryColorWhite;
 
 
-            }
-
-            .timeline {
-                position: relative;
-                width: 2px;
-                background-color: rgba($primaryColorBlue, 0.3);
-                margin: 0 auto;
+            .grid-cv {
+                display: grid;
+                grid-template-columns: 0.2fr 0.2fr 0.6fr;
 
 
 
-
-            }
-
-            .marker {
-                $markerSize: 1.5rem;
-                position: absolute;
-                width: $markerSize;
-                height: $markerSize;
-                background: $primaryGradientBlue;
-                border-radius: 50%;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: $primaryColorBlack;
-            }
-
-
-            .desc-cv {
-
-
-                h3 {
-                    text-transform: none;
-                    margin: 0 0 1rem 0;
-                    line-height: 1.125rem;
-                    font-size: 1.125rem;
-                }
-
-                p {
+                .date {
+                    margin: 0;
+                    margin-top: -0.25rem;
+                    line-height: 1.25rem;
                     font-size: 1rem;
                     color: $secondaryColorWhite;
-                    margin-bottom: 1rem;
+
+
+                }
+
+                .timeline {
+                    position: relative;
+                    width: 2px;
+                    background-color: rgba($primaryColorBlue, 0.3);
+                    margin: 0 auto;
+
+
+
+
+                }
+
+                .marker {
+                    $markerSize: 1.5rem;
+                    position: absolute;
+                    width: $markerSize;
+                    height: $markerSize;
+                    background: $primaryGradientBlue;
+                    border-radius: 50%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $primaryColorBlack;
+                }
+
+
+                .desc-cv {
+
+
+                    h4 {
+                        text-transform: none;
+                        margin: 0 0 1rem 0;
+                        line-height: 1.125rem;
+                        font-size: 1.125rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: $secondaryColorWhite;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }

@@ -191,27 +191,67 @@ header .logo-nav a {
 #cv-section .cv-container {
   width: 70%;
 }
-#cv-section .cv-container article {
-  display: grid;
-  grid-template-columns: 0.2fr 0.2fr 0.6fr;
+#cv-section .cv-container h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+#cv-section .cv-container .tabs-cv {
+  display: flex;
+}
+#cv-section .cv-container .tabs-cv * {
+  margin-bottom: 1.5rem;
+}
+#cv-section .cv-container .tabs-cv .tab-cv {
+  cursor: pointer;
+  flex: 1;
+  border-bottom: 0.25rem rgb(255, 255, 255) solid;
+  border-right: 0.25rem rgb(255, 255, 255) solid;
+}
+#cv-section .cv-container .tabs-cv .tab-cv > * {
+  margin-left: 1rem;
+}
+#cv-section .cv-container .tabs-cv .tab-cv h3 {
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+#cv-section .cv-container .tabs-cv .tab-cv p {
+  font-size: 1rem;
+}
+#cv-section .cv-container .tabs-cv .tab-cv p strong {
+  font-size: 2rem;
+}
+#cv-section .cv-container .tabs-cv .tab-cv.hidden {
+  border-bottom: 0.25rem rgba(255, 255, 255, 0.08) solid;
+  border-right: 0.25rem rgba(255, 255, 255, 0.08) solid;
+}
+#cv-section .cv-container .tabs-cv .tab-cv.hidden * {
+  color: rgba(255, 255, 255, 0.6);
 }
 #cv-section .cv-container article.hidden {
   display: none;
 }
-#cv-section .cv-container article .date {
+#cv-section .cv-container article .grid-cv {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.6fr;
+}
+#cv-section .cv-container article .grid-cv .date {
   margin: 0;
   margin-top: -0.25rem;
   line-height: 1.25rem;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
 }
-#cv-section .cv-container article .timeline {
+#cv-section .cv-container article .grid-cv .timeline {
   position: relative;
   width: 2px;
   background-color: rgba(0, 212, 252, 0.3);
   margin: 0 auto;
 }
-#cv-section .cv-container article .marker {
+#cv-section .cv-container article .grid-cv .marker {
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
@@ -224,13 +264,13 @@ header .logo-nav a {
   justify-content: center;
   color: rgb(17, 17, 17);
 }
-#cv-section .cv-container article .desc-cv h3 {
+#cv-section .cv-container article .grid-cv .desc-cv h4 {
   text-transform: none;
   margin: 0 0 1rem 0;
   line-height: 1.125rem;
   font-size: 1.125rem;
 }
-#cv-section .cv-container article .desc-cv p {
+#cv-section .cv-container article .grid-cv .desc-cv p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 1rem;
