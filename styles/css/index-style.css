@@ -180,6 +180,7 @@ header .logo-nav a {
   margin-top: 5rem;
 }
 #guess-section .slider-buttons img {
+  cursor: pointer;
   padding: 1rem;
   background: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
 }
@@ -187,9 +188,55 @@ header .logo-nav a {
   transform: rotate(180deg);
 }
 
-#cv-section figure {
-  background-color: rgba(255, 255, 255, 0.08);
-  width: 900px;
+#cv-section .cv-container {
+  width: 70%;
+}
+#cv-section .cv-container article {
+  display: grid;
+  grid-template-columns: 0.5fr 5rem 1fr;
+}
+#cv-section .cv-container article.hidden {
+  display: none;
+}
+#cv-section .cv-container article .date {
+  margin: 0;
+  margin-top: -0.25rem;
+  line-height: 1.25rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  vertical-align: top;
+}
+#cv-section .cv-container article .timeline {
+  position: relative;
+  width: 1px;
+  background-color: rgb(0, 212, 252);
+  margin: 0 auto;
+}
+#cv-section .cv-container article .marker {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(0, 212, 252);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+}
+#cv-section .cv-container article .desc-cv {
+  margin-left: 1rem;
+}
+#cv-section .cv-container article .desc-cv h3 {
+  margin: 0 0 1rem 0;
+  line-height: 1.12rem;
+  font-size: 1.125rem;
+}
+#cv-section .cv-container article .desc-cv p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
 }
 
 #git-section {

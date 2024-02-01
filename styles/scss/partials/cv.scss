@@ -1,7 +1,65 @@
 #cv-section {
-    figure {
-        background-color: $secondaryColorBlack;
+    .cv-container {
+        width: 70%;
 
-        width: 900px;
+        article {
+            display: grid;
+            grid-template-columns: 0.5fr 5rem 1fr;
+
+            &.hidden {
+                display: none;
+            }
+
+            .date {
+                margin: 0;
+                margin-top: -0.25rem;
+                line-height: 1.25rem;
+                font-size: 1rem;
+                color: $secondaryColorWhite;
+                vertical-align: top;
+
+            }
+
+            .timeline {
+                position: relative;
+                width: 1px;
+                background-color: $primaryColorBlue;
+                margin: 0 auto;
+
+
+            }
+
+            .marker {
+                $markerSize: 1rem;
+                position: absolute;
+                width: $markerSize;
+                height: $markerSize;
+                background-color: $primaryColorBlue;
+                border-radius: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $primaryColorBlack;
+            }
+
+
+            .desc-cv {
+                margin-left: 1rem;
+
+                h3 {
+                    margin: 0 0 1rem 0;
+                    line-height: 1.12rem;
+                    font-size: 1.125rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: $secondaryColorWhite;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
 }
