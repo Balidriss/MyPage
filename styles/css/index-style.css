@@ -193,7 +193,7 @@ header .logo-nav a {
 }
 #cv-section .cv-container article {
   display: grid;
-  grid-template-columns: 0.5fr 5rem 1fr;
+  grid-template-columns: 0.2fr 0.2fr 0.6fr;
 }
 #cv-section .cv-container article.hidden {
   display: none;
@@ -204,19 +204,18 @@ header .logo-nav a {
   line-height: 1.25rem;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
-  vertical-align: top;
 }
 #cv-section .cv-container article .timeline {
   position: relative;
-  width: 1px;
-  background-color: rgb(0, 212, 252);
+  width: 2px;
+  background-color: rgba(0, 212, 252, 0.3);
   margin: 0 auto;
 }
 #cv-section .cv-container article .marker {
   position: absolute;
-  width: 1rem;
-  height: 1rem;
-  background-color: rgb(0, 212, 252);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
   border-radius: 50%;
   left: 50%;
   transform: translateX(-50%);
@@ -225,12 +224,10 @@ header .logo-nav a {
   justify-content: center;
   color: rgb(17, 17, 17);
 }
-#cv-section .cv-container article .desc-cv {
-  margin-left: 1rem;
-}
 #cv-section .cv-container article .desc-cv h3 {
+  text-transform: none;
   margin: 0 0 1rem 0;
-  line-height: 1.12rem;
+  line-height: 1.125rem;
   font-size: 1.125rem;
 }
 #cv-section .cv-container article .desc-cv p {

@@ -4,7 +4,7 @@
 
         article {
             display: grid;
-            grid-template-columns: 0.5fr 5rem 1fr;
+            grid-template-columns: 0.2fr 0.2fr 0.6fr;
 
             &.hidden {
                 display: none;
@@ -16,25 +16,27 @@
                 line-height: 1.25rem;
                 font-size: 1rem;
                 color: $secondaryColorWhite;
-                vertical-align: top;
+
 
             }
 
             .timeline {
                 position: relative;
-                width: 1px;
-                background-color: $primaryColorBlue;
+                width: 2px;
+                background-color: rgba($primaryColorBlue, 0.3);
                 margin: 0 auto;
+
+
 
 
             }
 
             .marker {
-                $markerSize: 1rem;
+                $markerSize: 1.5rem;
                 position: absolute;
                 width: $markerSize;
                 height: $markerSize;
-                background-color: $primaryColorBlue;
+                background: $primaryGradientBlue;
                 border-radius: 50%;
                 left: 50%;
                 transform: translateX(-50%);
@@ -46,11 +48,12 @@
 
 
             .desc-cv {
-                margin-left: 1rem;
+
 
                 h3 {
+                    text-transform: none;
                     margin: 0 0 1rem 0;
-                    line-height: 1.12rem;
+                    line-height: 1.125rem;
                     font-size: 1.125rem;
                 }
 
