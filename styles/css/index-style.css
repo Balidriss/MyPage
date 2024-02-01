@@ -119,9 +119,6 @@ header nav li a {
   font-weight: 500;
   font-size: 1rem;
 }
-header nav li a:first-of-type {
-  color: rgb(255, 255, 255);
-}
 header nav menu {
   display: flex;
   justify-content: space-around;
@@ -289,4 +286,9 @@ header .logo-nav a {
 }
 #contact-section li img {
   margin-right: 1rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+footer {
+  background-color: rgb(17, 17, 17);
+  padding: 1rem;
+}/*# sourceMappingURL=index-style.css.map */
