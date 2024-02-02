@@ -11,16 +11,19 @@ class Guess {
     index: number;
     answer: string;
     imgPath: string;
+    helpMessage: string;
     hintMessage: string;
     successMessage: string;
 
 
-    constructor(index: number, answer: string, hintMessage: string, successMessage: string) {
+    constructor(index: number, answer: string, helpMessage: string, hintMessage: string, successMessage: string) {
         this.index = index;
         this.answer = answer;
         this.imgPath = "assets/img/guesses/" + index + "_guess";
         this.successMessage = successMessage;
+        this.helpMessage = helpMessage;
         this.hintMessage = hintMessage;
+
     }
 
 
@@ -37,15 +40,3 @@ class Guess {
         return response;
     }
 }
-
-let guessTest: Guess
-
-console.log(guessTest = new Guess(0, "Idriss", "c'est moi", "Rohlalalal mais quel devin..."));
-
-let test: GuessResponse = guessTest.guess("Jean");
-
-console.log(test.message);
-
-test = guessTest.guess("Idriss");
-
-console.log(test.message);
