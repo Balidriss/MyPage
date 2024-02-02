@@ -1,7 +1,7 @@
-<!-- <?php
+ <?php
 
 ?>
- -->
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,26 +21,11 @@
     <script src="scripts/js/guess-words.js" defer></script>
 
 </head>
-
+<?php
+    require_once(__DIR__ . '/includes/header.php'); ?>
 <body>
     <div class="gradient-bg"></div>
-    <header>
-        <nav>
-            <div class="logo-nav">
-                <a href="">IB</a>
-            </div>
-            <menu>
-                <li><a href="">Home</a></li>
-                <li><a href="">CV</a></li>
-                <li><a href="">Git</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Contact</a></li>
-            </menu>
-            <a href="" class="cta">
-                Contactez-moi
-            </a>
-        </nav>
-    </header>
+    
     <main>
         <section id="intro-section">
             <article>
@@ -290,9 +275,7 @@
 
         </section>
     </main>
-    <footer>
-        <p>IB footer</p>
-    </footer>
+    <?php require_once(__DIR__ . '/includes/footer.php'); ?>
 </body>
 
 </html>
