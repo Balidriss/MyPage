@@ -11,6 +11,7 @@ require_once(__DIR__ . '/config/dbconnect.php');?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idriss Balijon - Junior dev</title>
+    <link rel="icon" href="assets/icons/fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/css/index-style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
