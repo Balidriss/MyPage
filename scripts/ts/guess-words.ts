@@ -40,3 +40,18 @@ class Guess {
         return response;
     }
 }
+
+const fetchGuessesData = async () => {
+    try {
+        const response = await fetch('../guessAPI.php');
+        const guessesData = await response.json();
+
+
+        for (const guessData of guessesData) {
+            const guess = new Guess(guessData.guess_id, guessData.answer, guessData.help_message, guessData.hint_message, guessData.success_message);
+            console.log(guess);
+        }
+    } catch (error) {
+        console.error('Error fetching guesses data:', error);
+    }
+};
