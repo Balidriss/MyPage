@@ -1,10 +1,10 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+try {
+require_once __ROOT__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'ib.env');
 $dotenv->load();
+} catch (\Dotenv\Exception\InvalidFileException $e) {
+    die('Error loading .env file: ' . $e->getMessage());
+}
 
-$host = $_ENV['MYSQL_HOST'];
-$user = $_ENV['MYSQL_USER'];
-$password = $_ENV['MYSQL_PASSWORD'];
-$database = $_ENV['MYSQL_DATABASE'];
