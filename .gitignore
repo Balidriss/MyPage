@@ -1,1 +1,11 @@
 node_modules/
+vendor/
+
+composer.phar
+composer.lock
+desktop.ini
+
+.vscode
+*.env
+*.js.map
+*.css.map
