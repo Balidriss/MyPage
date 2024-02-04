@@ -8,14 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-class GuessResponse {
-    constructor(message, isSuccess) {
-        this.message = "";
-        this.isSuccess = false;
-        this.message = message;
-        this.isSuccess = isSuccess;
-    }
-}
 class Guess {
     constructor(guess_id, helpMessage) {
         this.guess_id = guess_id;
@@ -25,34 +17,37 @@ class Guess {
         this.helpMessage = helpMessage;
         this.hintMessage = "";
     }
-    guess(attempt) {
-        let response;
-        if (attempt === this.answer) {
-            response = new GuessResponse(this.successMessage, true);
-        }
-        else {
-            response = new GuessResponse(this.hintMessage, true);
-        }
-        return response;
-    }
 }
 function createGuessForm(data) {
     console.log(data);
     const formGuess = document.createElement("form");
     formGuess.id = "form-guess-" + data.guess_id.toString();
-    formGuess.method = "get";
+    formGuess.method = "post";
     formGuess.action = "scripts/ts/guessAPI.php";
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'name';
+    input.placeholder = 'Qui suis je ?';
+    const submitButton = document.createElement('input');
+    submitButton.type = 'submit';
+    submitButton.innerText = 'Deviner';
     console.log(formGuess);
     return formGuess;
 }
 const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch('scripts/ts/guessAPI.php?guess=init', {
+        const response = yield fetch('scripts/ts/guessAPI.php', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify({ guess: 'init' }),
         });
         const guessesData = yield response.json();
+        const helpMessage = document.getElementById('help-message');
+        if (helpMessage != null) {
+            helpMessage.innerHTML = guessesData[0]['help_message'];
+        }
         for (const guessData of guessesData) {
             const guess = new Guess(guessData.guess_id, guessData.help_message);
             const guessContainer = document.querySelector('.guess-container');

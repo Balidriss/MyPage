@@ -1,15 +1,3 @@
-
-
-
-class GuessResponse {
-    message: string = "";
-    isSuccess: boolean = false;
-    constructor(message: string, isSuccess: boolean) {
-        this.message = message;
-        this.isSuccess = isSuccess;
-    }
-}
-
 class Guess {
     guess_id: number;
     answer: string;
@@ -28,28 +16,22 @@ class Guess {
         this.hintMessage = "";
 
     }
-
-
-    public guess(attempt: string): GuessResponse {
-
-        let response: GuessResponse;
-
-        if (attempt === this.answer) {
-            response = new GuessResponse(this.successMessage, true);
-        }
-        else {
-            response = new GuessResponse(this.hintMessage, true);
-        }
-        return response;
-    }
 }
 
 function createGuessForm(data: Guess): HTMLElement {
     console.log(data);
     const formGuess: HTMLFormElement = document.createElement("form") as HTMLFormElement;
     formGuess.id = "form-guess-" + data.guess_id.toString() as string;
-    formGuess.method = "get";
+    formGuess.method = "post";
     formGuess.action = "scripts/ts/guessAPI.php";
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'name';
+    input.placeholder = 'Qui suis je ?';
+    const submitButton = document.createElement('input');
+    submitButton.type = 'submit';
+    submitButton.innerText = 'Deviner';
+
     console.log(formGuess);
     return formGuess;
 }
@@ -58,16 +40,21 @@ const createGuesses = async () => {
 
     try {
 
-        const response = await fetch('scripts/ts/guessAPI.php?guess=init', {
+        const response = await fetch('scripts/ts/guessAPI.php', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify({ guess: 'init' }),
         });
 
 
         const guessesData = await response.json();
+        const helpMessage: HTMLElement = document.getElementById('help-message') as HTMLElement;
 
-
+        if (helpMessage != null) {
+            helpMessage.innerHTML = guessesData[0]['help_message'];
+        }
         for (const guessData of guessesData) {
 
             const guess = new Guess(guessData.guess_id, guessData.help_message);

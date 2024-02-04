@@ -4,12 +4,11 @@ require_once(__DIR__ . '/../../vendor/autoload.php');
 
 header('Content-Type: application/json');
 
+$post = json_decode(file_get_contents("php://input"), true);
+$guessRequest = $post['guess'];
+if(isset($post['id'])){
+$guessId = $post['id'];
 
-if(isset( $_GET['guess'])){
-    $guessRequest = $_GET['guess'];
-}
-if(isset( $_GET['id'])){
-$guessId = $_GET['id'];
 }
 
 try {
