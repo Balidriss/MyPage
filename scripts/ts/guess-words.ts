@@ -10,7 +10,7 @@ class Guess {
     constructor(guess_id: number, helpMessage: string) {
         this.guess_id = guess_id;
         this.answer = "";
-        this.imgPath = "assets/img/guesses/" + guess_id + "_guess";
+        this.imgPath = "assets/img/guesses/guess-" + guess_id.toString() + ".png" as string;
         this.successMessage = "Bravo.";
         this.helpMessage = helpMessage;
         this.hintMessage = "";
@@ -30,7 +30,12 @@ function createGuessForm(data: Guess): HTMLElement {
     input.placeholder = 'Qui suis je ?';
     const submitButton = document.createElement('input');
     submitButton.type = 'submit';
-    submitButton.innerText = 'Deviner';
+    submitButton.value = 'Deviner';
+    const img = document.createElement('img');
+    img.src = data.imgPath.toString() as string;
+    formGuess.appendChild(img);
+    formGuess.appendChild(submitButton);
+    formGuess.appendChild(input);
 
     console.log(formGuess);
     return formGuess;
@@ -58,9 +63,10 @@ const createGuesses = async () => {
         for (const guessData of guessesData) {
 
             const guess = new Guess(guessData.guess_id, guessData.help_message);
+
             const guessContainer = document.querySelector('.guess-container');
             if (guessContainer != null) {
-                const formGuess: HTMLElement = createGuessForm(guessData);
+                const formGuess: HTMLElement = createGuessForm(guess);
                 guessContainer.appendChild(formGuess);
             } else {
                 console.error("can't find guess container ! reload")

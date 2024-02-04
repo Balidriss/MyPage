@@ -12,7 +12,7 @@ class Guess {
     constructor(guess_id, helpMessage) {
         this.guess_id = guess_id;
         this.answer = "";
-        this.imgPath = "assets/img/guesses/" + guess_id + "_guess";
+        this.imgPath = "assets/img/guesses/guess-" + guess_id.toString() + ".png";
         this.successMessage = "Bravo.";
         this.helpMessage = helpMessage;
         this.hintMessage = "";
@@ -30,7 +30,12 @@ function createGuessForm(data) {
     input.placeholder = 'Qui suis je ?';
     const submitButton = document.createElement('input');
     submitButton.type = 'submit';
-    submitButton.innerText = 'Deviner';
+    submitButton.value = 'Deviner';
+    const img = document.createElement('img');
+    img.src = data.imgPath.toString();
+    formGuess.appendChild(img);
+    formGuess.appendChild(submitButton);
+    formGuess.appendChild(input);
     console.log(formGuess);
     return formGuess;
 }
@@ -52,7 +57,7 @@ const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
             const guess = new Guess(guessData.guess_id, guessData.help_message);
             const guessContainer = document.querySelector('.guess-container');
             if (guessContainer != null) {
-                const formGuess = createGuessForm(guessData);
+                const formGuess = createGuessForm(guess);
                 guessContainer.appendChild(formGuess);
             }
             else {
