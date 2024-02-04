@@ -17,13 +17,13 @@ class GuessResponse {
     }
 }
 class Guess {
-    constructor(index, answer, helpMessage, hintMessage, successMessage) {
-        this.index = index;
-        this.answer = answer;
-        this.imgPath = "assets/img/guesses/" + index + "_guess";
-        this.successMessage = successMessage;
+    constructor(guess_id, helpMessage) {
+        this.guess_id = guess_id;
+        this.answer = "";
+        this.imgPath = "assets/img/guesses/" + guess_id + "_guess";
+        this.successMessage = "Bravo.";
         this.helpMessage = helpMessage;
-        this.hintMessage = hintMessage;
+        this.hintMessage = "";
     }
     guess(attempt) {
         let response;
@@ -36,16 +36,39 @@ class Guess {
         return response;
     }
 }
-const fetchGuessesData = () => __awaiter(void 0, void 0, void 0, function* () {
+function createGuessForm(data) {
+    console.log(data);
+    const formGuess = document.createElement("form");
+    formGuess.id = "form-guess-" + data.guess_id.toString();
+    formGuess.method = "get";
+    formGuess.action = "scripts/ts/guessAPI.php";
+    console.log(formGuess);
+    return formGuess;
+}
+const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch('../guessAPI.php');
+        const response = yield fetch('scripts/ts/guessAPI.php?guess=init', {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
         const guessesData = yield response.json();
         for (const guessData of guessesData) {
-            const guess = new Guess(guessData.guess_id, guessData.answer, guessData.help_message, guessData.hint_message, guessData.success_message);
-
+            const guess = new Guess(guessData.guess_id, guessData.help_message);
+            const guessContainer = document.querySelector('.guess-container');
+            if (guessContainer != null) {
+                const formGuess = createGuessForm(guessData);
+                guessContainer.appendChild(formGuess);
+            }
+            else {
+                console.error("can't find guess container ! reload");
+            }
         }
     }
     catch (error) {
         console.error('Error fetching guesses data:', error);
     }
 });
+window.onload = () => {
+    createGuesses();
+};

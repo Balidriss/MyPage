@@ -2,8 +2,6 @@
 
 
 ?>
-
-
 <section id="guess-section">
     <div class="guess-container">
         
@@ -25,5 +23,4 @@
                     
             </article>
         </section>
-
-<script src="scripts/js/guess-words.js" defer></script>
+        <script src="scripts/js/guess-words.js" defer></script>

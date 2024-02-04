@@ -20,6 +20,7 @@ require_once(__DIR__ . '/config/dbconnect.php');?>
         rel="stylesheet">
     <script src="scripts/js/decorations.js" defer></script>
     <script src="scripts/js/interactions.js" defer></script>
+ 
 </head>
 <?php
     require_once(__DIR__ . '/includes/header.php'); ?>

@@ -1,7 +1,6 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
 try {
-require_once __ROOT__ . '/vendor/autoload.php';
-
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'ib.env');
 $dotenv->load();
 } catch (\Dotenv\Exception\InvalidFileException $e) {
