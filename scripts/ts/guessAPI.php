@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once(__DIR__ . '/../../config/dbconnect.php');
 require_once(__DIR__ . '/../../vendor/autoload.php'); 
 
@@ -29,6 +30,8 @@ case 'attempt':
         if (isset($post['attempt']) && $post['attempt'] === $currentGuessAttempt['answer'])
 {
     $response['success_message'] = $currentGuessAttempt['success_message'];
+    $response['answer'] = $currentGuessAttempt['answer'];
+    $_SESSION['GUESSES'][(int)$guessId] = $response['answer'];
 }
     }
     break;

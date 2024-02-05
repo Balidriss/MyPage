@@ -18,16 +18,15 @@ class Guess {
         this.hintMessage = "";
     }
 }
-function createGuessForm(data) {
-    console.log(data);
+function createGuessForm(guess) {
     const formGuess = document.createElement("form");
-    formGuess.id = "form-guess-" + data.guess_id.toString();
+    formGuess.id = "form-guess-" + guess.guess_id.toString();
     formGuess.method = "post";
     formGuess.action = "scripts/ts/guessAPI.php";
     const id = document.createElement('input');
     id.type = 'hidden';
     id.name = 'id';
-    id.value = data.guess_id.toString();
+    id.value = guess.guess_id.toString();
     const input = document.createElement('input');
     input.type = 'text';
     input.name = 'attempt';
@@ -36,7 +35,7 @@ function createGuessForm(data) {
     submitButton.type = 'submit';
     submitButton.value = 'Deviner';
     const img = document.createElement('img');
-    img.src = data.imgPath.toString();
+    img.src = guess.imgPath.toString();
     formGuess.appendChild(img);
     formGuess.appendChild(submitButton);
     formGuess.appendChild(input);
@@ -45,11 +44,14 @@ function createGuessForm(data) {
         try {
             const response = yield fetch('scripts/ts/guessAPI.php', {
                 method: 'POST',
-                body: JSON.stringify({ guess: 'attempt', attempt: input.value, id: data.guess_id.toString() }),
+                body: JSON.stringify({ guess: 'attempt', attempt: input.value, id: guess.guess_id.toString() }),
             });
             if (response.ok) {
                 const responseAttempt = yield response.json();
-                console.log(responseAttempt);
+                guess.hintMessage = responseAttempt['hint_message'];
+                guess.successMessage = responseAttempt['success_message'];
+                guess.answer = responseAttempt['answer'];
+                console.log(guess);
             }
             else {
                 console.error('Failed to submit the form');
@@ -61,6 +63,7 @@ function createGuessForm(data) {
     }));
     return formGuess;
 }
+const guesses = [];
 const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch('scripts/ts/guessAPI.php', {
@@ -82,6 +85,7 @@ const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
                 if (guessContainer != null) {
                     const formGuess = createGuessForm(guess);
                     guessContainer.appendChild(formGuess);
+                    guesses.push(guess);
                 }
                 else {
                     console.error("can't find guess container ! reload");
@@ -98,4 +102,5 @@ const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 window.onload = () => {
     createGuesses();
+    console.log(guesses);
 };

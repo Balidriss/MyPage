@@ -1,3 +1,8 @@
+<?php
+session_start();
+define('__ROOT__', __DIR__);
+require_once(__DIR__ . '/config/dbconnect.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
