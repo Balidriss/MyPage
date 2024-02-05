@@ -40,7 +40,7 @@ function createGuessForm(guess: Guess): HTMLFormElement {
     input.placeholder = 'Qui suis je ?';
     const submitButton = document.createElement('input');
     submitButton.type = 'submit';
-    submitButton.value = 'Deviner';
+    submitButton.value = '';
     const img = document.createElement('img');
     img.src = guess.imgPath.toString() as string;
     formGuess.appendChild(img);
@@ -109,14 +109,16 @@ const createGuesses = async () => {
         } else {
             console.error('Failed to submit the form');
         }
+        window.dispatchEvent(new Event('guessesPopulated'));
     }
     catch (error) {
         console.error('Error fetching guesses data:', error);
     }
 
 };
-window.onload = () => {
-    createGuesses();
-    console.log(guesses);
-};
+
+window.addEventListener("load", async () => {
+    await createGuesses();
+
+});
 
