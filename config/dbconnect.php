@@ -1,5 +1,6 @@
 <?php
 require_once (__DIR__ . '/config.php');
+define('PRODUCTION', $_ENV['PRODUCTION']);
 try {
     $mysqlClient = new PDO(
         sprintf('mysql:host=%s;dbname=%s;port=%s;charset=utf8',  $_ENV['MYSQL_HOST'], $_ENV['MYSQL_NAME'],  $_ENV['MYSQL_PORT']),

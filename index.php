@@ -2,7 +2,11 @@
 session_start();
 define('__ROOT__', __DIR__);
 require_once(__DIR__ . '/config/dbconnect.php');?>
+<?php 
+if (!PRODUCTION === 'TRUE'): ?> 
+   <a style="font-size: 0.5rem; position:absolute; top: 100px" href= "<?php echo __DIR__ . '../config/clear_session.php' ?>">Clear Session</a>
 
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
