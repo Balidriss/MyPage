@@ -9,7 +9,6 @@ $post = json_decode(file_get_contents("php://input"), true);
 $guessRequest = $post['guess'];
 if(isset($post['id'])){
 $guessId = $post['id'];
-
 }
 
 try {
@@ -27,10 +26,10 @@ case 'attempt':
     {
         $response = ['hint_message' => $currentGuessAttempt['hint_message']];
        
-        if($guessRequest['attempt'] === $currentGuessAttempt['answer'])
-        {
-            $response['success_message'] = $currentGuessAttempt['success_message'];
-        }
+        if (isset($post['attempt']) && $post['attempt'] === $currentGuessAttempt['answer'])
+{
+    $response['success_message'] = $currentGuessAttempt['success_message'];
+}
     }
     break;
 default:

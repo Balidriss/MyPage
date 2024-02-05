@@ -40,12 +40,25 @@ function createGuessForm(data) {
     formGuess.appendChild(img);
     formGuess.appendChild(submitButton);
     formGuess.appendChild(input);
-    formGuess.addEventListener('submit', (e) => {
+    formGuess.addEventListener('submit', (e) => __awaiter(this, void 0, void 0, function* () {
         e.preventDefault();
-        const inputValue = input.value;
-        console.log("submit : ", inputValue);
-    });
-    console.log(formGuess);
+        try {
+            const response = yield fetch('scripts/ts/guessAPI.php', {
+                method: 'POST',
+                body: JSON.stringify({ guess: 'attempt', attempt: input.value, id: data.guess_id.toString() }),
+            });
+            if (response.ok) {
+                const responseAttempt = yield response.json();
+                console.log(responseAttempt);
+            }
+            else {
+                console.error('Failed to submit the form');
+            }
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    }));
     return formGuess;
 }
 const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -57,21 +70,26 @@ const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
             },
             body: JSON.stringify({ guess: 'init' }),
         });
-        const guessesData = yield response.json();
-        const helpMessage = document.getElementById('help-message');
-        if (helpMessage != null) {
-            helpMessage.innerHTML = guessesData[0]['help_message'];
+        if (response.ok) {
+            const guessesData = yield response.json();
+            const helpMessage = document.getElementById('help-message');
+            if (helpMessage != null) {
+                helpMessage.innerHTML = guessesData[0]['help_message'];
+            }
+            for (const guessData of guessesData) {
+                const guess = new Guess(guessData.guess_id, guessData.help_message);
+                const guessContainer = document.querySelector('.guess-container');
+                if (guessContainer != null) {
+                    const formGuess = createGuessForm(guess);
+                    guessContainer.appendChild(formGuess);
+                }
+                else {
+                    console.error("can't find guess container ! reload");
+                }
+            }
         }
-        for (const guessData of guessesData) {
-            const guess = new Guess(guessData.guess_id, guessData.help_message);
-            const guessContainer = document.querySelector('.guess-container');
-            if (guessContainer != null) {
-                const formGuess = createGuessForm(guess);
-                guessContainer.appendChild(formGuess);
-            }
-            else {
-                console.error("can't find guess container ! reload");
-            }
+        else {
+            console.error('Failed to submit the form');
         }
     }
     catch (error) {
