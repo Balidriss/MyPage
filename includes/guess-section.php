@@ -20,7 +20,6 @@ if(!isset($_SESSION['GUESSES']))
                     <p>A propos de moi...</p>
                     <h2>Pouvez-vous deviner ?</h2>
                 </div>
-                var_dump($_SESSION);
                 <p id="help-message"></p>
                 <p id="hint-message"></p>
                 <div class="slider-buttons">
