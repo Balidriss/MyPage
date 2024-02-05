@@ -1,4 +1,5 @@
 #guess-section {
+
     article {
         margin-left: 8rem;
     }
@@ -8,6 +9,52 @@
             width: 100%;
         }
     }
+
+    .guess-container {
+        display: flex;
+        overflow-x: hidden;
+        align-items: center;
+
+
+        form {
+            position: relative;
+            z-index: 0;
+            background-color: $secondaryColorBlack;
+            margin-left: -10rem;
+            width: 90%;
+            flex: 0 0 80%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.5s ease;
+
+            &.form-active {
+                z-index: 3;
+                background-color: black;
+            }
+
+            &* {
+                color: $primaryColorBlack;
+            }
+
+            input {
+                width: 50%;
+
+                &[placeholder] {
+                    color: $secondaryColorBlack;
+                }
+            }
+
+            img {
+                width: 50%;
+                filter: grayscale(1);
+            }
+        }
+    }
+
+
+
+
 
     .slider-buttons {
         display: flex;
