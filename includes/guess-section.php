@@ -1,11 +1,12 @@
 <?php
-if(!isset($_SESSION))
+if(!isset($_SESSION['GUESSES']))
 {
     $_SESSION['GUESSES'] =[];
-    $_SESSION['TEST']=0;
+ 
 }
-$_SESSION['TEST'] ++;
-var_dump($_SESSION);
+
+
+
 ?>
 <section id="guess-section">
     <div class="guess-container">
@@ -17,8 +18,7 @@ var_dump($_SESSION);
    <article class="main-text-section">         
         <div class="title">
                     <p>A propos de moi...</p>
-                    <h2>Pouvez-vous deviner ? <?php                 
-                    echo count($_SESSION['GUESSES']);?></h2>
+                    <h2>Pouvez-vous deviner ?</h2>
                 </div>
                 var_dump($_SESSION);
                 <p id="help-message"></p>
