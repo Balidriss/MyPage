@@ -37,8 +37,8 @@ function createGuessForm(guess) {
     const img = document.createElement('img');
     img.src = guess.imgPath.toString();
     formGuess.appendChild(img);
-    formGuess.appendChild(submitButton);
     formGuess.appendChild(input);
+    formGuess.appendChild(submitButton);
     formGuess.addEventListener('submit', (e) => __awaiter(this, void 0, void 0, function* () {
         e.preventDefault();
         try {
@@ -51,7 +51,6 @@ function createGuessForm(guess) {
                 guess.hintMessage = responseAttempt['hint_message'];
                 guess.successMessage = responseAttempt['success_message'];
                 guess.answer = responseAttempt['answer'];
-                console.log(guess);
             }
             else {
                 console.error('Failed to submit the form');
@@ -85,7 +84,7 @@ const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
                 if (guessContainer != null) {
                     const formGuess = createGuessForm(guess);
                     guessContainer.appendChild(formGuess);
-                    guesses.push(guess);
+                    guesses.push({ guess: guess, formElement: formGuess });
                 }
                 else {
                     console.error("can't find guess container ! reload");

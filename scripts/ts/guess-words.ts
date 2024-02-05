@@ -18,7 +18,13 @@ class Guess {
     }
 }
 
-function createGuessForm(guess: Guess): HTMLElement {
+
+interface Guesses {
+    guess: Guess;
+    formElement: HTMLFormElement;
+}
+
+function createGuessForm(guess: Guess): HTMLFormElement {
 
     const formGuess: HTMLFormElement = document.createElement("form") as HTMLFormElement;
     formGuess.id = "form-guess-" + guess.guess_id.toString() as string;
@@ -38,8 +44,8 @@ function createGuessForm(guess: Guess): HTMLElement {
     const img = document.createElement('img');
     img.src = guess.imgPath.toString() as string;
     formGuess.appendChild(img);
-    formGuess.appendChild(submitButton);
     formGuess.appendChild(input);
+    formGuess.appendChild(submitButton);
     formGuess.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
@@ -52,7 +58,7 @@ function createGuessForm(guess: Guess): HTMLElement {
                 guess.hintMessage = responseAttempt['hint_message'];
                 guess.successMessage = responseAttempt['success_message'];
                 guess.answer = responseAttempt['answer'];
-                console.log(guess);
+
 
             } else {
                 console.error('Failed to submit the form');
@@ -65,7 +71,7 @@ function createGuessForm(guess: Guess): HTMLElement {
     return formGuess;
 }
 
-const guesses: Guess[] = [];
+const guesses: Guesses[] = [];
 
 const createGuesses = async () => {
 
@@ -92,9 +98,10 @@ const createGuesses = async () => {
 
                 const guessContainer = document.querySelector('.guess-container');
                 if (guessContainer != null) {
-                    const formGuess: HTMLElement = createGuessForm(guess);
+                    const formGuess: HTMLFormElement = createGuessForm(guess);
                     guessContainer.appendChild(formGuess);
-                    guesses.push(guess);
+                    guesses.push({ guess: guess, formElement: formGuess });
+
                 } else {
                     console.error("can't find guess container ! reload")
                 }
@@ -106,10 +113,10 @@ const createGuesses = async () => {
     catch (error) {
         console.error('Error fetching guesses data:', error);
     }
+
 };
 window.onload = () => {
     createGuesses();
     console.log(guesses);
-
 };
 
