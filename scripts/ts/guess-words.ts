@@ -24,9 +24,13 @@ function createGuessForm(data: Guess): HTMLElement {
     formGuess.id = "form-guess-" + data.guess_id.toString() as string;
     formGuess.method = "post";
     formGuess.action = "scripts/ts/guessAPI.php";
+    const id = document.createElement('input');
+    id.type = 'hidden';
+    id.name = 'id';
+    id.value = data.guess_id.toString();
     const input = document.createElement('input');
     input.type = 'text';
-    input.name = 'name';
+    input.name = 'attempt';
     input.placeholder = 'Qui suis je ?';
     const submitButton = document.createElement('input');
     submitButton.type = 'submit';
@@ -36,7 +40,11 @@ function createGuessForm(data: Guess): HTMLElement {
     formGuess.appendChild(img);
     formGuess.appendChild(submitButton);
     formGuess.appendChild(input);
-
+    formGuess.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputValue = input.value;
+        console.log("submit : ", inputValue);
+    });
     console.log(formGuess);
     return formGuess;
 }
