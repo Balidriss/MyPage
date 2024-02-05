@@ -12,8 +12,10 @@
 
     .guess-container {
         display: flex;
+        flex-direction: row-reverse;
         overflow-x: hidden;
         align-items: center;
+
 
 
         form {
@@ -21,12 +23,18 @@
             z-index: 0;
             background-color: $secondaryColorBlack;
             margin-left: -10rem;
-            width: 90%;
-            flex: 0 0 80%;
+            flex: 0 0 50%;
             box-sizing: border-box;
-            padding: 10px;
+            padding: 5rem 1rem;
+            padding-bottom: 2rem;
             text-align: center;
             transition: transform 0.5s ease;
+
+
+            &>* {
+                margin: auto;
+                margin-top: 4rem;
+            }
 
             &.form-active {
                 z-index: 3;
@@ -38,22 +46,38 @@
             }
 
             input {
-                width: 50%;
+                $border-radius: 2rem;
+                border-radius: $border-radius;
+                padding: 1rem;
+                border-style: none;
 
-                &[placeholder] {
-                    color: $secondaryColorBlack;
+                &[name="attempt"] {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+
+                }
+
+                &[type="submit"] {
+                    background-image: $primaryGradientBlue;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+
+                &[type=text] {
+                    color: $primaryColorBlue;
                 }
             }
 
             img {
-                width: 50%;
+                width: 80%;
                 filter: grayscale(1);
             }
         }
     }
-
-
-
 
 
     .slider-buttons {

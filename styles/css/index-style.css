@@ -176,6 +176,7 @@ header .logo-nav a {
 }
 #guess-section .guess-container {
   display: flex;
+  flex-direction: row-reverse;
   overflow-x: hidden;
   align-items: center;
 }
@@ -184,12 +185,16 @@ header .logo-nav a {
   z-index: 0;
   background-color: rgba(255, 255, 255, 0.08);
   margin-left: -10rem;
-  width: 90%;
-  flex: 0 0 80%;
+  flex: 0 0 50%;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5rem 1rem;
+  padding-bottom: 2rem;
   text-align: center;
   transition: transform 0.5s ease;
+}
+#guess-section .guess-container form > * {
+  margin: auto;
+  margin-top: 4rem;
 }
 #guess-section .guess-container form.form-active {
   z-index: 3;
@@ -199,13 +204,30 @@ header .logo-nav a {
   color: rgb(17, 17, 17);
 }
 #guess-section .guess-container form input {
-  width: 50%;
+  border-radius: 2rem;
+  padding: 1rem;
+  border-style: none;
 }
-#guess-section .guess-container form input[placeholder] {
-  color: rgba(255, 255, 255, 0.08);
+#guess-section .guess-container form input[name=attempt] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#guess-section .guess-container form input[type=submit] {
+  background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#guess-section .guess-container form input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+#guess-section .guess-container form input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+#guess-section .guess-container form input[type=text] {
+  color: rgb(0, 212, 252);
 }
 #guess-section .guess-container form img {
-  width: 50%;
+  width: 80%;
   filter: grayscale(1);
 }
 #guess-section .slider-buttons {
