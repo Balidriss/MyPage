@@ -2,17 +2,12 @@
 if(!isset($_SESSION['GUESSES']))
 {
     $_SESSION['GUESSES'] =[];
- 
 }
 ?>
-
 <section id="guess-section">
     <div class="guess-container">
-        
-    
-        <!--  -->
-
     </div>
+
    <article class="main-text-section">         
         <div class="title">
                     <p>A propos de moi...</p>
