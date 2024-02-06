@@ -1,7 +1,9 @@
 "use strict";
 window.addEventListener("guessesPopulated", () => {
-    console.log(guesses);
-    console.log(guesses[0]);
-    const currentGuess = guesses[0].formElement;
-    console.log(currentGuess);
+    setZIndex(guesses);
 });
+function setZIndex(guesses) {
+    for (let i = 0; i < guesses.length; i++)
+        guesses[i].formElement.classList.add("form-position-" + i.toString());
+}
+;

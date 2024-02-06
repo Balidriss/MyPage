@@ -182,7 +182,7 @@ header .logo-nav a {
 }
 #guess-section .guess-container form {
   position: relative;
-  z-index: 0;
+  z-index: -1;
   background-color: rgba(255, 255, 255, 0.08);
   margin-left: -10rem;
   flex: 0 0 50%;
@@ -191,14 +191,37 @@ header .logo-nav a {
   padding-bottom: 2rem;
   text-align: center;
   transition: transform 0.5s ease;
+  scale: 0.5;
 }
 #guess-section .guess-container form > * {
   margin: auto;
   margin-top: 4rem;
 }
-#guess-section .guess-container form.form-active {
+#guess-section .guess-container form.form-position-0 {
   z-index: 3;
-  background-color: black;
+  background-color: #333333;
+  scale: 1;
+}
+#guess-section .guess-container form.form-position-1 {
+  z-index: 2;
+  background-color: #222222;
+  scale: 0.9;
+}
+#guess-section .guess-container form.form-position-2 {
+  z-index: 1;
+  background-color: #111111;
+  scale: 0.8;
+}
+#guess-section .guess-container form.form-position-3 {
+  z-index: 0;
+  background-color: #000000;
+  scale: 0.7;
+}
+#guess-section .guess-container form:not(.form-position-0) {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #guess-section .guess-container form* {
   color: rgb(17, 17, 17);

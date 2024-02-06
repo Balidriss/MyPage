@@ -1,10 +1,14 @@
 
 window.addEventListener("guessesPopulated", () => {
-    console.log(guesses);
+    setZIndex(guesses);
 
-    console.log(guesses[0]);
-    const currentGuess = guesses[0].formElement as HTMLFormElement;
-    console.log(currentGuess);
+
 }
 );
+
+function setZIndex(guesses: Guesses[]) {
+    for (let i: number = 0; i < guesses.length; i++)
+        guesses[i].formElement.classList.add("form-position-" + i.toString());
+
+};
 
