@@ -2,11 +2,7 @@
 session_start();
 define('__ROOT__', __DIR__);
 require_once(__DIR__ . '/config/dbconnect.php');?>
-<?php 
-if (!(PRODUCTION === 'TRUE')): ?> 
-   <a style="font-size: 0.5rem; position:absolute; top: 100px" href= "/config/clear_session.php">Clear Session</a>
 
-<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,7 +23,11 @@ if (!(PRODUCTION === 'TRUE')): ?>
 </head>
 <?php
     require_once(__DIR__ . '/includes/header.php'); ?>
-<body>
+<body><?php 
+if (!(PRODUCTION === 'TRUE')): ?> 
+   <a style="font-size: 0.5rem; position:absolute; top: 100px" href= "/config/clear_session.php">Clear Session</a>
+
+<?php endif; ?>
     <div class="gradient-bg"></div>
     <main>
     <?php require_once(__DIR__ . '/includes/intro-section.php'); ?>
