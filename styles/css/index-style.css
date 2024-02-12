@@ -190,8 +190,8 @@ header .logo-nav a {
   padding: 5rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
-  transition: transform 0.5s ease;
-  scale: 0.5;
+  transition: all 0.5s ease-in-out;
+  scale: 0.8;
 }
 #guess-section .guess-container form > * {
   margin: auto;
@@ -205,17 +205,17 @@ header .logo-nav a {
 #guess-section .guess-container form.form-position-1 {
   z-index: 2;
   background-color: #222222;
-  scale: 0.9;
+  scale: 0.95;
 }
 #guess-section .guess-container form.form-position-2 {
   z-index: 1;
   background-color: #111111;
-  scale: 0.8;
+  scale: 0.9;
 }
 #guess-section .guess-container form.form-position-3 {
   z-index: 0;
   background-color: #000000;
-  scale: 0.7;
+  scale: 0.85;
 }
 #guess-section .guess-container form:not(.form-position-0) {
   pointer-events: none;
