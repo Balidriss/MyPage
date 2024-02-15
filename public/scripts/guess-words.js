@@ -65,7 +65,7 @@ function createGuessForm(guess) {
 const guesses = [];
 const createGuesses = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch('scripts/ts/guessAPI.php', {
+        const response = yield fetch('guessAPI.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

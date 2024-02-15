@@ -77,7 +77,7 @@ const createGuesses = async () => {
 
     try {
 
-        const response = await fetch('scripts/ts/guessAPI.php', {
+        const response = await fetch('guessAPI.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

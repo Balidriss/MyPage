@@ -1,6 +1,5 @@
 image: alpine:latest
 
-# Define a visible job
 pages:
   script:
     - mkdir .public

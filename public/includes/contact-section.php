@@ -8,8 +8,8 @@
                     </div>
                 </div>
                 <ul>
-                    <li><img src="assets/img/mail.svg">xxxxxxx@ib.com</li>
-                    <li><img src="assets/img/call.svg">06 06 06 06 06</li>
+                    <li><img src="public/assets/img/mail.svg">xxxxxxx@ib.com</li>
+                    <li><img src="public/assets/img/call.svg">06 06 06 06 06</li>
                 </ul>
             </article>
 

@@ -1,14 +1,14 @@
 <?php
 session_start();
-define('__ROOT__', __DIR__);
-require_once(__DIR__ . '/config/dbconnect.php');
+require_once(__DIR__ . '/../config/dbconnect.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <title>Idriss Balijon - Blog</title>
-    <link href="styles/css/blog-style.css" type="text/css" rel="stylesheet">
+    <title>Idriss Balijon - Projets</title>
+    <link href="styles/css/projects-style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

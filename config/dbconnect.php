@@ -1,11 +1,20 @@
 <?php
 require_once (__DIR__ . '/config.php');
-define('PRODUCTION', $_ENV['PRODUCTION']);
+if(!($isProd === 'TRUE'))
+{
+    $dbPsw="";
+}
+else
+{
+   // $dbPsw={securedpassword};
+}
+
 try {
+    mysqli_report(MYSQLI_REPORT_ALL);
     $mysqlClient = new PDO(
-        sprintf('mysql:host=%s;dbname=%s;port=%s;charset=utf8',  $_ENV['MYSQL_HOST'], $_ENV['MYSQL_NAME'],  $_ENV['MYSQL_PORT']),
-        $_ENV['MYSQL_USER'],
-        $_ENV['MYSQL_PASSWORD']
+        sprintf('mysql:host=%s;dbname=%s;port=%s;charset=utf8',  $dbHost, $dbName,  $dbPort),
+        $dbUser,
+        $dbPsw
     );
     $mysqlClient->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $exception) {

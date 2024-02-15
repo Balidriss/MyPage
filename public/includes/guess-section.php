@@ -16,9 +16,9 @@ if(!isset($_SESSION['GUESSES']))
                 <p id="help-message"></p>
                 <p id="hint-message"></p>
                 <div class="slider-buttons">
-                    <img class="button-left" src="assets/img/fi_arrow-right.svg">
-                    <img class="button-right" src="assets/img/fi_arrow-right.svg">
+                    <img class="button-left" src="public/assets/img/fi_arrow-right.svg">
+                    <img class="button-right" src="public/assets/img/fi_arrow-right.svg">
                     
             </article>
         </section>
-        <script src="scripts/js/guess-words.js" defer></script>
+        <script src="public/scripts/guess-words.js" defer></script>

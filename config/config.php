@@ -1,10 +1,9 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+$dbHost = getenv('MYSQL_HOST');
+$dbPort = getenv('MYSQL_PORT');
+$dbName = getenv('MYSQL_NAME');
+$dbUser = getenv('MYSQL_USER');
+// $dbPsw = getenv('MYSQL_PASSWORD');
+$isProd = getenv('PRODUCTION');
 
-try {
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'ib.env');
-$dotenv->load();
-} catch (\Dotenv\Exception\InvalidFileException $e) {
-    die('Error loading .env file: ' . $e->getMessage());
-}
-
+$apiKey = getenv('PRIVATE_API_KEY');
