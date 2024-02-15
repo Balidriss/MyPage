@@ -5,16 +5,21 @@ window.addEventListener("guessesPopulated", () => {
 
 }
 );
-if (document.querySelector('button-left') != null) {
-    const sliderLeft = document.querySelector('button-left');
-} else {
-    console.error("couldn't find slider left");
-}
-if (document.querySelector('button-right') != null) {
-    const sliderLeft = document.querySelector('button-right');
-} else {
-    console.error("couldn't find slider right");
-}
+
+window.addEventListener("load", () => {
+
+    if (document.querySelector('.button-left') != null) {
+        const sliderLeft = document.querySelector('.button-left');
+    } else {
+        console.error("couldn't find slider left");
+    }
+    if (document.querySelector('.button-right') != null) {
+        const sliderLeft = document.querySelector('.button-right');
+    } else {
+        console.error("couldn't find slider right");
+    }
+});
+
 
 
 

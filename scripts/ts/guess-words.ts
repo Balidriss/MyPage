@@ -1,124 +1,98 @@
 class Guess {
     guess_id: number;
     answer: string;
-    imgPath: string;
     helpMessage: string;
     hintMessage: string;
     successMessage: string;
 
-
     constructor(guess_id: number, helpMessage: string) {
         this.guess_id = guess_id;
         this.answer = "";
-        this.imgPath = "assets/img/guesses/guess-" + guess_id.toString() + ".png" as string;
         this.successMessage = "Bravo.";
         this.helpMessage = helpMessage;
         this.hintMessage = "";
 
     }
 }
-
-
 interface Guesses {
     guess: Guess;
     formElement: HTMLFormElement;
 }
-
-function createGuessForm(guess: Guess): HTMLFormElement {
-
-    const formGuess: HTMLFormElement = document.createElement("form") as HTMLFormElement;
-    formGuess.id = "form-guess-" + guess.guess_id.toString() as string;
-    formGuess.method = "post";
-    formGuess.action = "scripts/ts/guessAPI.php";
-    const id = document.createElement('input');
-    id.type = 'hidden';
-    id.name = 'id';
-    id.value = guess.guess_id.toString();
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.name = 'attempt';
-    input.placeholder = 'Qui suis je ?';
-    const submitButton = document.createElement('input');
-    submitButton.type = 'submit';
-    submitButton.value = '';
-    const img = document.createElement('img');
-    img.src = guess.imgPath.toString() as string;
-    formGuess.appendChild(img);
-    formGuess.appendChild(input);
-    formGuess.appendChild(submitButton);
-    formGuess.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('scripts/ts/guessAPI.php', {
-                method: 'POST',
-                body: JSON.stringify({ guess: 'attempt', attempt: input.value, id: guess.guess_id.toString() }),
-            });
-            if (response.ok) {
-                const responseAttempt = await response.json();
-                guess.hintMessage = responseAttempt['hint_message'];
-                guess.successMessage = responseAttempt['success_message'];
-                guess.answer = responseAttempt['answer'];
-
-
-            } else {
-                console.error('Failed to submit the form');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-
-    return formGuess;
-}
-
 const guesses: Guesses[] = [];
 
-const createGuesses = async () => {
 
-    try {
 
-        const response = await fetch('guessAPI.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ guess: 'init' }),
-        });
+function guessAttempt(event: Event, form: HTMLFormElement) {
+    event.preventDefault();
 
-        if (response.ok) {
-            const guessesData = await response.json();
-            const helpMessage: HTMLElement = document.getElementById('help-message') as HTMLElement;
+    const formData = new FormData(form);
 
-            if (helpMessage != null) {
-                helpMessage.innerHTML = guessesData[0]['help_message'];
+
+    fetch('guessAPI.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-            for (const guessData of guessesData) {
 
-                const guess = new Guess(guessData.guess_id, guessData.help_message);
+            return response.json();
+        })
+        .then(data => {
+            updateGuessSection(parseInt(form.id), data.hint_message, data.success_message, data.answer);
+        }).catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        })
+}
 
-                const guessContainer = document.querySelector('.guess-container');
-                if (guessContainer != null) {
-                    const formGuess: HTMLFormElement = createGuessForm(guess);
-                    guessContainer.appendChild(formGuess);
-                    guesses.push({ guess: guess, formElement: formGuess });
+function updateGuessSection(guess_id: number, hintMessage: string, succesMessage: string, answer: string) {
+    const guessToUpdate = guesses.find(guessToFind => guessToFind.guess.guess_id === guess_id);
+
+    if (guessToUpdate != undefined) {
+        guessToUpdate.guess.hintMessage = hintMessage;
+        guessToUpdate.guess.successMessage = succesMessage;
+        guessToUpdate.guess.answer = answer;
+    }
+    const hintMessageElement = document.getElementById("hint-message");
+    if (hintMessageElement != null) {
+        console.log(hintMessage);
+        hintMessageElement.innerHTML = hintMessage;
+
+        //to do success message and answer to put somewhere + transitions 
+    }
+}
+
+function createGuesses() {
+
+    const guessContainer = document.querySelector('.guess-container');
+    if (guessContainer != null) {
+        const guessForms = guessContainer.querySelectorAll('form');
+        if (guessForms != null) {
+            guessForms.forEach((guessForm) => {
+                const guessId = parseInt(guessForm.id);
+                const imageTitle = guessForm.querySelector('img')?.getAttribute('title');
+                if (!isNaN(guessId) || guessForm.querySelector('img') != null) {
+
+                    if (imageTitle) {
+                        const guess = new Guess(guessId, imageTitle);
+                        guesses.push({ guess: guess, formElement: guessForm });
+                    }
 
                 } else {
-                    console.error("can't find guess container ! reload")
+                    console.error("couldn't parse int guessId or img was missing in form");
                 }
-            }
+            });
         } else {
-            console.error('Failed to submit the form');
+            console.error("Forms guesses are missing ! reload")
         }
-        window.dispatchEvent(new Event('guessesPopulated'));
+    } else {
+        console.error("guess container missing ! reload")
     }
-    catch (error) {
-        console.error('Error fetching guesses data:', error);
-    }
+}
 
-};
-
-window.addEventListener("load", async () => {
-    await createGuesses();
-
+window.addEventListener("load", () => {
+    createGuesses();
+    window.dispatchEvent(new Event('guessesPopulated'));
 });
 
