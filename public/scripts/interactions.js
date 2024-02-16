@@ -54,12 +54,7 @@ function setNewIndexOrder(guesses, currentIndex) {
         if (!(i < guesses.length)) {
             i = 0;
         }
-        if (y === 0) {
-            guesses[i].formElement.classList.remove("form-position-" + (guesses.length - 1).toString());
-        }
-        else {
-            guesses[i].formElement.classList.remove("form-position-" + (y - 1).toString());
-        }
+        guesses[i].formElement.className = '';
         guesses[i].formElement.classList.add("form-position-" + y.toString());
         i++;
         y++;
