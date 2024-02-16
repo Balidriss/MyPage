@@ -26,21 +26,11 @@ window.addEventListener("load", () => {
 function slide(isRight, currentIndex) {
     console.log(currentIndex);
     if (isRight) {
-        currentIndex--;
-        //if currentindex go beyond 0 that means we have to loop to the end
-        if ((currentIndex < 0)) {
-            // TODO
-            currentIndex = guesses.length - 1;
-        }
+        currentIndex = (currentIndex + 1) % guesses.length;
         setNewIndexOrder(guesses, currentIndex);
     }
     else {
-        currentIndex++;
-        //if currentindex go beyond the length that means we have to loop to the start
-        if (!(currentIndex < guesses.length)) {
-            // TODO
-            currentIndex = 0;
-        }
+        currentIndex = (currentIndex - 1 + guesses.length) % guesses.length;
         setNewIndexOrder(guesses, currentIndex);
     }
     return currentIndex;
