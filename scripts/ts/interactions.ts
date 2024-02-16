@@ -50,20 +50,21 @@ function slide(isRight: boolean, currentIndex: number): number {
 
 function setNewIndexOrder(guesses: Guesses[], currentIndex: number) {
     let y = 0;
-    let i = currentIndex;
+    let i = currentIndex % guesses.length;
     while (y < guesses.length) {
-        console.log('i : ', i, '...  y : ', y);
-        console.log('i < guesses.length : ', (i < guesses.length));
-        if (!(i < guesses.length)) {
-
-            i = 0;
-        }
         guesses[i].formElement.className = '';
         guesses[i].formElement.classList.add("form-position-" + y.toString());
+        if (y === (guesses.length - 1)) {
+            guesses[i].formElement.style.transform = `translateX(25rem)`;
+        } else if ((y > (guesses.length - 4)) && (guesses.length > 4)) {
+            console.log('i : ', i);
+            guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 20}rem`;
+        } else {
+            guesses[i].formElement.style.transform = `translateX(${-12 * y}rem)`;
+        }
 
-        i++;
+        i = (i + 1) % guesses.length;
         y++;
-
     }
 
 };
