@@ -37,7 +37,6 @@ function updateGuessSection(guess_id, hintMessage, succesMessage, answer) {
     }
     const hintMessageElement = document.getElementById("hint-message");
     if (hintMessageElement != null) {
-        console.log(hintMessage);
         hintMessageElement.innerHTML = hintMessage;
         //to do success message and answer to put somewhere + transitions 
     }
