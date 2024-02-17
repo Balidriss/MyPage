@@ -22,10 +22,11 @@ $i = 1;
                 echo $_SESSION['GUESSES'][$guess['guess_id']];
             }
              ?></p>
-
+            <?php if(!isset($_SESSION['GUESSES'][$guess['guess_id']])) :?>
             <input type = 'hidden' name = 'id' value=<?php echo strval($guess['guess_id']) ?>>
             <div class="attempt-field"><input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
             <input type = 'submit' value='▲'></div>
+            <?php endif; ?>
         </form>
             <?php 
             $i++;
