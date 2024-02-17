@@ -15,6 +15,9 @@ $i = 1;
         <?php foreach ($guesses as $guess) :?>
             <form id="<?php echo'form-guess-'. strval($i)  ?>" method="post" action="guessAPI.php" onsubmit="event.preventDefault();guessAttempt(event, this);">
             <img src="<?php echo'public/assets/img/guesses/guess-'.strval($i).'.png'?>" title="<?php echo $guess['help_message'] ?>" >
+            <?php if(isset($_SESSION['GUESSES'][$guess['guess_id']])) :?>
+            <p class="answer"><?php echo $_SESSION['GUESSES'][$guess['guess_id']] ?></p>
+            <?php endif; ?>
             <input type = 'hidden' name = 'id' value=<?php echo strval($guess['guess_id']) ?>>
             <div class="attempt-field"><input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
             <input type = 'submit' value='▲'></div>
