@@ -33,8 +33,6 @@ window.addEventListener("load", () => {
 
 
 function slide(isRight: boolean, currentIndex: number): number {
-
-    console.log(currentIndex);
     if (isRight) {
         currentIndex = (currentIndex + 1) % guesses.length;
         setNewIndexOrder(guesses, currentIndex);
@@ -46,8 +44,6 @@ function slide(isRight: boolean, currentIndex: number): number {
     return currentIndex;
 }
 
-
-
 function setNewIndexOrder(guesses: Guesses[], currentIndex: number) {
     let y = 0;
     let i = currentIndex % guesses.length;
@@ -56,13 +52,12 @@ function setNewIndexOrder(guesses: Guesses[], currentIndex: number) {
         guesses[i].formElement.classList.add("form-position-" + y.toString());
         if (y === (guesses.length - 1)) {
             guesses[i].formElement.style.transform = `translateX(25rem)`;
+
         } else if ((y > (guesses.length - 4)) && (guesses.length > 4)) {
-            console.log('i : ', i);
             guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 20}rem`;
         } else {
-            guesses[i].formElement.style.transform = `translateX(${-12 * y}rem)`;
+            guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 2}rem)`;
         }
-
         i = (i + 1) % guesses.length;
         y++;
     }

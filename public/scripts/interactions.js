@@ -24,7 +24,6 @@ window.addEventListener("load", () => {
     }
 });
 function slide(isRight, currentIndex) {
-    console.log(currentIndex);
     if (isRight) {
         currentIndex = (currentIndex + 1) % guesses.length;
         setNewIndexOrder(guesses, currentIndex);
@@ -45,11 +44,10 @@ function setNewIndexOrder(guesses, currentIndex) {
             guesses[i].formElement.style.transform = `translateX(25rem)`;
         }
         else if ((y > (guesses.length - 4)) && (guesses.length > 4)) {
-            console.log('i : ', i);
             guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 20}rem`;
         }
         else {
-            guesses[i].formElement.style.transform = `translateX(${-12 * y}rem)`;
+            guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 2}rem)`;
         }
         i = (i + 1) % guesses.length;
         y++;
