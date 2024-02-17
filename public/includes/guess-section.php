@@ -16,10 +16,8 @@ $i = 1;
             <form id="<?php echo'form-guess-'. strval($i)  ?>" method="post" action="guessAPI.php" onsubmit="event.preventDefault();guessAttempt(event, this);">
             <img src="<?php echo'public/assets/img/guesses/guess-'.strval($i).'.png'?>" title="<?php echo $guess['help_message'] ?>" >
             <input type = 'hidden' name = 'id' value=<?php echo strval($guess['guess_id']) ?>>
-            <input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
-            <input type = 'submit' value=''>
-
-            
+            <div class="attempt-field"><input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
+            <input type = 'submit' value='▲'></div>
         </form>
             <?php 
             $i++;

@@ -193,12 +193,13 @@ header .logo-nav a {
   background-color: black;
   width: 50%;
   box-sizing: border-box;
-  padding: 5rem 1rem;
+  padding: 0rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
   transition: all 0.5s ease-in-out;
   scale: 0.7;
   opacity: 0;
+  box-shadow: -1rem 0px 2rem 1rem Black;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -207,6 +208,10 @@ header .logo-nav a {
 #guess-section .guess-container form > * {
   margin: auto;
   margin-top: 4rem;
+}
+#guess-section .guess-container form .attempt-field {
+  display: flex;
+  justify-content: center;
 }
 #guess-section .guess-container form.form-position-0 {
   z-index: 3;
