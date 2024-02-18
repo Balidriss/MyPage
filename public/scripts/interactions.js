@@ -1,26 +1,47 @@
 "use strict";
-let elements;
+let elementsCV;
+let formations;
+let professions;
+let projects;
 function initCV() {
-    elements = {
-        container: document.querySelector('.cv-container'),
-        tabs: {
-            formations: document.querySelector('.tabs-cv .formations'),
-            professions: document.querySelector('.tabs-cv .professions'),
-            projects: document.querySelector('.tabs-cv .projects'),
-        }
+    formations = {
+        content: document.getElementById('formations'),
+        tab: document.querySelector('.tabs-cv .formations')
     };
-    if (!elements.container) {
+    professions = {
+        content: document.getElementById('professions'),
+        tab: document.querySelector('.tabs-cv .professions')
+    };
+    projects = {
+        content: document.getElementById('projects'),
+        tab: document.querySelector('.tabs-cv .projects')
+    };
+    ///
+    elementsCV = {
+        container: document.querySelector('.cv-container'),
+        pairTabContent: [formations, professions, projects]
+    };
+    elementsCV.pairTabContent.forEach(part => {
+        part.tab.addEventListener('click', () => {
+            selectCVPart(part);
+        });
+    });
+    if (!elementsCV.container) {
         throw new Error('Element container cv missing.');
     }
-    if (!elements.tabs.formations) {
-        throw new Error('Element tab formations missing.');
-    }
-    if (!elements.tabs.professions) {
-        throw new Error('Element tab professions missing.');
-    }
-    if (!elements.tabs.projects) {
-        throw new Error('Element tab projects missing.');
-    }
+    elementsCV.pairTabContent.forEach(part => {
+        if (!part.tab || !part.content) {
+            throw new Error(`Elements ${part} missing.`);
+        }
+    });
+}
+function selectCVPart(cvPart) {
+    elementsCV.pairTabContent.forEach(part => {
+        part.tab.classList.remove('show');
+        part.content.classList.remove('show');
+    });
+    cvPart.content.classList.add('show');
+    cvPart.tab.classList.add('show');
 }
 window.addEventListener("load", () => {
     try {

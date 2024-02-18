@@ -9,22 +9,22 @@
             </article>
             <div class="cv-container">
                 <div class="tabs-cv">
-                    <div class="tab-cv formations">
+                    <div class="tab-cv formations show">
                         <h3>Formations</h3>
                         <p><strong>Janvier</strong></br>
                             2024</p>
                     </div>
-                    <div class="tab-cv professions hidden">
+                    <div class="tab-cv professions">
                         <h3>Professions</h3>
                         <p><strong>Septembre</strong></br>
                             2023</p>
                     </div>
-                    <div class="tab-cv projects hidden">
+                    <div class="tab-cv projects">
                         <h3>Travaux personnels</h3>
                         <p><strong>Fevriers</strong> </br> 2024</p>
                     </div>
                 </div>
-                <article id="formations">
+                <article id="formations" class="show">
                     <h3>Formations</h3>
                     <div class="grid-cv">
                         <div class="date">
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                 </article>
-                <article id="professions" class="hidden">
+                <article id="professions" class="">
                     <h3>Professions</h3>
                     <div class="grid-cv">
                         <div class="date">
@@ -148,7 +148,7 @@
                     </div>
 
                 </article>
-                <article id="projects" class="hidden">
+                <article id="projects" class="">
 
 
                 </article>

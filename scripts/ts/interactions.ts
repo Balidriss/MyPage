@@ -1,45 +1,76 @@
 interface CV {
     container: HTMLDivElement;
+    pairTabContent: CVPart[];
 
-    tabs: {
-        formations: HTMLDivElement;
-        professions: HTMLDivElement;
-        projects: HTMLDivElement;
-    }
 }
 
-let elements: CV;
+interface CVPart {
+    tab: HTMLDivElement;
+    content: HTMLDivElement;
+}
+
+let elementsCV: CV;
+let formations: CVPart;
+let professions: CVPart;
+let projects: CVPart;
+
 
 function initCV() {
-    elements = {
-        container: document.querySelector('.cv-container') as HTMLDivElement,
-        tabs: {
-            formations: document.querySelector('.tabs-cv .formations') as HTMLDivElement,
-            professions: document.querySelector('.tabs-cv .professions') as HTMLDivElement,
-            projects: document.querySelector('.tabs-cv .projects') as HTMLDivElement,
-        }
-    };
 
-    if (!elements.container) {
+    formations = {
+        content: document.getElementById('formations') as HTMLDivElement,
+        tab: document.querySelector('.tabs-cv .formations') as HTMLDivElement
+    };
+    professions = {
+        content: document.getElementById('professions') as HTMLDivElement,
+        tab: document.querySelector('.tabs-cv .professions') as HTMLDivElement
+    };
+    projects = {
+        content: document.getElementById('projects') as HTMLDivElement,
+        tab: document.querySelector('.tabs-cv .projects') as HTMLDivElement
+    };
+    ///
+    elementsCV = {
+        container: document.querySelector('.cv-container') as HTMLDivElement,
+        pairTabContent: [formations, professions, projects] as CVPart[]
+
+
+    };
+    elementsCV.pairTabContent.forEach(part => {
+
+        part.tab.addEventListener('click', () => {
+            selectCVPart(part);
+
+        });
+
+
+    });
+
+    if (!elementsCV.container) {
         throw new Error('Element container cv missing.');
     }
 
-    if (!elements.tabs.formations) {
-        throw new Error('Element tab formations missing.');
-    }
+    elementsCV.pairTabContent.forEach(part => {
+        if (!part.tab || !part.content) {
+            throw new Error(`Elements ${part} missing.`);
+        }
+    });
+}
 
-    if (!elements.tabs.professions) {
-        throw new Error('Element tab professions missing.');
-    }
-
-    if (!elements.tabs.projects) {
-        throw new Error('Element tab projects missing.');
-    }
+function selectCVPart(cvPart: CVPart) {
+    elementsCV.pairTabContent.forEach(part => {
+        part.tab.classList.remove('show');
+        part.content.classList.remove('show');
+    });
+    cvPart.content.classList.add('show');
+    cvPart.tab.classList.add('show');
 }
 
 window.addEventListener("load", () => {
     try {
         initCV();
+
+
     } catch (error) {
         console.error(error);
     }

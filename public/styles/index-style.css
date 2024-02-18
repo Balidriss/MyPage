@@ -309,11 +309,14 @@ header .logo-nav a {
   cursor: pointer;
   padding: 0 1rem;
   flex: 1;
-  border-bottom: 0.25rem rgb(255, 255, 255) solid;
-  border-right: 0.25rem rgb(255, 255, 255) solid;
+  border-bottom: 0.25rem rgba(255, 255, 255, 0.08) solid;
+  border-right: 0.25rem rgba(255, 255, 255, 0.08) solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+#cv-section .cv-container .tabs-cv .tab-cv * {
+  color: rgba(255, 255, 255, 0.6);
 }
 #cv-section .cv-container .tabs-cv .tab-cv > * {
   margin-left: 1rem;
@@ -333,19 +336,22 @@ header .logo-nav a {
   align-items: center;
   font-size: 1.75rem;
 }
-#cv-section .cv-container .tabs-cv .tab-cv.hidden {
-  border-bottom: 0.25rem rgba(255, 255, 255, 0.08) solid;
-  border-right: 0.25rem rgba(255, 255, 255, 0.08) solid;
+#cv-section .cv-container .tabs-cv .tab-cv.show {
+  border-bottom: 0.25rem rgb(255, 255, 255) solid;
+  border-right: 0.25rem rgb(255, 255, 255) solid;
 }
-#cv-section .cv-container .tabs-cv .tab-cv.hidden * {
-  color: rgba(255, 255, 255, 0.6);
+#cv-section .cv-container .tabs-cv .tab-cv.show * {
+  color: rgb(255, 255, 255);
 }
 #cv-section .cv-container .tabs-cv .tab-cv:hover {
   border-bottom: 0.25rem rgb(0, 212, 252) solid;
   border-right: 0.25rem rgb(0, 212, 252) solid;
 }
-#cv-section .cv-container article.hidden {
+#cv-section .cv-container article {
   display: none;
+}
+#cv-section .cv-container article.show {
+  display: block;
 }
 #cv-section .cv-container article .grid-cv {
   display: grid;
