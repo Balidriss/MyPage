@@ -192,6 +192,7 @@ header .logo-nav a {
   z-index: -1;
   background-color: black;
   width: 15rem;
+  height: 23rem;
   box-sizing: border-box;
   padding: 0rem 1rem;
   padding-bottom: 2rem;
