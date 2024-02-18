@@ -16,7 +16,6 @@ function initCV() {
         content: document.getElementById('projects'),
         tab: document.querySelector('.tabs-cv .projects')
     };
-    ///
     elementsCV = {
         container: document.querySelector('.cv-container'),
         pairTabContent: [formations, professions, projects]

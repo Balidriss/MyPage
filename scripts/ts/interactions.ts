@@ -29,21 +29,15 @@ function initCV() {
         content: document.getElementById('projects') as HTMLDivElement,
         tab: document.querySelector('.tabs-cv .projects') as HTMLDivElement
     };
-    ///
+
     elementsCV = {
         container: document.querySelector('.cv-container') as HTMLDivElement,
         pairTabContent: [formations, professions, projects] as CVPart[]
-
-
     };
     elementsCV.pairTabContent.forEach(part => {
-
         part.tab.addEventListener('click', () => {
             selectCVPart(part);
-
         });
-
-
     });
 
     if (!elementsCV.container) {
