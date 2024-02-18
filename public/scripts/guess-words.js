@@ -124,11 +124,11 @@ function setNewIndexOrder(guesses, currentIndex) {
         if (y === (guesses.length - 1)) {
             guesses[i].formElement.style.transform = `translateX(25rem)`;
         }
-        else if ((y > (guesses.length - 4)) && (guesses.length > 4)) {
-            guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 20}rem`;
+        else if ((y > (guesses.length - 3)) && (guesses.length > 4)) {
+            guesses[i].formElement.style.transform = `translateX(${(-10 * y) - 20}rem`;
         }
         else {
-            guesses[i].formElement.style.transform = `translateX(${(-12 * y) - 2}rem)`;
+            guesses[i].formElement.style.transform = `translateX(${(-15 * y) - 2}rem)`;
         }
         i = (i + 1) % guesses.length;
         y++;

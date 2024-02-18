@@ -28,15 +28,15 @@
             position: absolute;
             z-index: -1;
             background-color: black;
-            width: 50%;
+            width: 15rem;
             box-sizing: border-box;
             padding: 0rem 1rem;
             padding-bottom: 2rem;
             text-align: center;
             transition: all 0.5s ease-in-out;
-            scale: 0.70;
+            scale: 0.40;
             opacity: 0;
-            box-shadow: -1rem 0px 2rem 1rem Black;
+            box-shadow: -0.0rem 0.2rem 2rem 0.2rem Black;
             pointer-events: none;
             user-select: none;
 
@@ -78,20 +78,38 @@
                 opacity: 1;
             }
 
+            &.form-position-3 {
+                z-index: 0;
+                background-color: #000000;
+                scale: 0.60;
+                opacity: 1;
+            }
+
+            &.form-position-4 {
+                z-index: -1;
+                background-color: #000000;
+                scale: 0.50;
+                opacity: 1;
+            }
+
             &* {
                 color: $primaryColorBlack;
             }
 
             input {
-                $border-radius: 2rem;
+                $border-radius: 1rem;
                 border-radius: $border-radius;
-                padding: 1rem;
+                padding: 0.5rem;
                 border-style: none;
 
                 &[name="attempt"] {
-                    border-top-right-radius: 0;
-                    border-bottom-right-radius: 0;
+                    border-radius: 0;
+                    width: 80%;
 
+                    &:focus {
+                        box-shadow: inset 0 0 0 0.1rem $primaryColorBlue;
+                        outline: none;
+                    }
                 }
 
                 &[type="submit"] {
@@ -122,6 +140,7 @@
         display: flex;
         gap: 2rem;
         margin-top: 5rem;
+        width: 100%;
 
 
         img {

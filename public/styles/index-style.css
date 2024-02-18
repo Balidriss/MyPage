@@ -191,15 +191,15 @@ header .logo-nav a {
   position: absolute;
   z-index: -1;
   background-color: black;
-  width: 50%;
+  width: 15rem;
   box-sizing: border-box;
   padding: 0rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
   transition: all 0.5s ease-in-out;
-  scale: 0.7;
+  scale: 0.4;
   opacity: 0;
-  box-shadow: -1rem 0px 2rem 1rem Black;
+  box-shadow: 0rem 0.2rem 2rem 0.2rem Black;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -239,17 +239,33 @@ header .logo-nav a {
   scale: 0.7;
   opacity: 1;
 }
+#guess-section .guess-container form.form-position-3 {
+  z-index: 0;
+  background-color: #000000;
+  scale: 0.6;
+  opacity: 1;
+}
+#guess-section .guess-container form.form-position-4 {
+  z-index: -1;
+  background-color: #000000;
+  scale: 0.5;
+  opacity: 1;
+}
 #guess-section .guess-container form* {
   color: rgb(17, 17, 17);
 }
 #guess-section .guess-container form input {
-  border-radius: 2rem;
-  padding: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
   border-style: none;
 }
 #guess-section .guess-container form input[name=attempt] {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 0;
+  width: 80%;
+}
+#guess-section .guess-container form input[name=attempt]:focus {
+  box-shadow: inset 0 0 0 0.1rem rgb(0, 212, 252);
+  outline: none;
 }
 #guess-section .guess-container form input[type=submit] {
   background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
@@ -274,6 +290,7 @@ header .logo-nav a {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
+  width: 100%;
 }
 #guess-section .slider-buttons img {
   cursor: pointer;
