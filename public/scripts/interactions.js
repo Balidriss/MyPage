@@ -25,7 +25,6 @@ function initCV() {
 window.addEventListener("load", () => {
     try {
         initCV();
-        // You can now access elements using `elements.container`, `elements.content`, etc.
     }
     catch (error) {
         console.error(error);
