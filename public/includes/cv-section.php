@@ -9,17 +9,17 @@
             </article>
             <div class="cv-container">
                 <div class="tabs-cv">
-                    <div class="tab-cv">
+                    <div class="tab-cv formations">
                         <h3>Formations</h3>
                         <p><strong>Janvier</strong></br>
                             2024</p>
                     </div>
-                    <div class="tab-cv hidden">
+                    <div class="tab-cv professions hidden">
                         <h3>Professions</h3>
                         <p><strong>Septembre</strong></br>
                             2023</p>
                     </div>
-                    <div class="tab-cv hidden">
+                    <div class="tab-cv projects hidden">
                         <h3>Travaux personnels</h3>
                         <p><strong>Fevriers</strong> </br> 2024</p>
                     </div>
