@@ -214,6 +214,9 @@ header .logo-nav a {
   margin-top: 1rem;
   padding: 0;
 }
+#guess-section .guess-container form .answer {
+  color: rgb(252, 109, 38);
+}
 #guess-section .guess-container form .attempt-field {
   display: flex;
   justify-content: center;
