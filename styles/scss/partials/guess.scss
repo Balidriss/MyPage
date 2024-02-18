@@ -2,7 +2,7 @@
 
     article {
         padding-left: 8rem;
-        width: 35%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -18,9 +18,9 @@
         position: relative;
         display: flex;
         flex-direction: row-reverse;
-        width: 65%;
+        width: 50%;
         overflow: hidden;
-        align-items: center;
+        align-items: flex-start;
         height: 35rem;
 
 
@@ -33,8 +33,8 @@
             padding: 0rem 1rem;
             padding-bottom: 2rem;
             text-align: center;
-            transition: all 0.5s ease-in-out;
-            scale: 0.40;
+            transition: all 0.25s ease-in-out;
+            scale: 0.90;
             opacity: 0;
             box-shadow: -0.0rem 0.2rem 2rem 0.2rem Black;
             pointer-events: none;
@@ -74,23 +74,10 @@
             &.form-position-2 {
                 z-index: 1;
                 background-color: #000000;
-                scale: 0.70;
+                scale: 0.80;
                 opacity: 1;
             }
 
-            &.form-position-3 {
-                z-index: 0;
-                background-color: #000000;
-                scale: 0.60;
-                opacity: 1;
-            }
-
-            &.form-position-4 {
-                z-index: -1;
-                background-color: #000000;
-                scale: 0.50;
-                opacity: 1;
-            }
 
             &* {
                 color: $primaryColorBlack;

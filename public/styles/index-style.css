@@ -170,7 +170,7 @@ header .logo-nav a {
 
 #guess-section article {
   padding-left: 8rem;
-  width: 35%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -182,9 +182,9 @@ header .logo-nav a {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  width: 65%;
+  width: 50%;
   overflow: hidden;
-  align-items: center;
+  align-items: flex-start;
   height: 35rem;
 }
 #guess-section .guess-container form {
@@ -196,8 +196,8 @@ header .logo-nav a {
   padding: 0rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
-  transition: all 0.5s ease-in-out;
-  scale: 0.4;
+  transition: all 0.25s ease-in-out;
+  scale: 0.9;
   opacity: 0;
   box-shadow: 0rem 0.2rem 2rem 0.2rem Black;
   pointer-events: none;
@@ -236,19 +236,7 @@ header .logo-nav a {
 #guess-section .guess-container form.form-position-2 {
   z-index: 1;
   background-color: #000000;
-  scale: 0.7;
-  opacity: 1;
-}
-#guess-section .guess-container form.form-position-3 {
-  z-index: 0;
-  background-color: #000000;
-  scale: 0.6;
-  opacity: 1;
-}
-#guess-section .guess-container form.form-position-4 {
-  z-index: -1;
-  background-color: #000000;
-  scale: 0.5;
+  scale: 0.8;
   opacity: 1;
 }
 #guess-section .guess-container form* {

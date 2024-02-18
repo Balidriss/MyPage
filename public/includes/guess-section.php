@@ -22,6 +22,12 @@ $i = 1;
                 echo $_SESSION['GUESSES'][$guess['guess_id']]['answer'];
             }
              ?></p>
+             <p style= "display:none;" class="hidden-additional-message"><?php 
+            if(isset($_SESSION['GUESSES'][$guess['guess_id']]['additional_message']))
+            {
+                echo $_SESSION['GUESSES'][$guess['guess_id']]['additional_message'];
+            }
+             ?></p>
             <?php if(!isset($_SESSION['GUESSES'][$guess['guess_id']]['answer'])) :?>
             <div class="attempt-field"><input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
             <input type = 'submit' value='▲'></div>
@@ -31,7 +37,6 @@ $i = 1;
             $i++;
             endforeach ?>
     </div>
-
    <article class="main-text-section">         
         <div class="title">
                     <p>A propos de moi...</p>
@@ -40,10 +45,11 @@ $i = 1;
                 <p id="help-message"><?php echo $guesses[0]['help_message']  ?></p>
                 <p id="additional-message">
                 <?php 
-                if(isset($guesses[0]['additonal_message']))
-                { echo $guesses[0]['additonal_message'];
-                } 
-                ?></p>
+            if(isset($_SESSION['GUESSES'][$guesses[0]['guess_id']]['additional_message']))
+            {
+                echo $_SESSION['GUESSES'][$guesses[0]['guess_id']]['additional_message'];
+            }
+             ?></p>
                 <div class="slider-buttons">
                     <img class="button-left" src="public/assets/img/fi_arrow-right.svg">
                     <img class="button-right" src="public/assets/img/fi_arrow-right.svg">

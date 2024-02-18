@@ -20,6 +20,7 @@ const guesses = [];
 let sliderLeft;
 let sliderRight;
 let additionalMessageElement;
+let hiddenAdditionalMessageElement;
 let helpMessageElement;
 let answerElement;
 let currentIndex = 0;
@@ -124,11 +125,11 @@ function setNewIndexOrder(guesses, currentIndex) {
         if (y === (guesses.length - 1)) {
             guesses[i].formElement.style.transform = `translateX(25rem)`;
         }
-        else if ((y > (guesses.length - 3)) && (guesses.length > 4)) {
-            guesses[i].formElement.style.transform = `translateX(${(-10 * y) - 20}rem`;
+        else if ((y > (guesses.length - 2)) && (guesses.length > 3)) {
+            guesses[i].formElement.style.transform = `translateX(${(-10 * y) - 10}rem`;
         }
         else {
-            guesses[i].formElement.style.transform = `translateX(${(-15 * y) - 2}rem)`;
+            guesses[i].formElement.style.transform = `translateX(${(-10 * y) - 2}rem)`;
         }
         i = (i + 1) % guesses.length;
         y++;
@@ -136,6 +137,12 @@ function setNewIndexOrder(guesses, currentIndex) {
 }
 ;
 function updateSectionGuess(isAttempt) {
+    if (guesses[currentIndex].formElement.querySelector(".hidden-additional-message") != null) {
+        hiddenAdditionalMessageElement = guesses[currentIndex].formElement.querySelector(".hidden-additional-message");
+    }
+    else {
+        console.error("couldn't find hidden additionnal message element");
+    }
     if (guesses[currentIndex].formElement.querySelector('.answer') != null) {
         answerElement = guesses[currentIndex].formElement.querySelector('.answer');
         if (guesses[currentIndex].guess.answer !== '' || isAttempt) {
@@ -144,8 +151,14 @@ function updateSectionGuess(isAttempt) {
                 attemptField.remove();
             }
             answerElement.innerHTML = guesses[currentIndex].guess.answer;
+            hiddenAdditionalMessageElement.innerHTML = guesses[currentIndex].guess.additionalMessage;
         }
-        additionalMessageElement.innerHTML = guesses[currentIndex].guess.additionalMessage;
+        if (hiddenAdditionalMessageElement.innerHTML !== '') {
+            additionalMessageElement.innerHTML = hiddenAdditionalMessageElement.innerHTML;
+        }
+        else {
+            additionalMessageElement.innerHTML = guesses[currentIndex].guess.additionalMessage;
+        }
         helpMessageElement.innerHTML = guesses[currentIndex].guess.helpMessage;
     }
 }
@@ -156,7 +169,7 @@ window.addEventListener("load", () => __awaiter(void 0, void 0, void 0, function
         additionalMessageElement = document.getElementById("additional-message");
     }
     else {
-        console.error("couldn't find hint message element");
+        console.error("couldn't find additionnal message element");
     }
     if (document.getElementById("help-message") != null) {
         helpMessageElement = document.getElementById("help-message");
