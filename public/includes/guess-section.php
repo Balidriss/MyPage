@@ -14,16 +14,15 @@ $i = 1;
     <div class="guess-container">
         <?php foreach ($guesses as $guess) :?>
             <form id="<?php echo'form-guess-'. strval($i)  ?>" method="post" action="guessAPI.php" onsubmit="event.preventDefault();guessAttempt(event, this);">
+            <input type='hidden' name='id' value='<?php echo strval($guess['guess_id']) ?>'>
             <img src="<?php echo'public/assets/img/guesses/guess-'.strval($i).'.png'?>" title="<?php echo $guess['help_message'] ?>" >
-         
             <p class="answer"><?php 
-            if(isset($_SESSION['GUESSES'][$guess['guess_id']]))
+            if(isset($_SESSION['GUESSES'][$guess['guess_id']]['answer']))
             {
-                echo $_SESSION['GUESSES'][$guess['guess_id']];
+                echo $_SESSION['GUESSES'][$guess['guess_id']]['answer'];
             }
              ?></p>
-            <?php if(!isset($_SESSION['GUESSES'][$guess['guess_id']])) :?>
-            <input type = 'hidden' name = 'id' value=<?php echo strval($guess['guess_id']) ?>>
+            <?php if(!isset($_SESSION['GUESSES'][$guess['guess_id']]['answer'])) :?>
             <div class="attempt-field"><input type = 'text' name = 'attempt' placeholder ='Qui suis je ?'>
             <input type = 'submit' value='▲'></div>
             <?php endif; ?>
@@ -39,7 +38,12 @@ $i = 1;
                     <h2>Pouvez-vous deviner ?</h2>
                 </div>
                 <p id="help-message"><?php echo $guesses[0]['help_message']  ?></p>
-                <p id="hint-message"></p>
+                <p id="additional-message">
+                <?php 
+                if(isset($guesses[0]['additonal_message']))
+                { echo $guesses[0]['additonal_message'];
+                } 
+                ?></p>
                 <div class="slider-buttons">
                     <img class="button-left" src="public/assets/img/fi_arrow-right.svg">
                     <img class="button-right" src="public/assets/img/fi_arrow-right.svg">
