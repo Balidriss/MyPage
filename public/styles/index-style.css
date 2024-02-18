@@ -353,6 +353,8 @@ header .logo-nav a {
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: rgb(252, 109, 38) rgba(255, 255, 255, 0.08);
+  -webkit-mask-image: linear-gradient(180deg, #000 90%, transparent), linear-gradient(to left, black 1rem, transparent 1rem);
+          mask-image: linear-gradient(180deg, #000 90%, transparent), linear-gradient(to left, black 1rem, transparent 1rem);
 }
 #cv-section .cv-container article.show {
   display: block;

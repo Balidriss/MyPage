@@ -82,19 +82,15 @@
             overflow-y: scroll;
             scrollbar-width: thin;
             scrollbar-color: $primaryColorOrange $secondaryColorBlack;
-
-
+            mask-image: linear-gradient(180deg, #000 90%, transparent), linear-gradient(to left, black 1rem, transparent 1rem);
 
             &.show {
                 display: block;
             }
 
-
-
             .grid-cv {
                 display: grid;
                 grid-template-columns: 0.25fr 0.20fr 0.65fr;
-
 
 
                 .date {
@@ -104,7 +100,6 @@
                     line-height: 1.25rem;
                     font-size: 1rem;
                     color: $secondaryColorWhite;
-
                 }
 
                 .timeline {
