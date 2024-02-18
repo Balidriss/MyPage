@@ -337,8 +337,8 @@ header .logo-nav a {
   font-size: 1.75rem;
 }
 #cv-section .cv-container .tabs-cv .tab-cv.show {
-  border-bottom: 0.25rem rgb(255, 255, 255) solid;
-  border-right: 0.25rem rgb(255, 255, 255) solid;
+  border-bottom: 0.25rem rgb(252, 109, 38) solid;
+  border-right: 0.25rem rgb(252, 109, 38) solid;
 }
 #cv-section .cv-container .tabs-cv .tab-cv.show * {
   color: rgb(255, 255, 255);
