@@ -1,6 +1,6 @@
 <header>
         <nav>
-            <div class="logo-nav">
+            <div class="logo">
                 <a href="">IB</a>
             </div>
             <menu>

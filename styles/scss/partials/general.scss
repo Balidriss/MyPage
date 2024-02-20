@@ -115,3 +115,14 @@ article>* {
         }
     }
 }
+
+.logo {
+    a {
+
+        font-size: 3rem;
+        color: $primaryColorWhite;
+        font-weight: 700;
+        line-height: 4.5rem;
+        letter-spacing: 0.12rem;
+    }
+}

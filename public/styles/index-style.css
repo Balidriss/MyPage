@@ -101,6 +101,14 @@ article > * {
   margin-top: 2rem;
 }
 
+.logo a {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  line-height: 4.5rem;
+  letter-spacing: 0.12rem;
+}
+
 header {
   background-color: rgba(255, 255, 255, 0.08);
   padding: 1rem;
@@ -122,13 +130,6 @@ header nav li a {
 header nav menu {
   display: flex;
   justify-content: space-around;
-}
-header .logo-nav a {
-  font-size: 3rem;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  line-height: 4.5rem;
-  letter-spacing: 0.12rem;
 }
 
 #intro-section h1 {
@@ -500,6 +501,16 @@ header .logo-nav a {
 }
 
 footer {
-  background-color: rgb(17, 17, 17);
+  text-align: center;
   padding: 1rem;
+}
+footer > * {
+  margin: 2rem;
+}
+footer .socials {
+  text-align: center;
+}
+footer .socials > * {
+  height: 1rem;
+  margin: 3rem;
 }/*# sourceMappingURL=index-style.css.map */
