@@ -2,7 +2,7 @@
             <article class="main-text-section">
                 <div class="title">
                     <p>CV</p>
-                    <h2>Mon humble parcours</h2>
+                    <h2>Mon parcours</h2>
                 </div>
                 <p>Une perspective unique dans le monde du numérique.</p>
                 <a href="" class="cta">Télécharger</a>
