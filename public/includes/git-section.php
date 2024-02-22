@@ -12,14 +12,14 @@
                             <h3>Hub</h3>
                         </div>
                         <img src="public/assets/img/github-mark 1.svg">
-                        <a href="" class="cta">Visiter dépôt</a>
+                        <a href="https://github.com/Balidriss" class="cta">Visiter dépôt</a>
                     </div>
                     <div class="git-block">
                         <div class="title">
                             <p>Git</p>
                             <h3>Lab</h3>
                         </div><img src="public/assets/img/gitlab.svg">
-                        <a href="" class="cta">Visiter dépôt</a>
+                        <a href="https://gitlab.com/ibalijon" class="cta">Visiter dépôt</a>
                     </div>
                     <div class="git-block">
                         <div class="title">
