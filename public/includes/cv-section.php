@@ -39,47 +39,45 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>Implémentez vos bases de données relationnelles avec SQL </br>Openclassroom -
-                                Autoformation</h4>
+                            <h4>Implémentez vos bases de données relationnelles avec SQL </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Rappels sur les requêtes SQL.
                             </p>
-                            <h4>Concevez votre site web avec PHP et MySQL </br>Openclassroom - Autoformation</h4>
+                            <h4>Concevez votre site web avec PHP et MySQL </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation PHP, écoute de requete,système de connexion, sessions, cookies, requètes SQL,
                                 partage de recette entre utilisateur avec système de notes et commentaires.
                             </p>
-                            <h4>Créez votre site web avec HTML5 et CSS3 </br>Openclassroom - Autoformation</h4>
+                            <h4>Créez votre site web avec HTML5 et CSS3 </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation HTML CSS plus détaillé.</p>
 
                         </div>
                         <div class="date">
                             Décembre 2023
                         </div>
-                        <!-- need an show/hide more -->
                         <div class="timeline">
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>Manage Your Code Project With Git and GitHub </br>Openclassroom - Autoformation</h4>
+                            <h4>Manage Your Code Project With Git and GitHub </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation en anglais GitBash, commit, branch, push, merge , corrections.
                             </p>
-                            <h4>Write JavaScript for the Web </br>Openclassroom - Autoformation</h4>
+                            <h4>Write JavaScript for the Web </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation en anglais javascript avancé, manipulation du DOM, requête de données,
                                 programation asynchrone.</p>
-                            <h4>Learn Programming With JavaScript </br>Openclassroom - Autoformation</h4>
+                            <h4>Learn Programming With JavaScript </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation en anglais javascript , les bases du langage javascript.</p>
-                            <h4>Build Your First Web Pages With HTML and CSS </br>Openclassroom - Autoformation</h4>
+                            <h4>Build Your First Web Pages With HTML and CSS </br><i>Openclassroom - Autoformation</i></h4>
                             <p>Formation en anglais HTML CSS , les bases dans la création d'une page web.</p>
                         </div>
                         <div class="date">
                             02 Octobre 2023 -</br> 31 Juin 2023
                         </div>
-                        <!-- need an show/hide more -->
+
                         <div class="timeline">
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>Découverte des métiers du numérique </br>+ ICDL marketing numérique </br>Human Booster -
-                                Clermont-Ferrand (63)</h4>
+                            <h4>ICDL marketing numérique </br> <i>Human Booster -
+                                Clermont-Ferrand (63)</i></h4>
                             <p> Une formation complète incluant marketing, SEO, design
                                 UI/UX et programation HTML CSS JS.</p>
                         </div>
@@ -89,8 +87,8 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                         </div>
 
                         <div class="desc-cv">
-                            <h4>Ingénieur optique et vision industrielle</br>Télécom Saint-Étienne - Saint-Étienne (42)
-                            </h4>
+                            <h4>Ingénieur optique et vision industrielle</br><i>Télécom Saint-Étienne - Saint-Étienne (42)
+</i></h4>
                             <p> 1an en alternance - Electronique, mécanique, métrologie, informatique, programation c++,
                                 automatique, traitement d'image, optique
                                 géométrique et ondulatoire,
@@ -103,7 +101,7 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>BTS Génie optique photonique,</br> André Argouges - Grenoble (38)</h4>
+                            <h4>BTS Génie optique photonique,</br><i>André Argouges - Grenoble (38)</i></h4>
                             <p>Formation technique dans l'optique géométrique et ondulatoire, métrologie,théorèmes
                                 physiques et mécaniques.</p>
                         </div>
@@ -115,13 +113,12 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                         <div class="date">
                             29 Septembre 2023 -</br>13 Septembre 2023
                         </div>
-                        <!-- need an show/hide more -->
                         <div class="timeline">
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>Stagiaire développeur Web </br>Drosalys -
-                                Clermont-Ferrand (63)</h4>
+                            <h4>Stagiaire développeur Web </br><i>Drosalys -
+                                Clermont-Ferrand (63)</i></h4>
                             <p> Stage de finalisation de formation Human Booster, réalisation de la partie front-end
                                 wordpress à partir d'une maquette à l'aide de Champ ACF, Symfony, SCSS et typescript.
                             </p>
@@ -132,8 +129,8 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                         </div>
 
                         <div class="desc-cv">
-                            <h4>Ingénieur optique et vision industrielle</br>Télécom Saint-Étienne - Saint-Étienne (42)
-                            </h4>
+                            <h4>Ingénieur optique et vision industrielle</br><i>Télécom Saint-Étienne - Saint-Étienne (42)
+</i></h4>
                             <p> 1an en alternance - Electronique, mécanique, métrologie, informatique, programation c++,
                                 automatique, traitement d'image, optique
                                 géométrique et ondulatoire,
@@ -146,7 +143,7 @@ Je recherche une entreprise pour une alternance en collaboration avec Human Boos
                             <span class="marker"></span>
                         </div>
                         <div class="desc-cv">
-                            <h4>BTS Génie optique photonique,</br> André Argouges - Grenoble (38)</h4>
+                            <h4>BTS Génie optique photonique,</br> <i>André Argouges - Grenoble (38)</i></h4>
                             <p>Formation technique dans l'optique géométrique et ondulatoire, métrologie,théorèmes
                                 physiques et mécaniques.</p>
                         </div>
