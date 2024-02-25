@@ -1,6 +1,20 @@
 #cv-section {
+    .main-text-section {
+        width: 40%;
+        padding-right: 4rem;
+
+        strong {
+            color: $primaryColorOrange;
+        }
+
+        &>* {
+            margin-bottom: 2rem;
+        }
+
+    }
+
     .cv-container {
-        width: 70%;
+        width: 60%;
 
         h3 {
             margin: 0;

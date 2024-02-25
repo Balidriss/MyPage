@@ -294,8 +294,18 @@ header nav menu {
   transform: rotate(180deg);
 }
 
+#cv-section .main-text-section {
+  width: 40%;
+  padding-right: 4rem;
+}
+#cv-section .main-text-section strong {
+  color: rgb(252, 109, 38);
+}
+#cv-section .main-text-section > * {
+  margin-bottom: 2rem;
+}
 #cv-section .cv-container {
-  width: 70%;
+  width: 60%;
 }
 #cv-section .cv-container h3 {
   margin: 0;
