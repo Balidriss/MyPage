@@ -126,3 +126,14 @@ article>* {
         letter-spacing: 0.12rem;
     }
 }
+
+.link-out {
+    position: relative;
+
+    &::after {
+        content: '\1F30E';
+        margin-left: 1em;
+        font-family: Arial, sans-serif;
+
+    }
+}

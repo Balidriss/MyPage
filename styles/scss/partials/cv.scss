@@ -104,7 +104,7 @@
 
             .grid-cv {
                 display: grid;
-                grid-template-columns: 0.25fr 0.20fr 0.65fr;
+                grid-template-columns: 0.20fr 0.20fr 0.70fr;
 
 
                 .date {
@@ -145,9 +145,13 @@
                         $line-height: 1.5rem;
                         $font-size: 1.125rem;
                         text-transform: none;
-                        margin: ($font-size - $line-height) 0 1rem 0;
+                        margin: ($font-size - $line-height) 0 0.5rem 0;
                         line-height: 1.5rem;
                         font-size: 1.125rem;
+                    }
+
+                    h5 {
+                        margin: 0.5rem 0;
                     }
 
                     p {
