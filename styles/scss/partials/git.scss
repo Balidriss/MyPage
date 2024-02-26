@@ -30,6 +30,10 @@
         }
 
         @include responsive('small') {
+            & * {
+                font-size: 1em;
+            }
+
             flex-direction: column;
         }
 

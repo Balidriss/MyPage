@@ -17,10 +17,9 @@
 
     .title {
         position: absolute;
-        right: 4rem;
+        right: 2rem;
         bottom: 0;
-        padding: 4rem;
-        padding-bottom: 1rem;
+        padding: 1rem;
         background-color: $mainBackgroundColor;
     }
 
@@ -28,6 +27,7 @@
         margin-top: 2.5rem;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     li {
@@ -40,7 +40,7 @@
         letter-spacing: 0.04rem;
 
         img {
-            padding-right: 1rem;
+            padding: 0 1rem;
         }
     }
 }
