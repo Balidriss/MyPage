@@ -6,13 +6,18 @@ footer {
     text-align: center;
 
     .socials {
-        text-align: center;
+
+        display: flex;
+        justify-content: center;
 
 
-        &>* {
+        img {
+
             height: 2rem;
             margin: 3rem;
         }
+
+
     }
 
     padding: 1rem;
