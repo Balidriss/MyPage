@@ -12,8 +12,23 @@ $primaryGradientBlue: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254
 $marginLeftHeader: 18rem;
 $mainContainer: 1200px;
 
-// responsive
-
+// Responsive breakpoints
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 992px;
 $breakpoint-desktop: 1200px;
+
+$breakpoints: (
+    "small": $breakpoint-mobile,
+    "medium": $breakpoint-tablet,
+    "large": $breakpoint-desktop
+);
+
+// Mixin for responsive styles
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media (max-width: $query) {
+        @content;
+    }
+
+}
