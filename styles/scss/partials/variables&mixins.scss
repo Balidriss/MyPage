@@ -11,3 +11,9 @@ $primaryColorBlue: rgb(0, 212, 252);
 $primaryGradientBlue: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
 $marginLeftHeader: 18rem;
 $mainContainer: 1200px;
+
+// responsive
+
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 992px;
+$breakpoint-desktop: 1200px;
