@@ -11,7 +11,7 @@ header {
 
         li {
 
-            margin: 1rem;
+            padding: 1rem;
 
             a {
                 color: $secondaryColorWhite;
@@ -23,6 +23,16 @@ header {
         menu {
             display: flex;
             justify-content: space-around;
+
+            @include responsive('large') {}
+
+
+            @include responsive('medium') {}
+
+            @include responsive('small') {
+                display: none;
+            }
+
         }
 
     }

@@ -1,20 +1,59 @@
 #cv-section {
-    .main-text-section {
-        width: 40%;
-        padding-right: 4rem;
+    display: flex;
 
-        strong {
-            color: $primaryColorOrange;
+    .main-text-section {
+
+        p {
+            @include responsive('large') {}
+
+
+            @include responsive('medium') {
+                font-size: 1.5em;
+            }
+
+            @include responsive('small') {
+                font-size: 1em;
+            }
+
+            strong {
+                color: $primaryColorOrange;
+            }
+
         }
 
         &>* {
-            margin-bottom: 2rem;
+            padding: 0 4em;
+            margin-bottom: 2em;
+
+            @include responsive('large') {}
+
+
+            @include responsive('medium') {
+                padding: 0 2em;
+            }
+
+            @include responsive('small') {
+                padding: 0 1em;
+            }
         }
 
     }
 
     .cv-container {
-        width: 60%;
+
+        &>* {
+            @include responsive('large') {}
+
+
+            @include responsive('medium') {
+                padding: 0 2em;
+            }
+
+            @include responsive('small') {
+                padding: 0 1em;
+            }
+        }
+
 
         h3 {
             margin: 0;
@@ -27,25 +66,34 @@
             display: flex;
 
             & * {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5em;
             }
 
             .tab-cv {
                 cursor: pointer;
-                padding: 0 1rem;
+                padding: 0 1em;
                 flex: 1;
-                border-bottom: 0.25rem $secondaryColorBlack solid;
-                border-right: 0.25rem $secondaryColorBlack solid;
+                border-bottom: 0.25em $secondaryColorBlack solid;
+                border-right: 0.25em $secondaryColorBlack solid;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+
+                @include responsive('large') {}
+
+
+                @include responsive('medium') {}
+
+                @include responsive('small') {
+                    font-size: 0.5em;
+                }
 
                 & * {
                     color: $secondaryColorWhite;
                 }
 
                 &>* {
-                    margin-left: 1rem;
+                    padding-left: 1em;
 
 
                 }
@@ -55,26 +103,26 @@
                     letter-spacing: normal;
                     text-transform: none;
                     font-weight: 500;
-                    font-size: 1.125rem;
+                    font-size: 1.125em;
                     align-self: flex-end;
 
                 }
 
                 p {
 
-                    font-size: 1rem;
-                    margin-left: 0;
+                    font-size: 1em;
+                    padding-left: 0;
 
 
                     strong {
                         align-items: center;
-                        font-size: 1.75rem;
+                        font-size: 1.75em;
                     }
                 }
 
                 &.show {
-                    border-bottom: 0.25rem $primaryColorOrange solid;
-                    border-right: 0.25rem $primaryColorOrange solid;
+                    border-bottom: 0.25em $primaryColorOrange solid;
+                    border-right: 0.25em $primaryColorOrange solid;
 
                     & * {
                         color: $primaryColorWhite;
@@ -84,19 +132,20 @@
                 }
 
                 &:hover {
-                    border-bottom: 0.25rem $primaryColorBlue solid;
-                    border-right: 0.25rem $primaryColorBlue solid;
+                    border-bottom: 0.25em $primaryColorBlue solid;
+                    border-right: 0.25em $primaryColorBlue solid;
                 }
             }
         }
 
         article {
             display: none;
-            max-height: 20rem;
+            max-height: 20em;
             overflow-y: scroll;
             scrollbar-width: thin;
             scrollbar-color: $primaryColorOrange $secondaryColorBlack;
-            mask-image: linear-gradient(180deg, #000 90%, transparent), linear-gradient(to left, black 1rem, transparent 1rem);
+            mask-image: linear-gradient(180deg, #000 90%, transparent), linear-gradient(to left, black 1em, transparent 1em);
+
 
             &.show {
                 display: block;
@@ -108,11 +157,11 @@
 
 
                 .date {
-                    $line-height: 1.5rem;
-                    $font-size: 1.125rem;
+                    $line-height: 1.5em;
+                    $font-size: 1.125em;
                     margin: 0;
-                    line-height: 1.25rem;
-                    font-size: 1rem;
+                    line-height: 1.25em;
+                    font-size: 1em;
                     color: $secondaryColorWhite;
                 }
 
@@ -125,7 +174,7 @@
                 }
 
                 .marker {
-                    $markerSize: 1.5rem;
+                    $markerSize: 1.5em;
                     position: absolute;
                     width: $markerSize;
                     height: $markerSize;
@@ -142,22 +191,22 @@
                 .desc-cv {
 
                     h4 {
-                        $line-height: 1.5rem;
-                        $font-size: 1.125rem;
+                        $line-height: 1.5em;
+                        $font-size: 1.125em;
                         text-transform: none;
-                        margin: ($font-size - $line-height) 0 0.5rem 0;
-                        line-height: 1.5rem;
-                        font-size: 1.125rem;
+                        margin: ($font-size - $line-height) 0 0.5em 0;
+                        line-height: 1.5em;
+                        font-size: 1.125em;
                     }
 
                     h5 {
-                        margin: 0.5rem 0;
+                        margin: 0.5em 0;
                     }
 
                     p {
-                        font-size: 1rem;
+                        font-size: 1em;
                         color: $secondaryColorWhite;
-                        margin-bottom: 1rem;
+                        margin-bottom: 1em;
                     }
                 }
             }

@@ -1,28 +1,56 @@
 #guess-section {
+    @include responsive('large') {
+        display: none;
+    }
+
+
+    @include responsive('medium') {
+        display: none;
+    }
+
+    @include responsive('small') {
+        display: none;
+    }
+
+    justify-content: center;
+    flex-wrap: nowrap;
 
     article {
+        order: 1;
         padding-left: 8rem;
-        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 20rem;
     }
 
-    figure {
-        img {
-            width: 100%;
-        }
-    }
+
+
+
 
     .guess-container {
+        order: 0;
         position: relative;
         display: flex;
         flex-direction: row-reverse;
-        width: 50%;
         overflow: hidden;
         align-items: flex-start;
         height: 30rem;
+        width: 50%;
 
+        @include responsive('large') {}
+
+
+
+        @include responsive('medium') {
+            order: 2;
+            width: 100%;
+        }
+
+        @include responsive('small') {
+            width: 100%;
+            order: 2;
+        }
 
         form {
             position: absolute;

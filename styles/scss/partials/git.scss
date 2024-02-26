@@ -19,6 +19,20 @@
         align-items: stretch;
         margin-bottom: 2.5rem;
 
+        @include responsive('large') {
+
+            flex-direction: column;
+        }
+
+
+        @include responsive('medium') {
+            flex-direction: column;
+        }
+
+        @include responsive('small') {
+            flex-direction: column;
+        }
+
         .git-block {
             display: flex;
             flex: 1;
@@ -27,7 +41,21 @@
             padding: 2rem;
             background-color: $secondaryColorBlack;
             align-items: center;
-            width: auto;
+            margin: auto;
+
+            @include responsive('large') {
+
+                width: 33%;
+            }
+
+
+            @include responsive('medium') {
+                width: 80%;
+            }
+
+            @include responsive('small') {
+                width: 80%;
+            }
 
             .title {
                 margin-bottom: 1rem;
@@ -45,7 +73,8 @@
             }
 
             img {
-                margin: 2rem;
+                // padding: 2rem;
+                max-width: 50%;
 
             }
 

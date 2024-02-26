@@ -1,4 +1,5 @@
 #intro-section {
+    padding: 1rem;
 
     h1 {
         font-size: 7.5rem;
@@ -6,13 +7,27 @@
         font-weight: 700;
         line-height: 7rem;
 
+        @include responsive('large') {}
+
+
+        @include responsive('medium') {
+            font-size: 7.5rem;
+            line-height: 7rem;
+        }
+
+        @include responsive('small') {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+
+
         sup {
-            font-size: 2rem;
-            padding: 1.8rem 1rem;
+            font-size: 0.25em;
+            padding: 1em 0.5em;
             font-weight: 700;
             background-color: $tertiaryColor;
             position: relative;
-            top: 0.5rem;
+            top: 0.3em;
 
         }
     }
@@ -22,6 +37,19 @@
         color: $secondaryColorWhite;
         font-size: 1.375rem;
         line-height: 2rem;
+
+        @include responsive('large') {}
+
+
+        @include responsive('medium') {
+            font-size: 1rem;
+            line-height: 1.1rem;
+        }
+
+        @include responsive('small') {
+            font-size: 0.8rem;
+            line-height: 1rem;
+        }
 
         &:first-child {
             color: $primaryColorWhite;
@@ -38,13 +66,23 @@
 
     .cta {
         margin: 4rem 0;
-        font-size: 1.125rem;
+        font-size: 1.125em;
+
+
+        @include responsive('large') {}
+
+
+        @include responsive('medium') {}
+
+        @include responsive('small') {
+            display: none;
+        }
     }
 
 
     figure {
         background-color: $secondaryColorBlack;
-        width: 900px;
+        width: 100%;
     }
 
 
