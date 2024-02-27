@@ -28,7 +28,7 @@ function guessAttempt(event, form) {
     event.preventDefault();
     let formId = null;
     const formData = new FormData(form);
-    fetch('guessATTEMPT.php', {
+    fetch('../guessATTEMPT.php', {
         method: 'POST',
         body: formData
     })
@@ -76,7 +76,7 @@ function createGuesses() {
                     }
                     try {
                         if (formId !== null) {
-                            const response = yield fetch('guessINIT.php', {
+                            const response = yield fetch('../guessINIT.php', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'

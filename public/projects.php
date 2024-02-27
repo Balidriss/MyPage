@@ -6,16 +6,11 @@ require_once(__DIR__ . '/../config/dbconnect.php');
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
+<head> 
+    <?php require_once(__DIR__ . '/includes/head.php'); ?>
+    <link rel="stylesheet" href="styles/projects-style.css" type="text/css" />
     <title>Idriss Balijon - Projets</title>
-    <link href="styles/css/projects-style.css" type="text/css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <script src="scripts/decorations.js" defer></script>
-    <script src="scripts/interactions.js" defer></script>
+   
 </head>
 <body>
 <?php

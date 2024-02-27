@@ -13,9 +13,9 @@ $i = 1;
 <section id="guess-section">
     <div class="guess-container">
         <?php foreach ($guesses as $guess) :?>
-            <form id="<?php echo'form-guess-'. strval($i)  ?>" method="post" action="guessAPI.php" onsubmit="event.preventDefault();guessAttempt(event, this);">
+            <form id="<?php echo'form-guess-'. strval($i)  ?>" method="post" action="../../guessATTEMPT.php" onsubmit="event.preventDefault();guessAttempt(event, this);">
             <input type='hidden' name='id' value='<?php echo strval($guess['guess_id']) ?>'>
-            <img src="<?php echo'public/assets/img/guesses/guess-'.strval($i).'.png'?>" title="<?php echo $guess['help_message'] ?>" >
+            <img src="<?php echo'assets/img/guesses/guess-'.strval($i).'.png'?>" title="<?php echo $guess['help_message'] ?>" >
             <p class="answer"><?php 
             if(isset($_SESSION['GUESSES'][$guess['guess_id']]['answer']))
             {
@@ -51,9 +51,9 @@ $i = 1;
             }
              ?></p>
                 <div class="slider-buttons">
-                    <img class="button-left" src="public/assets/img/fi_arrow-right.svg">
-                    <img class="button-right" src="public/assets/img/fi_arrow-right.svg">
+                    <img class="button-left" src="assets/img/fi_arrow-right.svg">
+                    <img class="button-right" src="assets/img/fi_arrow-right.svg">
                     
             </article>
         </section>
-        <script src="public/scripts/guess-words.js" defer></script>
+        <script src="scripts/guess-words.js" defer></script>

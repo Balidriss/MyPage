@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: /public");
-exit();
+header("Location: {$_SERVER['HTTP_REFERER']}");
+exit;
