@@ -1,0 +1,47 @@
+#contact-section {
+    article {
+        width: 100%;
+    }
+
+    .vercingetorix {
+        width: 100%;
+        height: 400px;
+
+        background-image: url(asset-path('img', 'clermont-ferrand-vercingetorix.jpg'));
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        background-size: 120%;
+        background-position: 80% 40%;
+
+        position: relative;
+    }
+
+    .title {
+        position: absolute;
+        right: 2rem;
+        bottom: 0;
+        padding: 1rem;
+        background-color: $mainBackgroundColor;
+    }
+
+    ul {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+
+        color: $secondaryColorWhite;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.04rem;
+
+        img {
+            padding: 0 1rem;
+        }
+    }
+}
