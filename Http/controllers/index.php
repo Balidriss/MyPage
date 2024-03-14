@@ -9,6 +9,5 @@ view("index.view.php", [
         'projects' => assetPath('img', "balidriss.png")
     ],
     'js' => assetPath('script', "home.js"),
-    'guessjs' => assetPath('script', "guess-words.js"),
     'heading' => 'Accueil'
 ]);

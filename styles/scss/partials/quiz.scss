@@ -1,4 +1,8 @@
-#guess-section {
+#quiz-section {
+    $form-quiz-width : 50%;
+    $form-quiz-height : 30rem;
+
+
     @include responsive('large') {
         display: none;
     }
@@ -28,15 +32,15 @@
 
 
 
-    .guess-container {
+    .quiz-container {
         order: 0;
         position: relative;
         display: flex;
         flex-direction: row-reverse;
         overflow: hidden;
         align-items: flex-start;
-        height: 30rem;
-        width: 50%;
+        height: $form-quiz-height;
+        width: $form-quiz-width;
 
         @include responsive('large') {}
 
@@ -53,8 +57,7 @@
         }
 
         form {
-            position: absolute;
-            z-index: -1;
+            cursor: pointer;
             background-color: black;
             width: 15rem;
             height: 23rem;
@@ -62,12 +65,7 @@
             padding: 0rem 1rem;
             padding-bottom: 2rem;
             text-align: center;
-            transition: all 0.25s ease-in-out;
-            scale: 0.90;
-            opacity: 0;
             box-shadow: -0.0rem 0.2rem 2rem 0.2rem Black;
-            pointer-events: none;
-            user-select: none;
 
             &>* {
                 margin: auto;
@@ -87,30 +85,6 @@
                 display: flex;
                 justify-content: center;
             }
-
-            &.form-position-0 {
-                z-index: 3;
-                background-color: #222222;
-                scale: 1;
-                pointer-events: all;
-                user-select: all;
-                opacity: 1;
-            }
-
-            &.form-position-1 {
-                z-index: 2;
-                background-color: #121212;
-                scale: 0.95;
-                opacity: 1;
-            }
-
-            &.form-position-2 {
-                z-index: 1;
-                background-color: #000000;
-                scale: 0.80;
-                opacity: 1;
-            }
-
 
             &* {
                 color: $primaryColorBlack;

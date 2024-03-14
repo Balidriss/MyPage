@@ -5,7 +5,7 @@
     <div class="gradient-bg"></div>
     <main>
         <?php require base_path('views/partials/Home/intro-section.php'); ?>
-        <!-- guess section -->
+        <?php require base_path('views/partials/Home/guess-section.php'); ?>
         <?php require base_path('views/partials/Home/CV/cv-section.php'); ?>
         <?php require base_path('views/partials/Home/git-section.php'); ?>
         <?php require base_path('views/partials/Home/blog-section.php'); ?>

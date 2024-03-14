@@ -283,26 +283,26 @@ header nav menu {
   width: 100%;
 }
 
-#guess-section {
+#quiz-section {
   justify-content: center;
   flex-wrap: nowrap;
 }
 @media (max-width: 1200px) {
-  #guess-section {
+  #quiz-section {
     display: none;
   }
 }
 @media (max-width: 992px) {
-  #guess-section {
+  #quiz-section {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  #guess-section {
+  #quiz-section {
     display: none;
   }
 }
-#guess-section article {
+#quiz-section article {
   order: 1;
   padding-left: 8rem;
   display: flex;
@@ -310,7 +310,7 @@ header nav menu {
   justify-content: space-between;
   height: 20rem;
 }
-#guess-section .guess-container {
+#quiz-section .quiz-container {
   order: 0;
   position: relative;
   display: flex;
@@ -321,20 +321,19 @@ header nav menu {
   width: 50%;
 }
 @media (max-width: 992px) {
-  #guess-section .guess-container {
+  #quiz-section .quiz-container {
     order: 2;
     width: 100%;
   }
 }
 @media (max-width: 768px) {
-  #guess-section .guess-container {
+  #quiz-section .quiz-container {
     width: 100%;
     order: 2;
   }
 }
-#guess-section .guess-container form {
-  position: absolute;
-  z-index: -1;
+#quiz-section .quiz-container form {
+  cursor: pointer;
   background-color: black;
   width: 15rem;
   height: 23rem;
@@ -342,99 +341,70 @@ header nav menu {
   padding: 0rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
-  transition: all 0.25s ease-in-out;
-  scale: 0.9;
-  opacity: 0;
   box-shadow: 0rem 0.2rem 2rem 0.2rem Black;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
-#guess-section .guess-container form > * {
+#quiz-section .quiz-container form > * {
   margin: auto;
   margin-top: 4rem;
 }
-#guess-section .guess-container form p {
+#quiz-section .quiz-container form p {
   margin-top: 1rem;
   padding: 0;
 }
-#guess-section .guess-container form .answer {
+#quiz-section .quiz-container form .answer {
   color: rgb(252, 109, 38);
 }
-#guess-section .guess-container form .attempt-field {
+#quiz-section .quiz-container form .attempt-field {
   display: flex;
   justify-content: center;
 }
-#guess-section .guess-container form.form-position-0 {
-  z-index: 3;
-  background-color: #222222;
-  scale: 1;
-  pointer-events: all;
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
-  opacity: 1;
-}
-#guess-section .guess-container form.form-position-1 {
-  z-index: 2;
-  background-color: #121212;
-  scale: 0.95;
-  opacity: 1;
-}
-#guess-section .guess-container form.form-position-2 {
-  z-index: 1;
-  background-color: #000000;
-  scale: 0.8;
-  opacity: 1;
-}
-#guess-section .guess-container form* {
+#quiz-section .quiz-container form* {
   color: rgb(17, 17, 17);
 }
-#guess-section .guess-container form input {
+#quiz-section .quiz-container form input {
   border-radius: 1rem;
   padding: 0.5rem;
   border-style: none;
 }
-#guess-section .guess-container form input[name=attempt] {
+#quiz-section .quiz-container form input[name=attempt] {
   border-radius: 0;
   width: 80%;
 }
-#guess-section .guess-container form input[name=attempt]:focus {
+#quiz-section .quiz-container form input[name=attempt]:focus {
   box-shadow: inset 0 0 0 0.1rem rgb(0, 212, 252);
   outline: none;
 }
-#guess-section .guess-container form input[type=submit] {
+#quiz-section .quiz-container form input[type=submit] {
   background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   cursor: pointer;
 }
-#guess-section .guess-container form input::-moz-placeholder {
+#quiz-section .quiz-container form input::-moz-placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
-#guess-section .guess-container form input::placeholder {
+#quiz-section .quiz-container form input::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
-#guess-section .guess-container form input[type=text] {
+#quiz-section .quiz-container form input[type=text] {
   color: rgb(0, 212, 252);
 }
-#guess-section .guess-container form img {
+#quiz-section .quiz-container form img {
   width: 80%;
   filter: grayscale(1);
 }
-#guess-section .slider-buttons {
+#quiz-section .slider-buttons {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
   width: 100%;
 }
-#guess-section .slider-buttons img {
+#quiz-section .slider-buttons img {
   cursor: pointer;
   padding: 1rem;
   background: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
 }
-#guess-section .slider-buttons img.button-left {
+#quiz-section .slider-buttons img.button-left {
   transform: rotate(180deg);
 }
 
