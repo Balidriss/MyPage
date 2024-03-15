@@ -15,17 +15,19 @@ class Quiz {
 
     static ratio = 0.5;
 
+
+
     constructor(index) {
         this.guessIndex = index;
-        this.guessWidth = Quiz.guessWidth();
-        this.guessHeight = Quiz.guessWidth() * Quiz.ratio;
-        this.guessPosX = this.guessWidth * index;
-        this.guessPosY = 0;
         this.hidden = false;
         this.element = Quiz.findGuessElement(Quiz.updateIndex(index));
+        this.guessSize = this.guessSize();
+        this.guessPosX = this.guessSize.width * index;
+        this.guessPosY = 0;
         if (!this.element) {
             throw new Error(`quiz element failed to be assign to instance guess ${index} with selector :${'.' + Quiz.updateIndex(index)}`)
         }
+        console.log(this.guessPosX);
     }
 
     static init() {
@@ -34,9 +36,9 @@ class Quiz {
         Quiz.sliderLeft = document.querySelector('.button-left');
         Quiz.sliderRight = document.querySelector('.button-right');
         Quiz.quizContainer = document.querySelector('.quiz-container');
-        Quiz.quizElements = this.quizContainer.querySelectorAll('form');;
+        Quiz.quizElements = Quiz.quizContainer.querySelectorAll('form');;
         Quiz.populate();
-
+        Quiz.assignSliderEvent();
         if (!Quiz.additionalMessageElement) {
             throw new Error("Couldn't find additional message element");
         }
@@ -64,7 +66,6 @@ class Quiz {
             throw new Error("Quiz failed to populate quiz");
         }
 
-        Quiz.assignSliderEvent();
     }
     static updateIndex(i) {
         return Quiz.baseSelector + i;
@@ -97,9 +98,9 @@ class Quiz {
     static add(index) {
         return new Quiz(index);
     }
-    static guessWidth() {
-        return 20;
-        //logic to calculate width based of container size
+    guessSize() {
+        return { width: this.element.offsetWidth, height: this.element.offsetHeight };
+        //logic to calculate size based of container size
     }
 
     dragStart(e) {
@@ -161,7 +162,7 @@ class CV {
         else {
             cvTab.content.classList.remove('show');
             cvTab.tab.classList.remove('show');
-    }
+        }
     }
     static hide(element) {
 
