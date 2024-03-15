@@ -124,47 +124,58 @@ class CVPart {
     constructor(tab, content) {
         this.tab = tab;
         this.content = content;
+        if (!tab) {
+            throw new Error(`Element cv tab missing.`);
+        } if (!content) {
+            throw new Error(`Elements cv content of the tab missing.`);
+        }
     }
 }
-
 class CV {
-    static init(container, pairTabContent) {
-        pairTabContent.forEach(part => {
+    static formations;
+    static professions;
+    static projects;
+    static pairTabContents;
+
+    static init() {
+        CV.formations = new CVPart(document.querySelector('.tabs-cv .formations'), document.getElementById('formations'));
+        CV.professions = new CVPart(document.querySelector('.tabs-cv .professions'), document.getElementById('professions'));
+        CV.projects = new CVPart(document.querySelector('.tabs-cv .projects'), document.getElementById('projects'));
+        CV.pairTabContents = [CV.formations, CV.professions, CV.projects];
+
+        CV.pairTabContents.forEach(part => {
             part.tab.addEventListener('click', () => {
-                CV.selectCVPart(part);
+                CV.pairTabContents.forEach(part => {
+                    CV.display(part, false);
+                });
+                CV.display(part, true);
             });
         });
-        if (!container) {
-            throw new Error('Element container cv missing.');
-        }
-        pairTabContent.forEach(part => {
-            if (!part.tab || !part.content) {
-                throw new Error(`Elements ${part} missing.`);
-            }
-        });
     }
 
-    static selectCVPart(cvPart) {
-        pairTabContent.forEach(part => {
-            part.tab.classList.remove('show');
-            part.content.classList.remove('show');
-        });
-        cvPart.content.classList.add('show');
-        cvPart.tab.classList.add('show');
+    static display(cvTab, show) {
+        if (show) {
+            cvTab.content.classList.add('show');
+            cvTab.tab.classList.add('show');
+        }
+        else {
+            cvTab.content.classList.remove('show');
+            cvTab.tab.classList.remove('show');
     }
+    }
+    static hide(element) {
+
+    }
+
 }
 
 window.addEventListener("load", () => {
     try {
-        const formations = new CVPart(document.querySelector('.tabs-cv .formations'), document.getElementById('formations'));
-        const professions = new CVPart(document.querySelector('.tabs-cv .professions'), document.getElementById('professions'));
-        const projects = new CVPart(document.querySelector('.tabs-cv .projects'), document.getElementById('projects'));
-        CV.init(document.querySelector('.cv-container'), [formations, professions, projects]);
+        CV.init();
         Quiz.init();
 
     }
     catch (error) {
         console.error(error);
     }
-    console.log(Quiz.quiz);
 });
