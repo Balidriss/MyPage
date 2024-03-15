@@ -1,6 +1,6 @@
 #quiz-section {
-    $form-quiz-width : 50%;
-    $form-quiz-height : 30rem;
+    $quiz-width : 50%;
+    $quiz-height : 30rem;
 
 
     @include responsive('large') {
@@ -39,8 +39,8 @@
         flex-direction: row-reverse;
         overflow: hidden;
         align-items: flex-start;
-        height: $form-quiz-height;
-        width: $form-quiz-width;
+        height: $quiz-height;
+        width: $quiz-width;
 
         @include responsive('large') {}
 
@@ -66,6 +66,10 @@
             padding-bottom: 2rem;
             text-align: center;
             box-shadow: -0.0rem 0.2rem 2rem 0.2rem Black;
+
+            .display {
+                background-color: $primaryColorBlack;
+            }
 
             &>* {
                 margin: auto;

@@ -5,9 +5,10 @@ class Quiz {
     static sliderRight;
     static quizContainer;
     static quizElements;
-    static baseSelector = "guess-";
+    static baseSelector = ".guess-";
     //
     static quiz;
+    static numberToShow = 3;
     // % 
     static swipeThreshold;
     static outPos;
@@ -20,12 +21,12 @@ class Quiz {
     constructor(index) {
         this.guessIndex = index;
         this.hidden = false;
-        this.element = Quiz.findGuessElement(Quiz.updateIndex(index));
+        this.element = Quiz.querySelector(Quiz.updateSelectorIndex(index));
         this.guessSize = this.guessSize();
         this.guessPosX = this.guessSize.width * index;
         this.guessPosY = 0;
         if (!this.element) {
-            throw new Error(`quiz element failed to be assign to instance guess ${index} with selector :${'.' + Quiz.updateIndex(index)}`)
+            throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${baseSelector + index}`)
         }
         console.log(this.guessPosX);
     }
@@ -67,11 +68,11 @@ class Quiz {
         }
 
     }
-    static updateIndex(i) {
+    static updateSelectorIndex(i) {
         return Quiz.baseSelector + i;
     }
-    static findGuessElement(element) {
-        return Quiz.quizContainer.querySelector('.' + element);
+    static querySelector(selector) {
+        return Quiz.quizContainer.querySelector(selector);
     }
     static populate() {
         Quiz.quiz = [];
