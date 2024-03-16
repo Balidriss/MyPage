@@ -12,18 +12,33 @@ Custom router.
 TODO :
 
 Quiz (redo).
+
 Accessibility.
+
 Cleaner Responsive with js.
+
 Contact page.
+
 Project Page.
+
 Fictif Blog Page.
+
 Security pass on db request.
+
 optimize assets + do quiz
+
 Contact Page (enable storing)
+
 Production.
+
 Admin page.
+
 English <> French
+
 Nightmode
+
 CV dashboard.
+
 Blog dashboard.
+
 Blog Page.
