@@ -7,5 +7,6 @@ desktop.ini
 
 .vscode
 *.env
-*.js.map
 *.css.map
+*.gcloudignore
+app.yaml

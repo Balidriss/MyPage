@@ -1,0 +1,155 @@
+#quiz-section {
+    $quiz-width : 50%;
+    $quiz-height : 30rem;
+
+
+    @include responsive('large') {
+        display: none;
+    }
+
+
+    @include responsive('medium') {
+        display: none;
+    }
+
+    @include responsive('small') {
+        display: none;
+    }
+
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    article {
+        order: 1;
+        padding-left: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20rem;
+    }
+
+
+
+
+
+    .quiz-container {
+        order: 0;
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        overflow: hidden;
+        align-items: flex-start;
+        height: $quiz-height;
+        width: $quiz-width;
+
+        @include responsive('large') {}
+
+
+
+        @include responsive('medium') {
+            order: 2;
+            width: 100%;
+        }
+
+        @include responsive('small') {
+            width: 100%;
+            order: 2;
+        }
+
+        form {
+            cursor: pointer;
+            background-color: black;
+            width: 15rem;
+            height: 23rem;
+            box-sizing: border-box;
+            padding: 0rem 1rem;
+            padding-bottom: 2rem;
+            text-align: center;
+            box-shadow: -0.0rem 0.2rem 2rem 0.2rem Black;
+
+            .display {
+                background-color: $primaryColorBlack;
+            }
+
+            &>* {
+                margin: auto;
+                margin-top: 4rem;
+            }
+
+            p {
+                margin-top: 1rem;
+                padding: 0;
+            }
+
+            .answer {
+                color: $primaryColorOrange;
+            }
+
+            .attempt-field {
+                display: flex;
+                justify-content: center;
+            }
+
+            &* {
+                color: $primaryColorBlack;
+            }
+
+            input {
+                $border-radius: 1rem;
+                border-radius: $border-radius;
+                padding: 0.5rem;
+                border-style: none;
+
+                &[name="attempt"] {
+                    border-radius: 0;
+                    width: 80%;
+
+                    &:focus {
+                        box-shadow: inset 0 0 0 0.1rem $primaryColorBlue;
+                        outline: none;
+                    }
+                }
+
+                &[type="submit"] {
+                    background-image: $primaryGradientBlue;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    cursor: pointer;
+                }
+
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+
+                &[type=text] {
+                    color: $primaryColorBlue;
+                }
+            }
+
+            img {
+                width: 80%;
+                filter: grayscale(1);
+            }
+        }
+    }
+
+
+    .slider-buttons {
+        display: flex;
+        gap: 2rem;
+        margin-top: 5rem;
+        width: 100%;
+
+
+        img {
+            cursor: pointer;
+            padding: 1rem;
+            background: $primaryGradientBlue;
+
+
+            &.button-left {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
