@@ -1,6 +1,23 @@
 #cv-section {
     display: flex;
 
+    &>* {
+        width: 50%;
+
+        @include responsive('large') {
+            width: 50%;
+        }
+
+
+        @include responsive('medium') {
+            width: 100%;
+        }
+
+        @include responsive('small') {
+            width: 100%;
+        }
+    }
+
     .main-text-section {
 
         p {

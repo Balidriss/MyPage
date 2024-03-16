@@ -343,6 +343,9 @@ header nav menu {
   text-align: center;
   box-shadow: 0rem 0.2rem 2rem 0.2rem Black;
 }
+#quiz-section .quiz-container form .display {
+  background-color: rgb(17, 17, 17);
+}
 #quiz-section .quiz-container form > * {
   margin: auto;
   margin-top: 4rem;
@@ -410,6 +413,24 @@ header nav menu {
 
 #cv-section {
   display: flex;
+}
+#cv-section > * {
+  width: 50%;
+}
+@media (max-width: 1200px) {
+  #cv-section > * {
+    width: 50%;
+  }
+}
+@media (max-width: 992px) {
+  #cv-section > * {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #cv-section > * {
+    width: 100%;
+  }
 }
 @media (max-width: 992px) {
   #cv-section .main-text-section p {
