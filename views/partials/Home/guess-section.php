@@ -27,7 +27,8 @@ $i = 1;
     <article class="main-text-section">
         <div class="title">
             <p>A propos de moi...</p>
-            <h2>Pouvez-vous deviner ?</h2>
+            <h2>Quiz !</h2>
+            <p style="font-size:0.5em">actuellement refais le code</p>
         </div>
         <p id="help-message"><?php echo $quiz[0]['help_message']  ?></p>
         <p id="additional-message"> message supplémentaire ici
