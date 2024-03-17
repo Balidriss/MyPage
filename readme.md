@@ -1,4 +1,4 @@
-lien temporaire : https://ib-page.000webhostapp.com/
+lien temporaire : https://ibproject.go.yo.fr/
 
 No framework PHP8.2 project, will get updated frequently.
 Using XAMP on local.
