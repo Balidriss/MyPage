@@ -419,7 +419,7 @@ header nav menu {
 }
 @media (max-width: 1200px) {
   #cv-section > * {
-    width: 50%;
+    width: 100%;
   }
 }
 @media (max-width: 992px) {
