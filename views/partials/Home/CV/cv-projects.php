@@ -8,13 +8,13 @@
             <span class="marker"></span>
         </div>
         <div class="desc-cv">
-            <h4>IB Page</h4>
-            <h5>Site personel en ligne - Autoformation</h5>
+            <h4>IB-Projects</h4>
+            <h5>Site personel / PortFolio en ligne - Autoformation</h5>
             <p>Réalisation d'un site utilisant PHP et MySQL.</p>
-            <p>Objectifs : Créer un back office permettant de modifier les parties du site pouvant évoluer, ainsi que de recevoir les formulaires de contact.
+            <p>Objectifs : Créer un back office permettant de modifier les parties du site pouvant évoluer, proposer des mini-jeux, ainsi que de recevoir les formulaires de contact.
             </p>
             <h4><a href="https://gitlab.com/ibalijon/Notes-manager" class="link-out">Notes Manager</a></h4>
-            <h5>Partage de recette de pizza - <a href="https://openclassrooms.com/">Autoformation</a></h5>
+            <h5>Création de pense bête - <a href="https://openclassrooms.com/">Autoformation</a></h5>
             <p>Réalisation en local d'un site de création de textes avec PHP et requete SQL</p>
             <p>Objectif : faire un système d'identification d'utilisateur. Donner la possibilité de création de contenu par l'utilisateur (ajout, suppression et édition). Securiser les requêtes(session, url, contenu). Router personalisé proche de celle du framework Laravel.
             </p>
