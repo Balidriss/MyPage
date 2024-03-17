@@ -1,4 +1,5 @@
 class Quiz {
+    //elements
     static additionalMessageElement;
     static helpMessageElement;
     static sliderLeft;
@@ -9,11 +10,16 @@ class Quiz {
     //
     static quiz;
     static numberToShow = 3;
+    //
+    static positions = [];
     // % 
     static swipeThreshold;
-    static outPos;
-    static inPos;
-
+    static outPosLeft = -50;
+    static outPosRight = 150;
+    static inPos = 25;
+    static frontPos = 75;
+    static gap = 10;
+    //
     static ratio = 0.5;
 
 
@@ -28,7 +34,6 @@ class Quiz {
         if (!this.element) {
             throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${baseSelector + index}`)
         }
-        console.log(this.guessPosX);
     }
 
     static init() {
@@ -39,6 +44,7 @@ class Quiz {
         Quiz.quizContainer = document.querySelector('.quiz-container');
         Quiz.quizElements = Quiz.quizContainer.querySelectorAll('form');;
         Quiz.populate();
+        console.log(Quiz.setWaypoints(), Quiz.quizContainer.offsetWidth);
         Quiz.assignSliderEvents();
         if (!Quiz.additionalMessageElement) {
             throw new Error("Couldn't find additional message element");
@@ -75,7 +81,7 @@ class Quiz {
         return Quiz.quizContainer.querySelector(selector);
     }
     static populate() {
-        Quiz.quiz = [];
+        Quiz.quiz = new Array();
         for (let i = 1; i <= Quiz.quizElements.length; i++) {
             Quiz.quiz.push(Quiz.add(i));
         }
@@ -100,7 +106,7 @@ class Quiz {
         return new Quiz(index);
     }
     static slide(direction) {
-        Quizquiz.forEach(guess => {
+        Quiz.quiz.forEach(guess => {
             guess.move(Quiz.waypoint[guess.nextIndex()]);
         });
     }
@@ -116,11 +122,22 @@ class Quiz {
     }
 
     static setWaypoints() {
-
-        //algo to apply pos where guess go in %
-        return [];
+        let arrayOfPos = new Array(Quiz.quiz.length);
+        const distanceFirtLast = Math.abs(Quiz.frontPos - Quiz.inPos);
+        const gap = distanceFirtLast / Quiz.numberToShow;
+        for (let i = 1; i < arrayOfPos.length; i++) {
+            arrayOfPos[i] = Quiz.posInPx(Quiz.frontPos - Quiz.frontPos * i);
+            if (i > Quiz.numberToShow) {
+                arrayOfPos[i] = Quiz.posInPx(Quiz.outPosLeft);
+            }
+        }
+        arrayOfPos[0] = Quiz.posInPx(Quiz.outPosRight);
+        return arrayOfPos;
     }
+    static posInPx(widthPourcent) {
+        return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
 
+    }
     checkIndex(index) {
         return this.guessIndex === index;
     }
