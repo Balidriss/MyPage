@@ -30,5 +30,5 @@
             </div>
         </div>
     </article>
-    <a href="" class="cta">Contactez-moi</a>
+    <a href="/contact" class="cta">Contactez-moi</a>
 </section>
