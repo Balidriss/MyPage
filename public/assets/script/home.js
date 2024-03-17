@@ -39,7 +39,7 @@ class Quiz {
         Quiz.quizContainer = document.querySelector('.quiz-container');
         Quiz.quizElements = Quiz.quizContainer.querySelectorAll('form');;
         Quiz.populate();
-        Quiz.assignSliderEvent();
+        Quiz.assignSliderEvents();
         if (!Quiz.additionalMessageElement) {
             throw new Error("Couldn't find additional message element");
         }
@@ -80,7 +80,7 @@ class Quiz {
             Quiz.quiz.push(Quiz.add(i));
         }
     }
-    static assignSliderEvent() {
+    static assignSliderEvents() {
         Quiz.sliderLeft.addEventListener('click', () => {
             currentIndex = Quiz.slide('left');
         });
@@ -90,8 +90,8 @@ class Quiz {
         });
 
         Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
-        Quiz.quizContainer.addEventListener('touchstart', Quiz.dragEnd);
-        Quiz.quizContainer.addEventListener('touchstart', Quiz.dragAction);
+        Quiz.quizContainer.addEventListener('touchend', Quiz.dragEnd);
+        Quiz.quizContainer.addEventListener('touchmove', Quiz.dragAction);
         Quiz.quizContainer.addEventListener('transitionend', Quiz.checkIndex);
 
 
@@ -99,26 +99,53 @@ class Quiz {
     static add(index) {
         return new Quiz(index);
     }
+    static slide(direction) {
+        Quizquiz.forEach(guess => {
+            guess.move(Quiz.waypoint[guess.nextIndex()]);
+        });
+    }
+
+    static dragStart(e) {
+        e.preventDefault();
+    }
+    static dragEnd(e) {
+        e.preventDefault();
+    }
+    static dragAction(e) {
+        e.preventDefault();
+    }
+
+    static setWaypoints() {
+
+        //algo to apply pos where guess go in %
+        return [];
+    }
+
+    checkIndex(index) {
+        return this.guessIndex === index;
+    }
     guessSize() {
         return { width: this.element.offsetWidth, height: this.element.offsetHeight };
         //logic to calculate size based of container size
     }
-
-    dragStart(e) {
-        e.preventDefault();
-    }
-    dragEnd(e) {
-        e.preventDefault();
-    }
-    dragEnd(e) {
-        e.preventDefault();
-    }
-    checkIndex(index) {
-        return this.guessIndex === index;
-    }
-    static slide(direction) {
+    move(length) {
+        //apply css 
 
     }
+    show(shown) {
+        //apply class hide
+
+    }
+    enable(enabled) {
+        //apply class disable user input
+    }
+    async send() {
+        //send attempt
+    }
+    update() {
+        //update what needs to be updated in some conditions that i dont know yet
+    }
+
 }
 
 
@@ -165,10 +192,6 @@ class CV {
             cvTab.tab.classList.remove('show');
         }
     }
-    static hide(element) {
-
-    }
-
 }
 
 window.addEventListener("load", () => {
