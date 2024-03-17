@@ -21,9 +21,9 @@
             <span class="marker"></span>
         </div>
         <div class="desc-cv">
-            <h4><a href="https://gitlab.com/ibalijon/Notes-manager" class="link-out">Notes Manager</a></h4>
-            <h5>Création de pense bête - <a href="https://openclassrooms.com/">Autoformation</a></h5>
-            <p>Réalisation en local d'un site de création de textes avec PHP et requete SQL</p>
+            <h4><a href="https://ib-page.000webhostapp.com/" class="link-out">Notes Manager</a></h4>
+            <h5>Création de pense bête - <a href="https://gitlab.com/ibalijon/Notes-manager">Autoformation</a></h5>
+            <p>Réalisation en ligne d'un site de création de textes avec PHP et requete SQL</p>
             <p>Objectif : faire un système d'identification d'utilisateur. Donner la possibilité de création de contenu par l'utilisateur (ajout, suppression et édition). Securiser les requêtes(session, url, contenu). Router personalisé proche de celle du framework Laravel.
             </p>
         </div>
