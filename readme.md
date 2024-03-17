@@ -15,13 +15,15 @@ TODO :
 
 Quiz (redo).
 
+Landing Page.
+
+Project Page.
+
 Accessibility.
 
 Cleaner Responsive with js.
 
 Contact page.
-
-Project Page.
 
 Fictif Blog Page.
 
