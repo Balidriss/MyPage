@@ -2,7 +2,7 @@
     <h3>Travaux</h3>
     <div class="grid-cv">
         <div class="date">
-            Actuellement - Fevriers 2024
+            Actuellement
         </div>
         <div class="timeline">
             <span class="marker"></span>
@@ -13,6 +13,14 @@
             <p>Réalisation d'un site utilisant PHP et MySQL.</p>
             <p>Objectifs : Créer un back office permettant de modifier les parties du site pouvant évoluer, proposer des mini-jeux, ainsi que de recevoir les formulaires de contact.
             </p>
+        </div>
+        <div class="date">
+            Mars 2024
+        </div>
+        <div class="timeline">
+            <span class="marker"></span>
+        </div>
+        <div class="desc-cv">
             <h4><a href="https://gitlab.com/ibalijon/Notes-manager" class="link-out">Notes Manager</a></h4>
             <h5>Création de pense bête - <a href="https://openclassrooms.com/">Autoformation</a></h5>
             <p>Réalisation en local d'un site de création de textes avec PHP et requete SQL</p>

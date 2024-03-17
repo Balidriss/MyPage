@@ -26,7 +26,7 @@
             </div>
             <div class="tab-cv projects">
                 <h3>Travaux</h3>
-                <p><strong>Fevriers</strong></br>2024</p>
+                <p><strong>Mars</strong></br>2024</p>
             </div>
         </div>
         <!-- TO DO : from db -->
