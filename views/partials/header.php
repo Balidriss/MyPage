@@ -6,7 +6,7 @@
     <?php endif; ?>
     <nav>
         <div class="logo">
-            <a href="">IB</a>
+            <a href="/">IB</a>
         </div>
         <menu>
             <li><a href="/">Home</a></li>
