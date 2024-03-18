@@ -19,7 +19,6 @@ class Quiz {
     static outPosRight = 150;
     static inPos = 25;
     static frontPos = 75;
-    static gap = 10;
     //
     static ratio = 0.5;
 
@@ -138,7 +137,7 @@ class Quiz {
         const distanceFirtLast = Math.abs(Quiz.frontPos - Quiz.inPos);
         const gap = distanceFirtLast / Quiz.numberToShow;
         for (let i = 1; i < arrayOfPos.length; i++) {
-            arrayOfPos[i] = Quiz.posInPx(Quiz.frontPos - Quiz.frontPos * i);
+            arrayOfPos[i] = Quiz.posInPx(Quiz.frontPos - gap - Quiz.frontPos * i);
             if (i > Quiz.numberToShow) {
                 arrayOfPos[i] = Quiz.posInPx(Quiz.outPosLeft);
             }
