@@ -161,12 +161,24 @@ class Quiz {
         //apply css 
 
     }
-    show(shown) {
-        //apply class hide
+    show(show = true) {
+        if (show) {
+            this.element.style.display = "block";
+        } else {
+            this.element.style.display = "none";
+        }
 
     }
-    enable(enabled) {
-        //apply class disable user input
+    allowInput(allow = true) {
+        if (allow) {
+            this.element.style.pointerEvents = "auto";
+            this.element.style.userSelect = "auto";
+        } else {
+            this.element.style.pointerEvents = "none";
+            this.element.style.userSelect = "none";
+        }
+    }
+
     }
     async send() {
         //send attempt
