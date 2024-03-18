@@ -44,7 +44,6 @@ class Quiz {
         Quiz.quizContainer = document.querySelector('.quiz-container');
         Quiz.quizElements = Quiz.quizContainer.querySelectorAll('form');;
         Quiz.populate();
-        console.log(Quiz.setWaypoints(), Quiz.quizContainer.offsetWidth);
         Quiz.assignSliderEvents();
         Quiz.update();
         if (!Quiz.additionalMessageElement) {
@@ -73,7 +72,6 @@ class Quiz {
         if (Quiz.quiz === undefined) {
             throw new Error("Quiz failed to populate quiz");
         }
-
     }
     static updateSelectorIndex(i) {
         return Quiz.baseSelector + i;
@@ -107,11 +105,24 @@ class Quiz {
         return new Quiz(index);
     }
     static slide(direction) {
-        Quiz.quiz.forEach(guess => {
-            guess.move(Quiz.waypoint[guess.nextIndex()]);
-        });
-    }
+        switch (direction) {
+            case 'Right':
+                Quiz.quiz.forEach(guess => {
+                    guess.move(Quiz.positions[guess.nextIndex()]);
+                });
+                break;
+            case 'Left':
+                Quiz.quiz.forEach(guess => {
+                    guess.move(Quiz.positions[guess.previewsIndex()]);
+                });
+                break;
+            default:
+                Quiz.quiz.forEach(guess, i => {
+                    guess.move(Quiz.positions[i]);
+                });
 
+        }
+    }
     static dragStart(e) {
         e.preventDefault();
     }
@@ -151,11 +162,7 @@ class Quiz {
         console.log(Quiz.quiz);
     }
     checkIndex(index) {
-        return this.guessIndex === index;
-    }
-    guessSize() {
-        return { width: this.element.offsetWidth, height: this.element.offsetHeight };
-        //logic to calculate size based of container size
+        //
     }
     move(length) {
         //apply css 
@@ -179,13 +186,17 @@ class Quiz {
         }
     }
 
+    nextIndex() {
+        return (currentIndex + 1 >= Quiz.quiz.length) ? 0 : currentIndex + 1;
+    }
+
+    previewsIndex() {
+        return (currentIndex - 1 < 0) ? Quiz.quiz.length - 1 : currentIndex - 1;
     }
     async send() {
         //send attempt
     }
-    update() {
-        //update what needs to be updated in some conditions that i dont know yet
-    }
+
 
 }
 
