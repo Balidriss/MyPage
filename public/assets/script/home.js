@@ -12,6 +12,7 @@ class Quiz {
     static numberToShow = 3;
     //
     static positions = [];
+    static currentIndex = 0;
     // % 
     static swipeThreshold;
     static outPosLeft = -50;
@@ -25,11 +26,10 @@ class Quiz {
 
 
     constructor(index) {
-        this.guessIndex = index;
+        this.index = index;
         this.hidden = false;
         this.element = Quiz.querySelector(Quiz.updateSelectorIndex(index));
-        this.guessSize = this.guessSize();
-        this.guessPosX = this.guessSize.width * index;
+        this.posX = -50;
         this.guessPosY = 0;
         if (!this.element) {
             throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${baseSelector + index}`)
@@ -46,6 +46,7 @@ class Quiz {
         Quiz.populate();
         console.log(Quiz.setWaypoints(), Quiz.quizContainer.offsetWidth);
         Quiz.assignSliderEvents();
+        Quiz.update();
         if (!Quiz.additionalMessageElement) {
             throw new Error("Couldn't find additional message element");
         }
@@ -137,6 +138,17 @@ class Quiz {
     static posInPx(widthPourcent) {
         return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
 
+    }
+    static update() {
+        Quiz.positions = Quiz.setWaypoints();
+        const startIndex = Quiz.currentIndex;
+        Quiz.quiz.forEach((guess, index) => {
+            guess.show((index <= Quiz.numberToShow) && (index !== 0));
+            guess.allowInput(index === 1);
+            guess.posX = Quiz.positions[startIndex + index % Quiz.positions.length];
+            //other stylings
+        });
+        console.log(Quiz.quiz);
     }
     checkIndex(index) {
         return this.guessIndex === index;
