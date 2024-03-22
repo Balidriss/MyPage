@@ -250,7 +250,7 @@ window.addEventListener("load", () => {
     try {
         CV.init();
         Quiz.init();
-
+        setInterval(Quiz.update, 100);
     }
     catch (error) {
         console.error(error);
