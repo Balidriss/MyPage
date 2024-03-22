@@ -1,66 +1,50 @@
 #quiz-section {
-    $quiz-width : 50%;
-    $quiz-height : 30rem;
 
 
-    @include responsive('large') {
-        display: none;
-    }
-
+    align-items: center;
+    justify-content: center;
 
     @include responsive('medium') {
-        display: none;
-    }
 
-    @include responsive('small') {
-        display: none;
-    }
+        width: 90%;
 
-    justify-content: center;
-    flex-wrap: nowrap;
+    }
 
     article {
         order: 1;
-        padding-left: 8rem;
+        padding-left: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 20rem;
+        width: 40%;
+
+        @include responsive('medium') {
+
+            width: 90%;
+            height: 15rem;
+        }
     }
-
-
-
-
 
     .quiz-container {
         order: 0;
-        position: relative;
         display: flex;
         flex-direction: row-reverse;
-        overflow: hidden;
+        overflow-x: hidden;
         align-items: flex-start;
-        height: $quiz-height;
-        width: $quiz-width;
-
-        @include responsive('large') {}
-
-
+        width: 60%;
 
         @include responsive('medium') {
+
+            width: 90%;
             order: 2;
-            width: 100%;
+
         }
 
-        @include responsive('small') {
-            width: 100%;
-            order: 2;
-        }
+
 
         form {
-            cursor: pointer;
             background-color: black;
-            width: 15rem;
-            height: 23rem;
             box-sizing: border-box;
             padding: 0rem 1rem;
             padding-bottom: 2rem;
@@ -78,7 +62,7 @@
 
             p {
                 margin-top: 1rem;
-                padding: 0;
+                margin: 2rem;
             }
 
             .answer {
@@ -99,6 +83,7 @@
                 border-radius: $border-radius;
                 padding: 0.5rem;
                 border-style: none;
+
 
                 &[name="attempt"] {
                     border-radius: 0;
@@ -127,7 +112,7 @@
             }
 
             img {
-                width: 80%;
+                width: 200px;
                 filter: grayscale(1);
             }
         }
@@ -140,6 +125,11 @@
         margin-top: 5rem;
         width: 100%;
 
+        @include responsive('medium') {
+
+            display: none;
+
+        }
 
         img {
             cursor: pointer;

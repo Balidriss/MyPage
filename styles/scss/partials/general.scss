@@ -3,6 +3,7 @@
     padding: 0;
     color: $primaryColorWhite;
     font-family: $primaryFont;
+
 }
 
 .gradient-bg {
@@ -24,18 +25,7 @@ footer {
     max-width: 1440px;
     margin: auto;
 
-    @include responsive('large') {
-        max-width: map-get($breakpoints, 'large');
-    }
 
-
-    @include responsive('medium') {
-        max-width: map-get($breakpoints, 'medium');
-    }
-
-    @include responsive('small') {
-        max-width: map-get($breakpoints, 'small');
-    }
 }
 
 menu,
@@ -63,59 +53,25 @@ section {
     display: flex;
     margin: 15rem 0;
 
-
-    @include responsive('large') {}
-
-
     @include responsive('medium') {
-        margin: 5rem auto;
-    }
+        flex-direction: column;
+        width: 90%;
+        margin: 7rem auto;
 
-    @include responsive('small') {
-        margin: 4rem auto;
+
     }
 
     &:first-of-type {
         margin-top: 7rem;
 
-        @include responsive('large') {}
-
-
         @include responsive('medium') {
-            margin-top: 5rem;
+            margin-top: 2rem;
+
+
         }
 
-        @include responsive('small') {
-            margin-top: 4rem;
-        }
     }
 
-    @include responsive('large') {
-        flex-direction: column;
-
-        &>* {
-            width: 100%;
-        }
-    }
-
-
-    @include responsive('medium') {
-        flex-direction: column;
-
-        &>* {
-            width: 100%;
-            align-items: center;
-        }
-    }
-
-    @include responsive('small') {
-        flex-direction: column;
-        align-items: center;
-
-        &>* {
-            width: 100%;
-        }
-    }
 }
 
 h2,

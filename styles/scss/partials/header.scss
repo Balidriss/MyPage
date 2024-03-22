@@ -1,13 +1,21 @@
 header {
     background-color: $secondaryColorBlack;
-    padding: 1rem;
-
+    width: 100%;
 
     nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        @include responsive('medium') {
+            text-align: center;
+            justify-content: space-around;
+
+            .cta {
+                display: none;
+            }
+        }
 
         li {
 
@@ -24,13 +32,10 @@ header {
             display: flex;
             justify-content: space-around;
 
-            @include responsive('large') {}
-
-
-            @include responsive('medium') {}
-
-            @include responsive('small') {
-                display: none;
+            @include responsive('medium') {
+                &>li:first-of-type {
+                    display: none;
+                }
             }
 
         }

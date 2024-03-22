@@ -19,80 +19,52 @@
         align-items: stretch;
         margin-bottom: 2.5rem;
 
-        @include responsive('large') {
-
-            flex-direction: column;
-        }
-
-
         @include responsive('medium') {
             flex-direction: column;
         }
+    }
 
-        @include responsive('small') {
-            & * {
-                font-size: 1em;
-            }
+    .git-block {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+        background-color: $secondaryColorBlack;
+        align-items: center;
+        margin: auto;
 
-            flex-direction: column;
-        }
+        .title {
+            margin-bottom: 1rem;
+            align-self: flex-start;
+            text-align: left;
 
-        .git-block {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 2rem;
-            background-color: $secondaryColorBlack;
-            align-items: center;
-            margin: auto;
-
-            @include responsive('large') {
-
-                width: 33%;
-            }
-
-
-            @include responsive('medium') {
-                width: 80%;
-            }
-
-            @include responsive('small') {
-                width: 80%;
-            }
-
-            .title {
-                margin-bottom: 1rem;
-                align-self: flex-start;
-                text-align: left;
-
-                p {
-
-                    font-size: 1.125rem;
-                    font-weight: 600;
-                    line-height: 1.125rem;
-                    letter-spacing: 0.045rem;
-
-                }
-            }
-
-            img {
-                // padding: 2rem;
-                max-width: 50%;
-
-            }
-
-            .cta {
-                padding: 1.5rem 4rem;
-                background: $secondaryColorBlack;
-
+            p {
 
                 font-size: 1.125rem;
-                font-size: 1rem;
-                color: $primaryColorWhite;
+                font-weight: 600;
+                line-height: 1.125rem;
+                letter-spacing: 0.045rem;
 
             }
+        }
+
+        img {
+            // padding: 2rem;
+            max-width: 50%;
 
         }
+
+        .cta {
+            padding: 1.5rem 4rem;
+            background: $secondaryColorBlack;
+
+
+            font-size: 1.125rem;
+            font-size: 1rem;
+            color: $primaryColorWhite;
+
+        }
+
     }
 }

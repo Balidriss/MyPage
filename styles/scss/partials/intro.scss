@@ -1,5 +1,5 @@
 #intro-section {
-    padding: 1rem;
+
 
     h1 {
         font-size: 7.5rem;
@@ -7,19 +7,10 @@
         font-weight: 700;
         line-height: 7rem;
 
-        @include responsive('large') {}
-
-
         @include responsive('medium') {
-            font-size: 7.5rem;
-            line-height: 7rem;
+            font-size: 4.5rem;
+            line-height: 4.5rem;
         }
-
-        @include responsive('small') {
-            font-size: 4rem;
-            line-height: 4rem;
-        }
-
 
         sup {
             font-size: 0.25em;
@@ -38,18 +29,6 @@
         font-size: 1.375rem;
         line-height: 2rem;
 
-        @include responsive('large') {}
-
-
-        @include responsive('medium') {
-            font-size: 1rem;
-            line-height: 1.1rem;
-        }
-
-        @include responsive('small') {
-            font-size: 0.8rem;
-            line-height: 1rem;
-        }
 
         &:first-child {
             color: $primaryColorWhite;
@@ -69,14 +48,6 @@
         font-size: 1.125em;
 
 
-        @include responsive('large') {}
-
-
-        @include responsive('medium') {}
-
-        @include responsive('small') {
-            display: none;
-        }
     }
 
 

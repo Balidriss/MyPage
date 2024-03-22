@@ -3,6 +3,12 @@
         width: 100%;
     }
 
+    h2 {
+        @include responsive('medium') {
+            font-size: 1rem;
+        }
+    }
+
     .vercingetorix {
         width: 100%;
         height: 400px;
@@ -12,8 +18,12 @@
         opacity: 0.8;
         background-size: 120%;
         background-position: 80% 40%;
-
         position: relative;
+
+        @include responsive('medium') {
+            background-size: 100%;
+            height: 200px;
+        }
     }
 
     .title {

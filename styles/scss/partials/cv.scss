@@ -4,16 +4,7 @@
     &>* {
         width: 50%;
 
-        @include responsive('large') {
-            width: 100%;
-        }
-
-
         @include responsive('medium') {
-            width: 100%;
-        }
-
-        @include responsive('small') {
             width: 100%;
         }
     }
@@ -21,16 +12,6 @@
     .main-text-section {
 
         p {
-            @include responsive('large') {}
-
-
-            @include responsive('medium') {
-                font-size: 1.5em;
-            }
-
-            @include responsive('small') {
-                font-size: 1em;
-            }
 
             strong {
                 color: $primaryColorOrange;
@@ -39,38 +20,21 @@
         }
 
         &>* {
-            padding: 0 4em;
+
             margin-bottom: 2em;
 
-            @include responsive('large') {}
 
-
-            @include responsive('medium') {
-                padding: 0 2em;
-            }
-
-            @include responsive('small') {
-                padding: 0 1em;
-            }
         }
 
     }
 
     .cv-container {
 
-        &>* {
-            @include responsive('large') {}
+        @include responsive('medium') {
 
+            font-size: small;
 
-            @include responsive('medium') {
-                padding: 0 2em;
-            }
-
-            @include responsive('small') {
-                padding: 0 1em;
-            }
         }
-
 
         h3 {
             margin: 0;
@@ -88,7 +52,8 @@
 
             .tab-cv {
                 cursor: pointer;
-                padding: 0 1em;
+                box-sizing: border-box;
+                width: 30%;
                 flex: 1;
                 border-bottom: 0.25em $secondaryColorBlack solid;
                 border-right: 0.25em $secondaryColorBlack solid;
@@ -96,14 +61,6 @@
                 flex-direction: column;
                 justify-content: space-between;
 
-                @include responsive('large') {}
-
-
-                @include responsive('medium') {}
-
-                @include responsive('small') {
-                    font-size: 0.5em;
-                }
 
                 & * {
                     color: $secondaryColorWhite;
@@ -122,18 +79,25 @@
                     font-weight: 500;
                     font-size: 1.125em;
                     align-self: flex-end;
+                    padding-right: 1em;
 
                 }
 
                 p {
 
                     font-size: 1em;
-                    padding-left: 0;
+                    padding-left: 1em;
 
 
                     strong {
                         align-items: center;
                         font-size: 1.75em;
+
+                        @include responsive('medium') {
+
+                            font-size: 1em;
+
+                        }
                     }
                 }
 
@@ -202,32 +166,14 @@
                         justify-content: center;
                         color: $primaryColorBlack;
 
-                        @include responsive('large') {}
 
-
-                        @include responsive('medium') {}
-
-                        @include responsive('small') {
-                            $markerSize: 1em;
-                            width: $markerSize;
-                            height: $markerSize;
-                        }
                     }
                 }
 
 
 
                 .desc-cv {
-                    @include responsive('large') {}
 
-
-                    @include responsive('medium') {}
-
-                    @include responsive('small') {
-
-                        font-size: 0.8em;
-
-                    }
 
                     h4 {
                         $line-height: 1.5em;
