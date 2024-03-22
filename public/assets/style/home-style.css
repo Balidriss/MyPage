@@ -252,17 +252,20 @@ header nav menu {
 #quiz-section .quiz-container form {
   background-color: black;
   box-sizing: border-box;
-  padding: 0rem 1rem;
+  padding: 1rem;
   padding-bottom: 2rem;
   text-align: center;
   box-shadow: 0rem 0.2rem 2rem 0.2rem Black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 435px;
 }
 #quiz-section .quiz-container form .display {
   background-color: rgb(17, 17, 17);
 }
 #quiz-section .quiz-container form > * {
   margin: auto;
-  margin-top: 4rem;
 }
 #quiz-section .quiz-container form p {
   margin-top: 1rem;

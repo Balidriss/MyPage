@@ -13,7 +13,7 @@ $i = 1;
             <form class="<?php echo 'guess-' . strval($i)  ?>" method="post" action="" onsubmit="">
                 <input type='hidden' name='id' value='<?php echo strval($guess['guess_id']) ?>'>
                 <img src="<?php echo 'assets/img/quiz/guess-' . strval($i) . '.png' ?>" title="<?php echo $guess['help_message'] ?>">
-                <p class="answer">Réponse s'affiche ici</p>
+                <p class="answer"></p>
                 <p style="display:none;" class="hidden-additional-message"></p>
                 <div class="attempt-field"><input type='text' name='attempt' placeholder='Qui suis je ?'>
                     <input type='submit' value='▲' disabled>
