@@ -11,15 +11,14 @@ class Quiz {
     static quiz;
     static numberToShow = 3;
     //
+    static gap = 20;
     static positions = [];
     static currentIndex = 0;
-    // % 
+    // 
     static swipeThreshold;
-    static outPosLeft = -50;
-    static outPosRight = 150;
-    static inPos = 25;
-    static frontPos = 75;
-    static gap = 10;
+    static outPosLeft = 100;
+    static outPosRight = -100;
+    static frontPos = 95;
     //
     static ratio = 0.5;
 
@@ -29,8 +28,6 @@ class Quiz {
         this.index = index;
         this.hidden = false;
         this.element = Quiz.querySelector(Quiz.updateSelectorIndex(index));
-        this.posX = -50;
-        this.guessPosY = 0;
         if (!this.element) {
             throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${baseSelector + index}`)
         }
@@ -132,32 +129,24 @@ class Quiz {
     static dragAction(e) {
         e.preventDefault();
     }
-
-    static setWaypoints() {
-        let arrayOfPos = new Array(Quiz.quiz.length);
-        const distanceFirtLast = Math.abs(Quiz.frontPos - Quiz.inPos);
-        const gap = distanceFirtLast / Quiz.numberToShow;
-        for (let i = 1; i < arrayOfPos.length; i++) {
-            arrayOfPos[i] = Quiz.posInPx(Quiz.frontPos - Quiz.frontPos * i);
-            if (i > Quiz.numberToShow) {
-                arrayOfPos[i] = Quiz.posInPx(Quiz.outPosLeft);
-            }
-        }
-        arrayOfPos[0] = Quiz.posInPx(Quiz.outPosRight);
-        return arrayOfPos;
-    }
     static posInPx(widthPourcent) {
         return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
 
     }
+
     static update() {
-        Quiz.positions = Quiz.setWaypoints();
-        const startIndex = Quiz.currentIndex;
+        let zIndex = Quiz.quiz.length;
+        Quiz.numberToShow = Math.floor(Quiz.quizContainer.offsetWidth / Quiz.quiz[1].element.offsetWidth ?? 1);
+        console.log(Quiz.quizContainer.offsetWidth, Quiz.quiz[1].element.offsetWidth, Quiz.numberToShow);
         Quiz.quiz.forEach((guess, index) => {
             guess.show((index <= Quiz.numberToShow) && (index !== 0));
             guess.allowInput(index === 1);
-            guess.posX = Quiz.positions[startIndex + index % Quiz.positions.length];
-            //other stylings
+            guess.element.style.transform = `translate(${Quiz.frontPos + (Quiz.gap * index) - Quiz.gap}%)`;
+            guess.outLeft((index > Quiz.numberToShow));
+            guess.outRight(index === 0);
+            guess.element.style.zIndex = zIndex;
+            guess.element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
+            zIndex--;
         });
         console.log(Quiz.quiz);
     }
@@ -168,14 +157,25 @@ class Quiz {
         //apply css 
 
     }
+    //todo: extract and change to css selector
     show(show = true) {
         if (show) {
-            this.element.style.display = "block";
+            this.element.style.opacity = "1";
         } else {
-            this.element.style.display = "none";
+            this.element.style.opacity = "0";
         }
-
     }
+    outLeft(isOut = true) {
+        if (isOut) {
+            this.element.style.transform = `translate(${Quiz.outPosLeft}%)`;
+        }
+    }
+    outRight(isOut = true) {
+        if (isOut) {
+            this.element.style.transform = `translate(${Quiz.outPosRight}%)`;
+        }
+    }
+
     allowInput(allow = true) {
         if (allow) {
             this.element.style.pointerEvents = "auto";
