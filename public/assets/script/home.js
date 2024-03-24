@@ -29,7 +29,7 @@ class Quiz {
         this.hidden = false;
         this.element = Quiz.querySelector(Quiz.updateSelectorIndex(index));
         if (!this.element) {
-            throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${baseSelector + index}`)
+            throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${Quiz.baseSelector + index}`)
         }
     }
 
@@ -78,7 +78,7 @@ class Quiz {
     }
     static populate() {
         Quiz.quiz = new Array();
-        for (let i = 1; i <= Quiz.quizElements.length; i++) {
+        for (let i = 0; i < Quiz.quizElements.length; i++) {
             Quiz.quiz.push(Quiz.add(i));
         }
     }
