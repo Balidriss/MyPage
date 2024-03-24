@@ -8,7 +8,8 @@ $router->get('/contact', 'contact/create.php');
 $router->post('/contact', 'contact/store.php');
 $router->get('/submited', 'contact/success.php')->only('submited');
 $router->get('/submited', 'secret.php')->only('secret');
-
+//quiz
+$router->post('/attempt', 'guess/processor.php');
 //admin
 $router->get('/dashboard', 'admin/dashboard.php')->only('admin');
 $router->get('/clear', 'session/destroy.php')->only('admin');
