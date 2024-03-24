@@ -12,6 +12,11 @@ $container->bind('Core\Database', function () {
     return new Core\Database($dbConfig['dsn'], $dbConfig['user'], $dbConfig['password']);
 });
 
-$container->resolve('Core\Database');
+$container->bind('Core\Quiz', function () {
+    return new Core\Quiz();
+});
 
+$container->resolve('Core\Database');
+App::setContainer($container);
+$container->resolve('Core\Quiz');
 App::setContainer($container);
