@@ -5,12 +5,12 @@
             <form class="<?php echo 'guess-' . strval($i)  ?>" method="post" action="" onsubmit="">
                 <input type='hidden' name='index' value='<?php echo strval($i) ?>'>
                 <img src="<?php echo 'assets/img/quiz/guess-' . strval($i) . '.png' ?>" title="<?= $guess->helpMessage ?>">
-                <p class="answer"></p>
-                <p style="display:none;" class="hidden-additional-message"></p>
-                <div class="attempt-field"><input type='text' name='attempt' placeholder='Qui suis je ?'>
-                    <input type='submit' value='▲'>
-                </div>
-
+                <p class="answer"><?= $answers[$i] ?? '' ?></p>
+                <?php if (empty($answers[$i])) : ?>
+                    <div class="attempt-field"><input type='text' name='attempt' placeholder='Qui suis je ?'>
+                        <input type='submit' value='▲'>
+                    </div>
+                <?php endif ?>
             </form>
         <?php endforeach ?>
     </div>
@@ -23,7 +23,7 @@
         <p id="help-message">
             <?= $helpMessage ?>
         </p>
-        <p id="additional-message"><?php $additionalMessage ?>
+        <p id="additional-message"><?= $additionalMessage ?>
         </p>
         <div class="slider-buttons">
             <img class="button-left" src=<?= assetPath('img', 'fi_arrow-right.svg') ?>>

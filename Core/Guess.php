@@ -54,9 +54,9 @@ class Guess
         $guessData = [
             'id' => $this->id,
             'answer' => $this->answer,
-            'helpMessage' => $this->helpMessage,
-            'hintMessage' => $this->hintMessage,
-            'successMessage' => $this->successMessage,
+            'help_message' => $this->helpMessage,
+            'hint_message' => $this->hintMessage,
+            'success_message' => $this->successMessage,
             'success' => true,
             'attempt' => $this->attempt
         ];

@@ -2,7 +2,13 @@
 
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
-$additionalMessage = $quiz[1]->additionalMessage ?? '';
+$answers = [count($quiz)];
+
+foreach ($quiz as $index => $guess) {
+    if ($guess->load('success')) {
+        $answers[$index] = $guess->load('answer');
+    }
+}
 
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
@@ -16,6 +22,7 @@ view("index.view.php", [
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
     'quiz' => $quiz,
-    'helpMessage' => $quiz[1]->helpMessage,
-    'additionalMessage' => $additionalMessage
+    'helpMessage' => $quiz[1]->helpMessage ?? '',
+    'additionalMessage' => $quiz[1]->load('success_message') ?? '',
+    'answers' => $answers
 ]);
