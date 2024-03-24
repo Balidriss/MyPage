@@ -2,6 +2,8 @@
 
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
+$additionalMessage = $quiz[1]->additionalMessage ?? '';
+
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => assetPath('style', "home-style.css"),
@@ -14,4 +16,6 @@ view("index.view.php", [
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
     'quiz' => $quiz,
+    'helpMessage' => $quiz[1]->helpMessage,
+    'additionalMessage' => $additionalMessage
 ]);

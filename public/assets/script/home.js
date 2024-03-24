@@ -134,7 +134,11 @@ class Quiz {
         return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
 
     }
-
+    static applyText($text, $element) {
+        if ($text !== null) {
+            $element.innerHTML = $text;
+        }
+    }
     static update() {
         let zIndex = Quiz.quiz.length;
         Quiz.numberToShow = Math.floor(Quiz.quizContainer.offsetWidth / Quiz.quiz[1].element.offsetWidth ?? 1);
@@ -203,11 +207,18 @@ class Quiz {
             .then(data => {
                 console.log(data.additional_message);
                 console.log(data.answer);
+                console.log(this);
+                this.additionalMessage = data.additional_message ?? null;
+                this.answer = data.answer ?? null;
+                Quiz.applyText(this.additionalMessage, Quiz.additionalMessageElement);
+                Quiz.applyText(this.answer, this.querySelector('.answer'));
+
             })
             .catch(error => console.error('Une erreur s\'est produite:', error));
 
 
     }
+
 }
 
 class CVPart {

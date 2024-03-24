@@ -2,10 +2,10 @@
 
 namespace Core;
 
+use Core\Session;
 
 class Quiz
 {
-    public $totalAttempts = 0;
     public $quiz = [];
     public $delay = 3;
     public function __construct()
@@ -19,14 +19,5 @@ class Quiz
     public function find($index)
     {
         return $this->quiz[$index];
-    }
-    public function clear()
-    {
-        $_SESSION['quiz'] = [];
-    }
-
-    public function store($index)
-    {
-        $_SESSION['quiz'][$index] = $this->find($index);
     }
 }
