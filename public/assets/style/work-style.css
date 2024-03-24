@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   margin: 0;
   padding: 0;
@@ -48,6 +49,7 @@ section {
   display: flex;
   margin: 15rem 0;
 }
+
 @media (max-width: 992px) {
   section {
     flex-direction: column;
@@ -55,9 +57,11 @@ section {
     margin: 7rem auto;
   }
 }
+
 section:first-of-type {
   margin-top: 7rem;
 }
+
 @media (max-width: 992px) {
   section:first-of-type {
     margin-top: 2rem;
@@ -81,7 +85,7 @@ h3 {
   padding-left: 1rem;
 }
 
-article > * {
+article>* {
   margin-bottom: 1rem;
 }
 
@@ -106,7 +110,7 @@ article > * {
   margin: 1rem 0;
 }
 
-.main-text-section > p:last-of-type {
+.main-text-section>p:last-of-type {
   color: rgba(255, 255, 255, 0.64);
   font-size: 1.25rem;
   line-height: 1.875rem;
@@ -125,6 +129,7 @@ article > * {
 .link-out {
   position: relative;
 }
+
 .link-out::after {
   content: "🌎";
   padding-left: 1em;
@@ -135,35 +140,42 @@ header {
   background-color: rgba(255, 255, 255, 0.08);
   width: 100%;
 }
+
 header nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 @media (max-width: 992px) {
   header nav {
     text-align: center;
     justify-content: space-around;
   }
+
   header nav .cta {
     display: none;
   }
 }
+
 header nav li {
   padding: 1rem;
 }
+
 header nav li a {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
   font-size: 1rem;
 }
+
 header nav menu {
   display: flex;
   justify-content: space-around;
 }
+
 @media (max-width: 992px) {
-  header nav menu > li:first-of-type {
+  header nav menu>li:first-of-type {
     display: none;
   }
 }
@@ -172,24 +184,29 @@ header nav menu {
   flex-direction: column;
   justify-content: space-between;
 }
-#git-section > .cta {
+
+#git-section>.cta {
   align-self: center;
 }
+
 #git-section .title {
   text-align: center;
   margin-bottom: 5rem;
 }
+
 #git-section .git-blocks {
   display: flex;
   gap: 2.5rem;
   align-items: stretch;
   margin-bottom: 2.5rem;
 }
+
 @media (max-width: 992px) {
   #git-section .git-blocks {
     flex-direction: column;
   }
 }
+
 #git-section .git-block {
   display: flex;
   flex: 1;
@@ -200,20 +217,24 @@ header nav menu {
   align-items: center;
   margin: auto;
 }
+
 #git-section .git-block .title {
   margin-bottom: 1rem;
   align-self: flex-start;
   text-align: left;
 }
+
 #git-section .git-block .title p {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.125rem;
   letter-spacing: 0.045rem;
 }
+
 #git-section .git-block img {
   max-width: 50%;
 }
+
 #git-section .git-block .cta {
   padding: 1.5rem 4rem;
   background: rgba(255, 255, 255, 0.08);
@@ -225,14 +246,19 @@ header nav menu {
 footer {
   text-align: center;
 }
-footer > * {
+
+footer>* {
   margin-bottom: 2rem;
 }
+
 footer .socials {
   display: flex;
   justify-content: center;
 }
+
 footer .socials img {
   height: 2rem;
   margin: 0.5rem;
-}/*# sourceMappingURL=projects-style.css.map */
+}
+
+/*# sourceMappingURL=work-style.css.map */

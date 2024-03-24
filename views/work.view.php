@@ -5,7 +5,9 @@
     <div class="gradient-bg"></div>
 
     <main>
-        <h1>Project Page</h1>
+
+        <h1><?= $heading ?></h1>
+        <?php require base_path('views/partials/Home/git-section.php'); ?>
     </main>
 
     <?php require base_path('views/partials/footer.php'); ?>

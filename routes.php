@@ -1,7 +1,7 @@
 <?php
 
 $router->get('/', 'index.php');
-$router->get('/projects', 'projects.php');
+$router->get('/work', 'work.php');
 $router->get('/blog', 'blog.php');
 
 $router->get('/contact', 'contact/create.php');

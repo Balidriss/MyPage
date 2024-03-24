@@ -137,7 +137,6 @@ class Quiz {
     static update() {
         let zIndex = Quiz.quiz.length;
         Quiz.numberToShow = Math.floor(Quiz.quizContainer.offsetWidth / Quiz.quiz[1].element.offsetWidth ?? 1);
-        console.log(Quiz.quizContainer.offsetWidth, Quiz.quiz[1].element.offsetWidth, Quiz.numberToShow);
         Quiz.quiz.forEach((guess, index) => {
             guess.show((index <= Quiz.numberToShow) && (index !== 0));
             guess.allowInput(index === 1);
@@ -148,7 +147,6 @@ class Quiz {
             guess.element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
             zIndex--;
         });
-        console.log(Quiz.quiz);
     }
     checkIndex(index) {
         //

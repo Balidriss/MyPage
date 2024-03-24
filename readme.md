@@ -17,7 +17,7 @@ Quiz (redo).
 
 Landing Page.
 
-Project Page.
+Work Page.
 
 Accessibility.
 

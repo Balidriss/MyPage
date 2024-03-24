@@ -21,6 +21,10 @@ header {
 
             padding: 1rem;
 
+            @include responsive('small') {
+                padding: 0.5rem;
+            }
+
             a {
                 color: $secondaryColorWhite;
                 font-weight: 500;
@@ -39,6 +43,7 @@ header {
             }
 
         }
+
 
     }
 
