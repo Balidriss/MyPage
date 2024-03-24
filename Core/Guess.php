@@ -4,8 +4,6 @@ namespace Core;
 
 class Guess
 {
-    static $totalAttempts = 0;
-
     public $id;
     public $answer = '';
     public $helpMessage = '';
@@ -16,6 +14,10 @@ class Guess
     public function __construct($id)
     {
         $this->id = $id;
+        $guess = $this->get($id);
+        $this->answer = $guess['answer'];
+        $this->helpMessage = $guess['help_message'];
+        $this->hintMessage = $guess['hint_message'];
     }
     public function get($id)
     {
@@ -24,6 +26,7 @@ class Guess
 
     public function attempt($userAtempt, $answer)
     {
+        return $userAtempt === $answer;
     }
 
     public function store($id)
