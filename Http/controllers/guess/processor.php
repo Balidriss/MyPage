@@ -1,5 +1,4 @@
 <?php
-
 $userAttempt = $_POST['attempt'];
 $index = $_POST['index'];
 
@@ -11,4 +10,4 @@ if ($guess->attempt($userAttempt)) {
     $response = $guess->fail();
 }
 
-return $response;
+echo json_encode($response);
