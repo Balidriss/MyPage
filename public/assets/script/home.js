@@ -31,6 +31,7 @@ class Quiz {
         if (!this.element) {
             throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${Quiz.baseSelector + index}`)
         }
+        this.element.addEventListener("submit", this.send);
     }
 
     static init() {
@@ -191,13 +192,23 @@ class Quiz {
     previewsIndex() {
         return (currentIndex - 1 < 0) ? Quiz.quiz.length - 1 : currentIndex - 1;
     }
-    async send() {
-        //send attempt
+    send(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        fetch("/attempt", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.additional_message);
+                console.log(data.answer);
+            })
+            .catch(error => console.error('Une erreur s\'est produite:', error));
+
+
     }
-
-
 }
-
 
 class CVPart {
     constructor(tab, content) {

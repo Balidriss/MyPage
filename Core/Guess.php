@@ -22,9 +22,9 @@ class Guess
         $this->successMessage = $guess['success_message'];
     }
 
-    public function attempt($userAtempt, $answer)
+    public function attempt($userAtempt)
     {
-        return $userAtempt === $answer;
+        return $userAtempt === $this->answer;
     }
     public function success()
     {

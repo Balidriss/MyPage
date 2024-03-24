@@ -18,7 +18,7 @@ class Quiz
 
     public function find($index)
     {
-        return $this->quiz[$index]['id'];
+        return $this->quiz[$index];
     }
     public function clear()
     {

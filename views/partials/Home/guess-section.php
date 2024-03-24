@@ -7,7 +7,7 @@
                 <p class="answer"></p>
                 <p style="display:none;" class="hidden-additional-message"></p>
                 <div class="attempt-field"><input type='text' name='attempt' placeholder='Qui suis je ?'>
-                    <input type='submit' value='▲' disabled>
+                    <input type='submit' value='▲'>
                 </div>
 
             </form>
