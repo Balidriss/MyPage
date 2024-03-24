@@ -11,5 +11,6 @@ view("index.view.php", [
     ],
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
-    'quiz' => Core\App::resolve(Core\Quiz::class)->quiz
+    'quiz' => Core\App::resolve(Core\Quiz::class)->quiz,
+    'i' => 1
 ]);

@@ -1,12 +1,3 @@
-<?php
-
-if (!isset($_SESSION['GUESSES'])) {
-    $_SESSION['GUESSES'] = [];
-}
-
-
-$i = 1;
-?>
 <section id="quiz-section">
     <div class="quiz-container">
         <?php foreach ($quiz as $guess) : ?>
