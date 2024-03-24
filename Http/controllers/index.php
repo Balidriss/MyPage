@@ -14,5 +14,4 @@ view("index.view.php", [
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
     'quiz' => $quiz,
-    'i' => 1
 ]);
