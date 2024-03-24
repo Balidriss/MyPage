@@ -1,9 +1,14 @@
 <?php
 
 $userAttempt = $_POST['attempt'];
-$id = $_POST['id'];
+$index = $_POST['index'];
 
+$guess = Core\App::resolve(Core\Quiz::class)->find($index);
 
+if ($guess->attempt($userAttempt)) {
+    $response = $guess->success();
+} else {
+    $response = $guess->fail();
+}
 
-$response = [];
 return $response;

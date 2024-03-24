@@ -1,5 +1,7 @@
 <?php
 
+$quiz = Core\App::resolve(Core\Quiz::class)->quiz;
+
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => assetPath('style', "home-style.css"),
@@ -11,6 +13,6 @@ view("index.view.php", [
     ],
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
-    'quiz' => Core\App::resolve(Core\Quiz::class)->quiz,
+    'quiz' => $quiz,
     'i' => 1
 ]);
