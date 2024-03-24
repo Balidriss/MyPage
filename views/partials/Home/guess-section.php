@@ -4,7 +4,7 @@ if (!isset($_SESSION['GUESSES'])) {
     $_SESSION['GUESSES'] = [];
 }
 
-$quiz = Core\App::resolve(Core\Database::class)->query('select * from guesses')->get();
+
 $i = 1;
 ?>
 <section id="quiz-section">
