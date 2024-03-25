@@ -1,25 +1,38 @@
+function debounce(func, waitTime) {
+    let lastCallTime = 0;
+
+    return function () {
+        const currentTime = Date.now();
+        if (currentTime - lastCallTime > waitTime) {
+            func.apply(this, arguments);
+            lastCallTime = currentTime;
+        }
+    };
+}
 class Quiz {
-    //elements
+    //element
     static hintMessageElement;
     static helpMessageElement;
     static sliderLeft;
     static sliderRight;
     static quizContainer;
     static quizElements;
+    //string
     static baseSelector = ".guess-";
-    //
+    //array
     static quiz;
+    //int
     static numberToShow = 3;
-    //
-    static gap = 20;
     static currentIndex = 0;
-    // 
+    // %
+    static gap = 20;
     static swipeThreshold;
     static outPosLeft = 1000;
     static outPosRight = -1000;
     static frontPos = 5;
-    //
-    static ratio = 0.5;
+    //sec
+    static delay = 1;
+
 
 
 
@@ -87,12 +100,14 @@ class Quiz {
         }
     }
     static assignSliderEvents() {
+        const debouncedSlide = debounce(Quiz.slide, 1000);
+
         Quiz.sliderLeft.addEventListener('click', () => {
-            Quiz.slide('left');
+            debouncedSlide('left');
         });
 
         Quiz.sliderRight.addEventListener('click', () => {
-            Quiz.slide('right');
+            debouncedSlide('right');
         });
 
         Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
@@ -109,12 +124,12 @@ class Quiz {
         switch (direction) {
             case 'right':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(guess.nextIndex(), length);
+                    guess.move(guess.previewsIndex(), length);
                 });
                 break;
             case 'left':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(guess.previewsIndex(), length);
+                    guess.move(guess.nextIndex(), length);
                 });
                 break;
             default:
