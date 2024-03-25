@@ -44,6 +44,16 @@ a {
   color: currentColor;
 }
 
+.phone-only {
+  display: none;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .phone-only {
+    display: block;
+  }
+}
+
 section {
   display: flex;
   margin: 15rem 0;
@@ -239,7 +249,7 @@ header nav menu {
 @media (max-width: 992px) {
   #quiz-section article {
     width: 90%;
-    min-height: 31em;
+    min-height: 10rem;
     padding-left: 0;
   }
 }

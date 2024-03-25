@@ -49,6 +49,15 @@ a {
     color: currentColor;
 }
 
+.phone-only {
+    display: none;
+    text-align: center;
+
+    @include responsive('medium') {
+        display: block;
+    }
+}
+
 section {
     display: flex;
     margin: 15rem 0;

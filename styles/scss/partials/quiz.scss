@@ -23,7 +23,7 @@
         @include responsive('medium') {
 
             width: 90%;
-            min-height: $guesscardHeight + 1em;
+            min-height: 10rem;
             padding-left: 0;
         }
     }

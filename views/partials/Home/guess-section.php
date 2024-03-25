@@ -25,6 +25,7 @@
         </p>
         <p id="hint-message"><?= $hintMessages[1] ?? '' ?>
         </p>
+        <p class="phone-only" style="font-size:0.5rem;color:gray;text-transform:uppercase;letter-spacing: 0.1em;">! le défilement tactile n'est pas encore opérationnel !</p>
         <div class="slider-buttons">
             <img class="button-left" src=<?= assetPath('img', 'fi_arrow-right.svg') ?>>
             <img class="button-right" src=<?= assetPath('img', 'fi_arrow-right.svg') ?>>
