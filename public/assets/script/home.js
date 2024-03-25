@@ -12,13 +12,12 @@ class Quiz {
     static numberToShow = 3;
     //
     static gap = 20;
-    static positions = [];
     static currentIndex = 0;
     // 
     static swipeThreshold;
-    static outPosLeft = 100;
-    static outPosRight = -100;
-    static frontPos = 95;
+    static outPosLeft = 1000;
+    static outPosRight = -1000;
+    static frontPos = 5;
     //
     static ratio = 0.5;
 
@@ -85,11 +84,12 @@ class Quiz {
     }
     static assignSliderEvents() {
         Quiz.sliderLeft.addEventListener('click', () => {
-            currentIndex = Quiz.slide('left');
+            Quiz.slide('left');
         });
 
         Quiz.sliderRight.addEventListener('click', () => {
-            currentIndex = Quiz.slide('right');
+            Quiz.slide('right');
+
         });
 
         Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
@@ -102,21 +102,21 @@ class Quiz {
     static add(index) {
         return new Quiz(index);
     }
-    static slide(direction) {
+    static slide(direction, length) {
         switch (direction) {
-            case 'Right':
+            case 'right':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(Quiz.positions[guess.nextIndex()]);
+                    guess.move(guess.nextIndex(), length);
                 });
                 break;
-            case 'Left':
+            case 'left':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(Quiz.positions[guess.previewsIndex()]);
+                    guess.move(guess.previewsIndex(), length);
                 });
                 break;
             default:
                 Quiz.quiz.forEach(guess, i => {
-                    guess.move(Quiz.positions[i]);
+                    guess.move(i);
                 });
 
         }
@@ -140,25 +140,25 @@ class Quiz {
         }
     }
     static update() {
+        Quiz.quiz.sort((a, b) => a.index - b.index)
         let zIndex = Quiz.quiz.length;
         Quiz.numberToShow = Math.floor(Quiz.quizContainer.offsetWidth / Quiz.quiz[1].element.offsetWidth ?? 1);
-        Quiz.quiz.forEach((guess, index) => {
-            guess.show((index <= Quiz.numberToShow) && (index !== 0));
-            guess.allowInput(index === 1);
-            guess.element.style.transform = `translate(${Quiz.frontPos + (Quiz.gap * index) - Quiz.gap}%)`;
-            guess.outLeft((index > Quiz.numberToShow));
-            guess.outRight(index === 0);
-            guess.element.style.zIndex = zIndex;
-            guess.element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
+        for (let index = 0; index < Quiz.quiz.length; index++) {
+            Quiz.quiz[index].show((index <= Quiz.numberToShow) && (index !== 0));
+            Quiz.quiz[index].allowInput(index === 1);
+            Quiz.quiz[index].element.style.right = Quiz.frontPos + (Quiz.gap * index) - Quiz.gap + "%";
+            Quiz.quiz[index].outLeft((index > Quiz.numberToShow));
+            Quiz.quiz[index].outRight(index === 0);
+            Quiz.quiz[index].element.style.zIndex = zIndex;
+            Quiz.quiz[index].element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
             zIndex--;
-        });
+        };
     }
     checkIndex(index) {
         //
     }
-    move(length) {
-        //apply css 
-
+    move(nextIndex, length) {
+        this.index = nextIndex;
     }
     //todo: extract and change to css selector
     show(show = true) {
@@ -170,12 +170,12 @@ class Quiz {
     }
     outLeft(isOut = true) {
         if (isOut) {
-            this.element.style.transform = `translate(${Quiz.outPosLeft}%)`;
+            this.element.style.right = Quiz.outPosLeft + "%";
         }
     }
     outRight(isOut = true) {
         if (isOut) {
-            this.element.style.transform = `translate(${Quiz.outPosRight}%)`;
+            this.element.style.right = Quiz.outPosRight + "%";
         }
     }
 
@@ -190,11 +190,11 @@ class Quiz {
     }
 
     nextIndex() {
-        return (currentIndex + 1 >= Quiz.quiz.length) ? 0 : currentIndex + 1;
+        return (this.index + 1 >= Quiz.quiz.length) ? 0 : this.index + 1;
     }
 
     previewsIndex() {
-        return (currentIndex - 1 < 0) ? Quiz.quiz.length - 1 : currentIndex - 1;
+        return (this.index - 1 < 0) ? Quiz.quiz.length - 1 : this.index - 1;
     }
     send(event) {
         event.preventDefault();
@@ -205,14 +205,10 @@ class Quiz {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data.additional_message);
-                console.log(data.answer);
-                console.log(this);
                 this.additionalMessage = data.additional_message ?? null;
                 this.answer = data.answer ?? null;
                 Quiz.applyText(this.additionalMessage, Quiz.additionalMessageElement);
                 Quiz.applyText(this.answer, this.querySelector('.answer'));
-
             })
             .catch(error => console.error('Une erreur s\'est produite:', error));
 
@@ -271,6 +267,7 @@ window.addEventListener("load", () => {
         CV.init();
         Quiz.init();
         setInterval(Quiz.update, 100);
+
     }
     catch (error) {
         console.error(error);

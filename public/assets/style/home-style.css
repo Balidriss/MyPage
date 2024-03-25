@@ -231,7 +231,7 @@ header nav menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 20rem;
+  min-height: 30rem;
   width: 40%;
   padding-left: 10rem;
 }
@@ -243,12 +243,14 @@ header nav menu {
   }
 }
 #quiz-section .quiz-container {
+  position: relative;
   order: 0;
   display: flex;
   flex-direction: row-reverse;
   overflow-x: hidden;
   align-items: flex-start;
   width: 60%;
+  min-height: 30rem;
 }
 @media (max-width: 992px) {
   #quiz-section .quiz-container {
@@ -257,6 +259,10 @@ header nav menu {
   }
 }
 #quiz-section .quiz-container form {
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+  right: 0;
+  width: 15rem;
   background-color: black;
   box-sizing: border-box;
   padding: 1rem;
