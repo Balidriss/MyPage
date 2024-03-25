@@ -5,7 +5,7 @@ $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 $answers = [count($quiz)];
 
 foreach ($quiz as $index => $guess) {
-    if ($guess->load('success')) {
+    if ($guess->load('success') !== null) {
         $answers[$index] = $guess->load('answer');
     }
 }
