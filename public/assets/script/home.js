@@ -1,6 +1,6 @@
 class Quiz {
     //elements
-    static additionalMessageElement;
+    static hintMessageElement;
     static helpMessageElement;
     static sliderLeft;
     static sliderRight;
@@ -31,10 +31,14 @@ class Quiz {
             throw new Error(`quiz element failed to be assign to instance guess #${index} with expected selector : ${Quiz.baseSelector + index}`)
         }
         this.element.addEventListener("submit", this.send);
+        this.answer = null;
+        this.hintMessage = '';
+        this.successMessage = null;
+        this.helpMessage = this.element.querySelector('img').getAttribute("title");
     }
 
     static init() {
-        Quiz.additionalMessageElement = document.getElementById("additional-message");
+        Quiz.hintMessageElement = document.getElementById("hint-message");
         Quiz.helpMessageElement = document.getElementById("help-message");
         Quiz.sliderLeft = document.querySelector('.button-left');
         Quiz.sliderRight = document.querySelector('.button-right');
@@ -43,8 +47,8 @@ class Quiz {
         Quiz.populate();
         Quiz.assignSliderEvents();
         Quiz.update();
-        if (!Quiz.additionalMessageElement) {
-            throw new Error("Couldn't find additional message element");
+        if (!Quiz.hintMessageElement) {
+            throw new Error("Couldn't find hint message element");
         }
 
         if (!Quiz.helpMessageElement) {
@@ -89,7 +93,6 @@ class Quiz {
 
         Quiz.sliderRight.addEventListener('click', () => {
             Quiz.slide('right');
-
         });
 
         Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
@@ -153,6 +156,9 @@ class Quiz {
             Quiz.quiz[index].element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
             zIndex--;
         };
+        Quiz.applyText(Quiz.quiz[1].hintMessage, Quiz.hintMessageElement);
+        Quiz.applyText(Quiz.quiz[1].helpMessage, Quiz.helpMessageElement);
+        Quiz.applyText(Quiz.quiz[1].answer, Quiz.quiz[1].element.querySelector('.answer'));
     }
     checkIndex(index) {
         //
@@ -205,10 +211,18 @@ class Quiz {
         })
             .then(response => response.json())
             .then(data => {
-                this.additionalMessage = data.additional_message ?? null;
-                this.answer = data.answer ?? null;
-                Quiz.applyText(this.additionalMessage, Quiz.additionalMessageElement);
-                Quiz.applyText(this.answer, this.querySelector('.answer'));
+                Quiz.quiz[1].hintMessage = data.hint_message ?? null;
+                Quiz.applyText(Quiz.quiz[1].hintMessage, Quiz.hintMessageElement);
+                if (data.answer !== undefined && data.answer !== null && data.answer !== '') {
+                    Quiz.quiz[1].answer = data.answer ?? null;
+                    Quiz.quiz[1].successMessage = data.hint_message ?? null;
+                    Quiz.applyText(Quiz.quiz[1].answer, this.querySelector('.answer'));
+                    this.querySelector('.attempt-field').remove();
+                    console.log(Quiz.quiz[1].successMessage);
+                    Quiz.applyText(Quiz.quiz[1].successMessage, this.querySelector('.success-message'));
+
+                }
+
             })
             .catch(error => console.error('Une erreur s\'est produite:', error));
 

@@ -63,13 +63,13 @@ class Guess
 
         // Store the array in the session
         $this->store($guessData);
-        return ['additional_message' => $this->successMessage, 'answer' => $this->answer];
+        return ['hint_message' => $this->successMessage, 'answer' => $this->answer];
     }
 
     public function fail()
     {
         $this->save('attempt', $this->load('attempt') + 1);
         Session::put('total_attempts', (Session::get('total_attempts') + 1) ?? 1);
-        return ['additional_message' => $this->hintMessage];
+        return ['hint_message' => $this->hintMessage];
     }
 }
