@@ -12,4 +12,4 @@ $router->get('/submited', 'secret.php')->only('secret');
 $router->post('/attempt', 'guess/processor.php');
 //admin
 $router->get('/dashboard', 'admin/dashboard.php')->only('admin');
-$router->get('/clear', 'session/destroy.php')->only('admin');
+$router->get('/clear', 'session/destroy.php');
