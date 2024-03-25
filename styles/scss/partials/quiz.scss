@@ -1,8 +1,8 @@
 #quiz-section {
-
-
+    $guesscardHeight : 30em;
     align-items: center;
     justify-content: center;
+    min-height: $guesscardHeight + 1em;
 
     @include responsive('medium') {
 
@@ -16,14 +16,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 30rem;
-        width: 40%;
+        width: 30%;
         padding-left: 10rem;
+        min-height: $guesscardHeight + 1em;
 
         @include responsive('medium') {
 
             width: 90%;
-            height: 15rem;
+            min-height: $guesscardHeight + 1em;
             padding-left: 0;
         }
     }
@@ -35,8 +35,10 @@
         flex-direction: row-reverse;
         overflow-x: hidden;
         align-items: flex-start;
-        width: 60%;
-        min-height: 30rem;
+        width: 70%;
+        min-height: $guesscardHeight;
+        height: 100%;
+
 
         @include responsive('medium') {
 
@@ -51,7 +53,7 @@
             transition: all ease-in-out 0.5s;
             position: absolute;
             right: 0;
-            width: 15rem;
+            width: 17em;
             background-color: black;
             box-sizing: border-box;
             padding: 1rem;
@@ -61,20 +63,13 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            max-height: 435px;
-
-            .display {
-                background-color: $primaryColorBlack;
-            }
+            height: $guesscardHeight;
 
             &>* {
                 margin: auto;
             }
 
-            p {
-                margin-top: 1rem;
-                margin: 2rem;
-            }
+            p {}
 
             .answer {
                 color: $primaryColorOrange;
@@ -123,7 +118,7 @@
             }
 
             img {
-                width: 200px;
+                width: 15em;
                 filter: grayscale(1);
             }
         }
@@ -131,10 +126,12 @@
 
 
     .slider-buttons {
+        $guessImgWidth: 15em;
         display: flex;
         gap: 2rem;
         margin-top: 5rem;
-        width: 100%;
+        width: $guessImgWidth;
+        max-height: $guessImgWidth;
 
         @include responsive('medium') {
 

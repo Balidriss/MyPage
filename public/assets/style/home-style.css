@@ -219,6 +219,7 @@ header nav menu {
 #quiz-section {
   align-items: center;
   justify-content: center;
+  min-height: 31em;
 }
 @media (max-width: 992px) {
   #quiz-section {
@@ -231,14 +232,14 @@ header nav menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 30rem;
-  width: 40%;
+  width: 30%;
   padding-left: 10rem;
+  min-height: 31em;
 }
 @media (max-width: 992px) {
   #quiz-section article {
     width: 90%;
-    height: 15rem;
+    min-height: 31em;
     padding-left: 0;
   }
 }
@@ -249,8 +250,9 @@ header nav menu {
   flex-direction: row-reverse;
   overflow-x: hidden;
   align-items: flex-start;
-  width: 60%;
-  min-height: 30rem;
+  width: 70%;
+  min-height: 30em;
+  height: 100%;
 }
 @media (max-width: 992px) {
   #quiz-section .quiz-container {
@@ -262,7 +264,7 @@ header nav menu {
   transition: all ease-in-out 0.5s;
   position: absolute;
   right: 0;
-  width: 15rem;
+  width: 17em;
   background-color: black;
   box-sizing: border-box;
   padding: 1rem;
@@ -272,17 +274,10 @@ header nav menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: 435px;
-}
-#quiz-section .quiz-container form .display {
-  background-color: rgb(17, 17, 17);
+  height: 30em;
 }
 #quiz-section .quiz-container form > * {
   margin: auto;
-}
-#quiz-section .quiz-container form p {
-  margin-top: 1rem;
-  margin: 2rem;
 }
 #quiz-section .quiz-container form .answer {
   color: rgb(252, 109, 38);
@@ -323,14 +318,15 @@ header nav menu {
   color: rgb(0, 212, 252);
 }
 #quiz-section .quiz-container form img {
-  width: 200px;
+  width: 15em;
   filter: grayscale(1);
 }
 #quiz-section .slider-buttons {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
-  width: 100%;
+  width: 15em;
+  max-height: 15em;
 }
 @media (max-width: 992px) {
   #quiz-section .slider-buttons {
