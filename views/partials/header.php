@@ -14,7 +14,7 @@
             <li><a href="/#git-section">Git</a></li>
             <li><a href="/work">Travaux</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/#about-section">About</a></li>
+            <li><a href="/#about-section">À propos</a></li>
         </menu>
         <a href="/contact" class="cta">
             Contactez-moi
