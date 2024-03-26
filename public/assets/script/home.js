@@ -100,7 +100,7 @@ class Quiz {
         }
     }
     static assignSliderEvents() {
-        const debouncedSlide = debounce(Quiz.slide, 1000);
+        const debouncedSlide = debounce(Quiz.slide, 500);
 
         Quiz.sliderLeft.addEventListener('click', () => {
             debouncedSlide('left');
@@ -226,11 +226,14 @@ class Quiz {
         })
             .then(response => response.json())
             .then(data => {
+                if (data.error) {
+                    return;
+                }
                 Quiz.quiz[1].hintMessage = data.hint_message ?? null;
                 Quiz.applyText(Quiz.quiz[1].hintMessage, Quiz.hintMessageElement);
                 if (data.answer !== undefined && data.answer !== null && data.answer !== '') {
                     Quiz.quiz[1].answer = data.answer ?? null;
-                    Quiz.quiz[1].successMessage = data.hint_message ?? null;
+                    Quiz.quiz[1].successMessage = data.success_message ?? null;
                     Quiz.applyText(Quiz.quiz[1].answer, this.querySelector('.answer'));
                     this.querySelector('.attempt-field').remove();
                     console.log(Quiz.quiz[1].successMessage);

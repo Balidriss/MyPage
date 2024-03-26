@@ -63,7 +63,7 @@ class Guess
 
         // Store the array in the session
         $this->store($guessData);
-        return ['hint_message' => $this->successMessage, 'answer' => $this->answer];
+        return ['success_message' => $this->successMessage, 'answer' => $this->answer];
     }
 
     public function fail()
