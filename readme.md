@@ -1,48 +1,31 @@
-lien temporaire : https://ibproject.go.yo.fr/
+# Visit the website [IB](https://ibproject.go.yo.fr/) .
+## No framework PHP8.2 project, will get updated frequently.
+## Using XAMP on local.
 
-No framework PHP8.2 project, will get updated frequently.
-Using XAMP on local.
-
-Currently redoing the quiz game.
-To make it cleaner and using a swipe system.
+**Currently doing a landing page and/with qr code**
 
 Done: 
-Home Page.
-Responsive.
-Custom router.
+* Home Page. |
+* Responsive. |
+* Custom router. |
+* Quiz system. |
 
 TODO :
 
-Quiz (redo).
-
-Landing Page.
-
-Work Page.
-
-Accessibility.
-
-Cleaner Responsive with js.
-
-Contact page.
-
-Fictif Blog Page.
-
-Security pass on db request.
-
-optimize assets + do quiz
-
-Contact Page (enable storing)
-
-Production.
-
-Admin page.
-
-English <> French
-
-Nightmode
-
-CV dashboard.
-
-Blog dashboard.
-
-Blog Page.
+* Landing Page. |
+* Work Page. |
+* Enable Quiz swiping |
+* Accessibility. |
+* Cleaner Responsive with js. |
+* Contact page. |
+* Fictif Blog Page. |
+* Security pass on db request. |
+* optimize assets + do quiz |
+* Contact Page (enable storing) |
+* Production. |
+* Admin page. |
+* English <> French |
+* Nightmode |
+* CV dashboard. |
+* Blog dashboard. |
+* Blog Page. |
