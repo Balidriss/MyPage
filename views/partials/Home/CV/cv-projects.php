@@ -1,13 +1,13 @@
 <article id="projects" class="">
     <h3>Travaux</h3>
-    <div class="grid-cv">
+    <div class="grid">
         <div class="date">
             Actuellement
         </div>
         <div class="timeline">
             <span class="marker"></span>
         </div>
-        <div class="desc-cv">
+        <div class="desc">
             <h4>IB-Projects</h4>
             <h5>Site personel / PortFolio en ligne - Autoformation</h5>
             <p>Réalisation d'un site utilisant PHP et MySQL.</p>
@@ -20,7 +20,7 @@
         <div class="timeline">
             <span class="marker"></span>
         </div>
-        <div class="desc-cv">
+        <div class="desc">
             <h4><a href="https://ib-page.000webhostapp.com/" class="link-out">Notes Manager</a></h4>
             <h5>Création de pense bête - <a href="https://gitlab.com/ibalijon/Notes-manager">Autoformation</a></h5>
             <p>Réalisation en ligne d'un site de création de textes avec PHP et requete SQL</p>
@@ -33,7 +33,7 @@
         <div class="timeline">
             <span class="marker"></span>
         </div>
-        <div class="desc-cv">
+        <div class="desc">
             <h4><a href="https://balidriss.github.io/Salon-Du-Vin_Web-Statique/" class="link-out">Salon Du Vin (Fictif)</a></h4>
             <h5>Projet Technique de séléction - <a href="https://humanbooster.com/">Human Booster</a> x <a href="https://www.coqpit.fr/">Coqpit</a></h5>
             <p>Réalisation d'une page statique à partir d'une maquette Figma</p>
@@ -60,7 +60,7 @@
         <div class="timeline">
             <span class="marker"></span>
         </div>
-        <div class="desc-cv">
+        <div class="desc">
             <h4><a href="https://balidriss.github.io/SITE/" class="link-out">Mon Site</a></h4>
             <h5>Site personel - Autoformation</h5>
             <p>Réalisation d'un site utilisant HTML CSS JS.</p>

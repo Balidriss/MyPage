@@ -132,7 +132,7 @@
                 display: block;
             }
 
-            .grid-cv {
+            .grid {
                 display: grid;
                 grid-template-columns: 0.20fr 0.20fr 0.70fr;
 
@@ -168,32 +168,6 @@
 
 
                     }
-                }
-
-
-
-                .desc-cv {
-
-
-                    h4 {
-                        $line-height: 1.5em;
-                        $font-size: 1.125em;
-                        text-transform: none;
-                        margin: ($font-size - $line-height) 0 0.5em 0;
-                        line-height: 1.5em;
-                        font-size: 1.125em;
-                    }
-
-                    h5 {
-                        margin: 0.5em 0;
-                    }
-
-                    p {
-                        font-size: 1em;
-                        color: $secondaryColorWhite;
-                        margin-bottom: 1em;
-                    }
-
                 }
             }
         }

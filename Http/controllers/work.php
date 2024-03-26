@@ -6,7 +6,6 @@ view("work.view.php", [
     [
         'gitlab' => assetPath('img', "gitlab.svg"),
         'github' => assetPath('img', "github.svg"),
-        'work' => assetPath('img', "balidriss.png")
     ],
     'js' => assetPath('script', "work.js"),
     'heading' => 'Mes travaux'
