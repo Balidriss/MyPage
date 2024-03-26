@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 function dd($value)
 {
     echo "<pre>";
@@ -71,4 +73,13 @@ function isProd()
 {
     $config = require base_path('Env.php');
     return $config['isProd'];
+}
+
+function timePassed($key, $time)
+{
+    return $time - ($_SESSION['time'][$key] ?? 0);
+}
+function storeTime($key)
+{
+    $_SESSION['time'][$key] = time();
 }
