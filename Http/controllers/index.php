@@ -1,5 +1,4 @@
 <?php
-
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
 $answers = [count($quiz)];
