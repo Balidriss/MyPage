@@ -1,3 +1,24 @@
+<?php
+
+use Core\App;
+use Core\Database;
+
+$formations = App::resolve(Database::class)->query("SELECT *
+FROM formations
+ORDER BY date_end DESC;")->get();
+// $professions = App::resolve(Database::class)->query("SELECT *
+// FROM professions
+// ORDER BY date_end DESC;")->get();
+// $projects = App::resolve(Database::class)->query("SELECT *
+// FROM works
+// ORDER BY date_end DESC;")->get();
+
+$tabLastDate = [];
+
+$periodDate = periodFormat($formations[0]['date_end'], 'french');
+$tabLastDate[0] = '<strong>' . $periodDate['month'] . '</strong></br>' . $periodDate['year'];
+
+?>
 <section id="cv-section">
     <article class="main-text-section">
         <div class="title">
@@ -15,8 +36,7 @@
         <div class="tabs-cv">
             <div class="tab-cv formations show">
                 <h3>Formations</h3>
-                <p><strong>Janvier</strong></br>
-                    2024</p>
+                <p><?= $tabLastDate[0] ?></p>
             </div>
             <div class="tab-cv professions">
                 <h3>Professions</h3>

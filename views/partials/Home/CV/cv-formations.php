@@ -77,7 +77,7 @@
             <span class="marker"></span>
         </div>
         <div class="desc">
-            <h4>BTS Génie optique photonique,</h4>
+            <h4>BTS Génie optique photonique</h4>
             <h5>André Argouges - Grenoble (38)</h5>
             <p>Formation technique dans l'optique géométrique et ondulatoire, métrologie,théorèmes
                 physiques et mécaniques.</p>
