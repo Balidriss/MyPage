@@ -2,6 +2,18 @@
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
 $answers = [count($quiz)];
+$tabRecent = [];
+$formations = (new Core\CV())->formations;
+$professions = (new Core\CV())->professions;
+$projects = (new Core\CV())->projects;
+
+$recentFormation = dateFormat($formations[0], true) ?? dateFormat($formations[0], true);
+$recentProfession = dateFormat($professions[0], true) ?? dateFormat($professions[0], true);
+$recentProject = dateFormat($projects[0], true) ?? dateFormat($projects[1], true);
+
+$tabRecents[0] = $recentFormation;
+$tabRecents[1] = $recentProfession;
+$tabRecents[2] = $recentProject;
 
 foreach ($quiz as $index => $guess) {
     if ($guess->load('success') !== null) {
@@ -12,6 +24,9 @@ foreach ($quiz as $index => $guess) {
     }
     $helpMessages[$index] = $guess->helpMessage;
 }
+
+
+
 
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
@@ -28,5 +43,9 @@ view("index.view.php", [
     'helpMessages' => $helpMessages ?? '',
     'hintMessages' => $hintMessages ?? '',
     'successMessages' => $successMessages ?? '',
-    'answers' => $answers
+    'answers' => $answers,
+    'formations' => $formations,
+    'professions' => $professions,
+    'projects' => $projects,
+    'tabRecents' => $tabRecents
 ]);

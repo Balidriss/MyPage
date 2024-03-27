@@ -80,16 +80,8 @@ function storeTime($key)
     $_SESSION['time'][$key] = time();
 }
 
-function periodFormat($date_db, $lang = 'french')
+function dateFormat($object, $isTab = false)
 {
-    $date = DateTime::createFromFormat('Y-m-d', $date_db);
-
-    if (!$date) {
-        return "Invalid date format";
-    }
-
-
-
     $monthTranslations = array(
         'January' => 'Janvier',
         'February' => 'Février',
@@ -105,10 +97,31 @@ function periodFormat($date_db, $lang = 'french')
         'December' => 'Décembre'
     );
 
-    $month = $date->format('F');
-    $year = $date->format('Y');
-    $month = $lang === 'french' ? $monthTranslations[$month] : $month;
-    $result = ['month' => $month, 'year' => $year];
+    $dates = ['date_end' => $object['date_end'], 'date_start' => $object['date_start']];
+    $part = [];
+    foreach ($dates as $index => $date) {
+        $date = DateTime::createFromFormat('Y-m-d', $date);
+        $month = $date->format('F');
+        $year = $date->format('Y');
+        $month = $monthTranslations[$month];
 
+        if ($isTab) {
+            if ($year > date('Y')) {
+                return null;
+            } else {
+                return '<strong>' . $month . '</strong></br>' . $year;
+            }
+        } else {
+
+            if ($year < 2020 && $year > 2014) {
+                $part[$index] = 'Intérim';
+            } else if ($year > date('Y')) {
+                $part[$index] = 'Actuellement';
+            } else {
+                $part[$index] = $month . ' ' . $year . ' ';
+            }
+        }
+    }
+    $result = $part['date_end'] === $part['date_start'] ? $part["date_end"] : $part["date_end"] . ' - ' . $part["date_start"];
     return $result;
 }
