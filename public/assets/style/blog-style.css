@@ -57,11 +57,11 @@ a {
 section {
   display: flex;
   margin: 15rem 0;
+  width: 90%;
 }
 @media (max-width: 992px) {
   section {
     flex-direction: column;
-    width: 90%;
     margin: 7rem auto;
   }
 }
