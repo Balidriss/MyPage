@@ -50,10 +50,6 @@ function assetPath($type, $name)
 {
     return "/assets/{$type}/{$name}";
 }
-function getGuessNmbPath($guessnmb)
-{
-    return urlencode("/assets/img/guess/guess-{$guessnmb}.png");
-}
 
 function redirect($path)
 {
@@ -82,4 +78,37 @@ function timePassed($key, $time)
 function storeTime($key)
 {
     $_SESSION['time'][$key] = time();
+}
+
+function periodFormat($date_db, $lang = 'french')
+{
+    $date = DateTime::createFromFormat('Y-m-d', $date_db);
+
+    if (!$date) {
+        return "Invalid date format";
+    }
+
+
+
+    $monthTranslations = array(
+        'January' => 'Janvier',
+        'February' => 'Février',
+        'March' => 'Mars',
+        'April' => 'Avril',
+        'May' => 'Mai',
+        'June' => 'Juin',
+        'July' => 'Juillet',
+        'August' => 'Août',
+        'September' => 'Septembre',
+        'October' => 'Octobre',
+        'November' => 'Novembre',
+        'December' => 'Décembre'
+    );
+
+    $month = $date->format('F');
+    $year = $date->format('Y');
+    $month = $lang === 'french' ? $monthTranslations[$month] : $month;
+    $result = ['month' => $month, 'year' => $year];
+
+    return $result;
 }
