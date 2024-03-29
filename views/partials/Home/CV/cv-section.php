@@ -8,7 +8,7 @@
         <p><strong>Curieux et créatif</strong>, je recherche un environnement stimulant pour accroître mes talents de développeur et participer à la réalisation de projets.</p>
         <div class="download-button-container">
             <p id="download-description"></p>
-            <a href=<?= assetPath('download', 'CV_Dev_Web_(numerique&print).pdf') ?> class="cta" download>Télécharger</a>
+            <a href=<?= $cvDownload ?> class="cta" download>Télécharger</a>
         </div>
     </article>
     <div class="cv-container">

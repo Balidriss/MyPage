@@ -1,6 +1,8 @@
 <?php
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
+$cvDownload = assetPath('download', 'CV_Balijon(numerique&print).pdf');
+
 $answers = [count($quiz)];
 $tabRecent = [];
 $formations = (new Core\CV())->formations;
@@ -34,7 +36,7 @@ view("index.view.php", [
     [
         'gitlab' => assetPath('img', "gitlab.svg"),
         'github' => assetPath('img', "github.svg"),
-        'work' => assetPath('img', "balidriss.png")
+        'work' => assetPath('img', "qrcodeblue.png")
     ],
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
@@ -43,6 +45,7 @@ view("index.view.php", [
     'hintMessages' => $hintMessages ?? '',
     'successMessages' => $successMessages ?? '',
     'answers' => $answers,
+    'cvDownload' => $cvDownload,
     'formations' => $formations,
     'professions' => $professions,
     'projects' => $projects,
