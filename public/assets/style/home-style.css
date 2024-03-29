@@ -267,7 +267,7 @@ header nav menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30%;
+  width: 25%;
   padding-left: 10rem;
   min-height: 31em;
 }
@@ -285,7 +285,7 @@ header nav menu {
   flex-direction: row-reverse;
   overflow-x: hidden;
   align-items: flex-start;
-  width: 70%;
+  width: 75%;
   min-height: 30em;
   height: 100%;
 }
