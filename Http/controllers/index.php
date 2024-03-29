@@ -27,7 +27,6 @@ foreach ($quiz as $index => $guess) {
 
 
 
-
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => assetPath('style', "home-style.css"),
@@ -47,5 +46,5 @@ view("index.view.php", [
     'formations' => $formations,
     'professions' => $professions,
     'projects' => $projects,
-    'tabRecents' => $tabRecents
+    'tabRecents' => $tabRecents,
 ]);

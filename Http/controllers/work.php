@@ -1,4 +1,8 @@
 <?php
+$projects = (new Core\CV())->projects;
+$tags = 'tag-to-do';
+
+
 view("work.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => assetPath('style', "work-style.css"),
@@ -8,5 +12,7 @@ view("work.view.php", [
         'github' => assetPath('img', "github.svg"),
     ],
     'js' => assetPath('script', "work.js"),
-    'heading' => 'Mes travaux'
+    'heading' => 'Mes travaux',
+    'projects' => $projects,
+    'tags' => $tags
 ]);
