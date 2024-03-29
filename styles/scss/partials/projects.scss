@@ -6,7 +6,7 @@ h1 {
 .all-work {
 
     margin: 1em auto;
-    justify-content: center;
+
     display: flex;
     flex-wrap: wrap;
 
@@ -22,7 +22,7 @@ h1 {
     }
 
     h3 {
-        font-size: 0.5em;
+        font-size: 0.6em;
         line-height: 1.2em;
         color: $primaryColorBlue;
     }

@@ -196,7 +196,7 @@ header nav li {
 header nav li a {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 header nav menu {
   display: flex;
@@ -215,7 +215,6 @@ h1 {
 
 .all-work {
   margin: 1em auto;
-  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
@@ -228,7 +227,7 @@ h1 {
   line-height: 1.5em;
 }
 .all-work h3 {
-  font-size: 0.5em;
+  font-size: 0.6em;
   line-height: 1.2em;
   color: rgb(0, 212, 252);
 }
