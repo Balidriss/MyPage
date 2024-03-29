@@ -4,10 +4,9 @@ h1 {
 }
 
 .all-work {
-
     margin: 1em auto;
-
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 
 
@@ -33,7 +32,8 @@ h1 {
         gap: 1em;
         margin: 1em;
         padding: 1em;
-        max-width: 20em;
+        width: 25em;
+        max-width: 80%;
         box-sizing: border-box;
         box-shadow: 1em 1em 1em black;
         border: 0.2em $primaryColorOrange solid;
