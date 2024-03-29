@@ -9,11 +9,10 @@ Done:
 * Responsive. |
 * Custom router. |
 * Quiz system. |
+* Work Page. |
 
 TODO :
 
-* Landing Page. |
-* Work Page. |
 * Enable Quiz swiping |
 * Accessibility. |
 * Cleaner Responsive with js. |
