@@ -60,7 +60,7 @@ a {
 
 section {
     display: flex;
-    margin: 15rem 0;
+    margin: 15rem auto;
     width: 90%;
 
     @include responsive('medium') {

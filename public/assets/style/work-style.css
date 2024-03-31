@@ -56,7 +56,7 @@ a {
 
 section {
   display: flex;
-  margin: 15rem 0;
+  margin: 15rem auto;
   width: 90%;
 }
 @media (max-width: 992px) {
@@ -173,7 +173,7 @@ header {
 header nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 @media (max-width: 992px) {
