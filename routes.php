@@ -6,8 +6,8 @@ $router->get('/blog', 'blog.php');
 
 $router->get('/contact', 'contact/create.php');
 $router->post('/contact', 'contact/store.php');
-$router->get('/submited', 'contact/success.php')->only('submited');
-$router->get('/submited', 'secret.php')->only('secret');
+$router->get('/submitted', 'contact/success.php')->only('submitted');
+
 //quiz
 $router->post('/attempt', 'guess/processor.php');
 

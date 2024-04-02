@@ -29,29 +29,14 @@ class Session
     {
         $_SESSION = [];
     }
-    public static function formSubmission($i)
+    public static function formSubmission()
     {
-        static::flash('submitted', true);
-        switch ($i) {
-            case 0:
-                static::put('user', ['admin' => true]);
-                break;
-            case 1:
-                static::flash('user', ['secret' => true]);
-                break;
-            default:
-                break;
-        }
+        static::flash('submitted',  true);
     }
-    public static function isAdmin()
+    public static function submitted()
     {
-        return static::get('user')['admin'] === true;
+        return (static::get('submitted') === true) ?? false;
     }
-    public static function secret()
-    {
-        return static::get('user')['secret'] === true;
-    }
-
     public static function destroy()
     {
         Session::flush();

@@ -4,14 +4,14 @@ namespace Core\Middleware;
 
 use Core\Session;
 
-class Secret
+class Submitted
 {
 
 
     public function handle()
     {
-        if (!Session::secret()) {
-            redirect('/submited');
+        if (!Session::get('submitted')) {
+            redirect('/');
         }
     }
 }

@@ -10,7 +10,6 @@ $email = $_POST['email'];
 
 Form::validate($attributes = ['email' => $email, 'subject' => $subject, 'body' => $body]);
 
-$i = (new Contact())->store($email, $subject, $body);
-
-Session::formSubmission($i);
-redirect('/submited');
+(new Contact())->store($email, $subject, $body);
+Session::formSubmission();
+redirect('/submitted');
