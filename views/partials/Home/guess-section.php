@@ -7,7 +7,7 @@
                 <img src="<?php echo 'assets/img/quiz/guess-' . strval($i) . '.png' ?>" title="<?= $helpMessages[$i] ?? '' ?>">
                 <p class="answer"><?= $answers[$i] ?? '' ?></p>
                 <?php if (empty($answers[$i])) : ?>
-                    <div class="attempt-field"><input type='text' name='attempt' placeholder='Qui suis je ?'>
+                    <div class="attempt-field"><input type='text' name='attempt' placeholder="<?= $placeholders[$i] ?>">
                         <input type='submit' value='▲'>
                     </div>
                 <?php endif ?>

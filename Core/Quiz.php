@@ -9,6 +9,7 @@ class Quiz
     {
 
         $guesses = App::resolve(Database::class)->query('select * from guesses')->get();
+
         foreach ($guesses as $index => $g) {
             $this->quiz[$index] = new Guess($g);
         }

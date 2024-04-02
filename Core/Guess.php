@@ -7,6 +7,7 @@ namespace Core;
 class Guess
 {
     public $id;
+    public $what = '';
     public $answer = '';
     public $helpMessage = '';
     public $hintMessage = '';
@@ -16,8 +17,8 @@ class Guess
 
     public function __construct($guess)
     {
-
         $this->id = $guess['guess_id'];
+        $this->what = $guess['what'];
         $this->answer = $guess['answer'];
         $this->helpMessage = $guess['help_message'];
         $this->hintMessage = $guess['hint_message'];
@@ -53,12 +54,14 @@ class Guess
     {
         $guessData = [
             'id' => $this->id,
+            'what' => $this->what,
             'answer' => $this->answer,
             'help_message' => $this->helpMessage,
             'hint_message' => $this->hintMessage,
             'success_message' => $this->successMessage,
             'success' => true,
-            'attempt' => $this->attempt
+            'attempt' => $this->attempt,
+
         ];
 
         // Store the array in the session

@@ -25,6 +25,7 @@ foreach ($quiz as $index => $guess) {
         $hintMessages[$index] = $guess->load('hint_message');
     }
     $helpMessages[$index] = $guess->helpMessage;
+    $placeholders[$index] = $guess->what;
 }
 
 
@@ -41,6 +42,7 @@ view("index.view.php", [
     'js' => assetPath('script', "home.js"),
     'heading' => 'Accueil',
     'quiz' => $quiz,
+    'placeholders' => $placeholders ?? '',
     'helpMessages' => $helpMessages ?? '',
     'hintMessages' => $hintMessages ?? '',
     'successMessages' => $successMessages ?? '',
