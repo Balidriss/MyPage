@@ -378,10 +378,10 @@ header nav menu {
   cursor: pointer;
 }
 #quiz-section .quiz-container form input::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
 #quiz-section .quiz-container form input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
 #quiz-section .quiz-container form input[type=text] {
   color: rgb(0, 212, 252);
