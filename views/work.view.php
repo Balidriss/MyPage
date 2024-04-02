@@ -2,6 +2,9 @@
 
 <body>
     <?php require base_path('views/partials/header.php'); ?>
+    <video autoplay muted loop id="myVideo">
+        <source src="<?= assetPath('video', 'bgloop.mp4') ?>" type="video/mp4">
+    </video>
     <main>
         <h1 class="heading"><?= $heading ?></h1>
         <div class="all-work">

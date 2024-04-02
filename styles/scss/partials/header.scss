@@ -1,12 +1,18 @@
 header {
+
+    z-index: 10;
+
     background-color: $secondaryColorBlack;
     width: 100%;
+    box-shadow: 0em 0em 0em black;
+
 
     nav {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+
 
         @include responsive('medium') {
             text-align: center;
