@@ -1,2 +1,9 @@
 <?php
-view("contact/success.view.php", []);
+
+use Core\Session;
+
+
+$heading = 'Merci !';
+
+
+view("contact/success.view.php", ['heading' => $heading]);

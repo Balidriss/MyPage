@@ -30,6 +30,10 @@ h3 {
   text-transform: uppercase;
 }
 
+h2 {
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+
 ul,
 menu {
   list-style: none;
@@ -51,6 +55,16 @@ a {
 @media (max-width: 992px) {
   .phone-only {
     display: block;
+  }
+}
+
+.heading {
+  margin: 2em;
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+@media (max-width: 992px) {
+  .heading {
+    margin: 1em;
   }
 }
 
@@ -82,13 +96,19 @@ h3 {
   line-height: 3.6rem;
   letter-spacing: 0.06rem;
 }
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+}
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 700;
-  line-height: 2.5rem;
-  letter-spacing: 0.1rem;
-  padding-left: 1rem;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  padding-left: 1em;
 }
 
 article > * {

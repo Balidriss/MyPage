@@ -1,0 +1,63 @@
+#section-form {
+    display: flex;
+    flex-direction: column;
+
+    p:first-child {
+        margin-bottom: 2rem;
+        font-size: 1.1em;
+    }
+
+    * {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+
+
+        *:not(button) {
+
+            padding: 1em;
+            background-color: black;
+            box-shadow: 1em 1em 1em black;
+        }
+    }
+
+    input,
+    textarea {
+        color: white;
+        background-color: $tertiaryColor;
+        width: 80%;
+        border: 0.1em dotted $primaryColorBlue;
+
+        &:focus {
+            box-shadow: inset 0 0 0 0.1rem $primaryColorBlue;
+            outline: none;
+        }
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 0.5em;
+        letter-spacing: 0.6em;
+    }
+
+    .error {
+        margin: 0;
+        padding: 0;
+        color: red;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        font-size: 0.5em;
+    }
+
+    button {
+        background-color: $primaryColorOrange;
+        border: none;
+        cursor: pointer;
+        padding: 0.5em 1em;
+        margin-top: 1em;
+        width: fit-content;
+    }
+
+}

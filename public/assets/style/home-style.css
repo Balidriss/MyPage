@@ -30,6 +30,10 @@ h3 {
   text-transform: uppercase;
 }
 
+h2 {
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+
 ul,
 menu {
   list-style: none;
@@ -51,6 +55,16 @@ a {
 @media (max-width: 992px) {
   .phone-only {
     display: block;
+  }
+}
+
+.heading {
+  margin: 2em;
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+@media (max-width: 992px) {
+  .heading {
+    margin: 1em;
   }
 }
 
@@ -82,13 +96,19 @@ h3 {
   line-height: 3.6rem;
   letter-spacing: 0.06rem;
 }
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+}
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 700;
-  line-height: 2.5rem;
-  letter-spacing: 0.1rem;
-  padding-left: 1rem;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  padding-left: 1em;
 }
 
 article > * {
@@ -511,17 +531,17 @@ header nav menu {
 }
 #git-section .title {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 5em;
 }
 #git-section .git-blocks {
   display: flex;
-  gap: 2.5rem;
+  gap: 2.5em;
   align-items: stretch;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5em;
 }
 @media (max-width: 992px) {
   #git-section .git-blocks {
-    flex-direction: column;
+    gap: 0.5em;
   }
 }
 #git-section .git-block {
@@ -529,15 +549,27 @@ header nav menu {
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2em;
   background-color: rgba(255, 255, 255, 0.08);
   align-items: center;
   margin: auto;
 }
+@media (max-width: 992px) {
+  #git-section .git-block {
+    gap: 0.5em;
+    padding: 1em 0;
+    width: 25%;
+  }
+}
 #git-section .git-block .title {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   align-self: flex-start;
   text-align: left;
+}
+@media (max-width: 992px) {
+  #git-section .git-block .title {
+    display: none;
+  }
 }
 #git-section .git-block .title p {
   font-size: 1.125rem;
@@ -549,11 +581,16 @@ header nav menu {
   max-width: 50%;
 }
 #git-section .git-block .cta {
-  padding: 1.5rem 4rem;
+  padding: 1.5em 4em;
   background: rgba(255, 255, 255, 0.08);
-  font-size: 1.125rem;
-  font-size: 1rem;
+  font-size: 1.125em;
+  font-size: 1em;
   color: rgb(255, 255, 255);
+}
+@media (max-width: 992px) {
+  #git-section .git-block .cta {
+    font-size: 0.5em;
+  }
 }
 
 #blog-section {

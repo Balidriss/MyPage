@@ -13,13 +13,13 @@ class Form
     public function __construct(public array $attributes)
     {
         if (!Validator::email($attributes['email'])) {
-            $this->errors['email'] = 'Please provice a valid email address.';
+            $this->errors['email'] = 'Une adresse mail valide est nécessaire.';
         }
         if (!Validator::string($attributes['subject'], 1, 100)) {
-            $this->errors['subject'] = 'A subject is required with less than 100 characters.';
+            $this->errors['subject'] = 'Un objet est nécessaire.';
         }
         if (!Validator::string($attributes['body'], 1, 10000)) {
-            $this->errors['body'] = 'A body is required with less than 10000 characters.';
+            $this->errors['body'] = 'Un message de moins de 10 000 caractères est nécessaire.';
         }
     }
 
