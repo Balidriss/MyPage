@@ -171,7 +171,7 @@ class Quiz {
             Quiz.quiz[index].element.style.backgroundColor = `rgb(${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10},${(Quiz.numberToShow - index) * 10}`;
             zIndex--;
         };
-        Quiz.applyText(Quiz.quiz[1].hintMessage, Quiz.hintMessageElement);
+        Quiz.applyText(Quiz.quiz[1].hintMessage ?? '', Quiz.hintMessageElement);
         Quiz.applyText(Quiz.quiz[1].helpMessage, Quiz.helpMessageElement);
         Quiz.applyText(Quiz.quiz[1].answer, Quiz.quiz[1].element.querySelector('.answer'));
     }
