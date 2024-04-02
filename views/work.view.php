@@ -3,7 +3,7 @@
 <body>
     <?php require base_path('views/partials/header.php'); ?>
     <main>
-        <h1><?= $heading ?></h1>
+        <h1 class="heading"><?= $heading ?></h1>
         <div class="all-work">
             <?php foreach ($projects as $project) : ?>
                 <div class="item <?= $tags ?>">

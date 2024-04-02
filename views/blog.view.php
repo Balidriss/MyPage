@@ -5,7 +5,7 @@
     <div class="gradient-bg"></div>
 
     <main>
-        <h1>Blog Page</h1>
+        <h1 class="heading">Blog</h1>
     </main>
     <?php require base_path('views/partials/footer.php'); ?>
 
