@@ -5,7 +5,7 @@ namespace Core\Middleware;
 class Middleware
 {
     const MAP = [
-        'secret' => Secret::class, 'submited' => Submited::class, 'admin' => Admin::class
+        'secret' => Secret::class, 'submited' => Submited::class
     ];
 
     public static function resolve($key)
