@@ -2,10 +2,10 @@
     <article>
         <div class="title">
             <p>Blog</p>
-            <h2>Work in progress</h2>
+            <h2>En cours de conception</h2>
         </div>
-        <p>Aperçu avec thumbnail des derniers articles.</p>
-        <p>=> <a href="/blog">lien vers tous les articles</a></p>
-        <figure><img src="assets/img/placeholder2.png"></figure>
+        <a href="/blog">
+            <figure><img src="assets/img/placeholder2.png"></figure>
+        </a>
     </article>
 </section>
