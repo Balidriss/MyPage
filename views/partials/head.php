@@ -4,6 +4,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="max-age=86400">
     <link rel="icon" href="<?= $ico ?? assetPath('icon', 'fav.ico') ?>" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
