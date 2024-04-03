@@ -11,6 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script src="<?= $js ?? "" ?>" defer></script>
-    <link rel="stylesheet" href="<?= $style ?? assetPath('style', 'home-style.css') ?>" type="text/css" />
+    <link rel="stylesheet" href="<?= $style ?? assetPath('style', 'home-style.min.css') ?>" type="text/css" />
     <title>Idriss Balijon - <?= $heading ?? 'oups' ?></title>
 </head>
