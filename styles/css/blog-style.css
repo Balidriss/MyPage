@@ -242,57 +242,15 @@ header nav menu {
   }
 }
 
-#section-form {
-  margin: 0 auto 2rem auto;
-  display: flex;
-  flex-direction: column;
+#blog-section {
+  justify-content: center;
 }
-#section-form p:first-child {
-  margin-bottom: 2rem;
-  font-size: 1.1em;
+#blog-section .title {
+  text-align: center;
+  margin-bottom: 5rem;
 }
-#section-form * {
-  display: flex;
-  flex-direction: column;
-}
-#section-form .container *:not(button) {
-  padding: 1em;
-  background-color: black;
-  box-shadow: 1em 1em 1em black;
-}
-#section-form input,
-#section-form textarea {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.4);
-  width: 80%;
-  border: 0.1em dotted rgb(0, 212, 252);
-}
-#section-form input:focus,
-#section-form textarea:focus {
-  box-shadow: inset 0 0 0 0.1rem rgb(0, 212, 252);
-  outline: none;
-}
-#section-form label {
-  text-transform: uppercase;
-  font-size: 0.5em;
-  letter-spacing: 0.6em;
-}
-#section-form .error {
-  margin: 0;
-  padding: 0;
-  color: red;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  font-size: 0.5em;
-}
-#section-form button {
-  background-color: rgb(252, 109, 38);
-  border: none;
-  cursor: pointer;
-  padding: 0.5em 1em;
-  margin-top: 1em;
-  width: -moz-fit-content;
-  width: fit-content;
+#blog-section img {
+  width: 100%;
 }
 
 footer {
@@ -308,4 +266,4 @@ footer .socials {
 footer .socials img {
   height: 2rem;
   margin: 0.5rem;
-}/*# sourceMappingURL=contact-style.css.map */
+}

@@ -242,15 +242,124 @@ header nav menu {
   }
 }
 
-#blog-section {
-  justify-content: center;
+h1 {
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
-#blog-section .title {
+
+.all-work {
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.all-work * {
+  display: grid;
+  grid-template-columns: 1f;
+}
+.all-work h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+.all-work h3 {
+  font-size: 0.6em;
+  line-height: 1.2em;
+  color: rgb(0, 212, 252);
+}
+.all-work .item {
+  gap: 1em;
+  margin: 1em;
+  padding: 1em;
+  width: 25em;
+  max-width: 80%;
+  box-sizing: border-box;
+  box-shadow: 1em 1em 1em black;
+  border: 0.2em rgb(252, 109, 38) solid;
+  transition: transform ease-in-out 0.25s;
+}
+.all-work .item * {
+  padding: 0.2em;
+}
+.all-work .item .desc {
+  gap: 1em;
+}
+.all-work .item:hover {
+  transform: scale(1.1);
+}
+.all-work .item .date {
+  justify-self: end;
+  align-self: end;
+}
+
+#git-section {
+  flex-direction: column;
+  justify-content: space-between;
+}
+#git-section > .cta {
+  align-self: center;
+}
+#git-section .title {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 5em;
 }
-#blog-section img {
-  width: 100%;
+#git-section .git-blocks {
+  display: flex;
+  gap: 2.5em;
+  align-items: stretch;
+  margin-bottom: 2.5em;
+}
+@media (max-width: 992px) {
+  #git-section .git-blocks {
+    gap: 0.5em;
+  }
+}
+#git-section .git-block {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.08);
+  align-items: center;
+  margin: auto;
+}
+@media (max-width: 992px) {
+  #git-section .git-block {
+    gap: 0.5em;
+    padding: 1em 0;
+    width: 25%;
+  }
+}
+#git-section .git-block .title {
+  margin-bottom: 1em;
+  align-self: flex-start;
+  text-align: left;
+}
+@media (max-width: 992px) {
+  #git-section .git-block .title {
+    display: none;
+  }
+}
+#git-section .git-block .title p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  letter-spacing: 0.045rem;
+}
+#git-section .git-block img {
+  max-width: 50%;
+}
+#git-section .git-block .cta {
+  padding: 1.5em 4em;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.125em;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 992px) {
+  #git-section .git-block .cta {
+    font-size: 0.5em;
+  }
 }
 
 footer {
@@ -266,4 +375,4 @@ footer .socials {
 footer .socials img {
   height: 2rem;
   margin: 0.5rem;
-}/*# sourceMappingURL=blog-style.css.map */
+}

@@ -1,6 +1,10 @@
 <?php
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
+$compressedStyle = assetPath('style', "home-style.min.css");
+$style = $compressedStyle ?? assetPath('style', "home-style.css");
+
+
 $cvDownload = assetPath('download', 'CV_Balijon(numerique&print).pdf');
 
 $answers = [count($quiz)];
@@ -32,7 +36,7 @@ foreach ($quiz as $index => $guess) {
 
 view("index.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
-    'style' => assetPath('style', "home-style.css"),
+    'style' => $compressedStyle ?? $style,
     'imgs' =>
     [
         'gitlab' => assetPath('img', "gitlab.svg"),

@@ -2,10 +2,11 @@
 $projects = (new Core\CV())->projects;
 $tags = 'tag-to-do';
 
-
+$compressedStyle = assetPath('style', "work-style.min.css");
+$style = $compressedStyle ?? assetPath('style', "work-style.css");
 view("work.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
-    'style' => assetPath('style', "work-style.css"),
+    'style' => $style,
     'imgs' =>
     [
         'gitlab' => assetPath('img', "gitlab.svg"),
