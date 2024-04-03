@@ -8,5 +8,4 @@
             réussite d'un produit.</p>
         <a href="/contact" class="cta">Contactez-moi</a>
     </article>
-    <figure></figure>
 </section>
