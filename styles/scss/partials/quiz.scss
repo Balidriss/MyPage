@@ -1,8 +1,14 @@
 #quiz-section {
+    @include responsive('medium') {
+
+        display: none;
+
+    }
+
     $guesscardHeight : 30em;
     align-items: center;
     justify-content: center;
-    min-height: $guesscardHeight + 1em;
+    min-height: $guesscardHeight +1em;
 
     @include responsive('medium') {
 

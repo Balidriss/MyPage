@@ -12,9 +12,8 @@
             <li><a href="/">Home</a></li>
             <li><a href="/#cv-section">CV</a></li>
             <li><a href="/#git-section">Git</a></li>
-            <li><a href="/work">Travaux</a></li>
-            <li><a href="/blog">Blog</a></li>
             <li><a href="/#about-section">À propos</a></li>
+            <li><a href="/travaux">Travaux</a></li>
         </menu>
         <a href="/contact" class="cta">
             Contactez-moi

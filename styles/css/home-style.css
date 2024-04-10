@@ -292,6 +292,11 @@ header nav menu {
 }
 @media (max-width: 992px) {
   #quiz-section {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  #quiz-section {
     width: 90%;
   }
 }
@@ -608,6 +613,7 @@ header nav menu {
 }
 
 #blog-section {
+  display: none;
   justify-content: center;
 }
 #blog-section .title {

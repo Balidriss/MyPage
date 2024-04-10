@@ -243,6 +243,7 @@ header nav menu {
 }
 
 #blog-section {
+  display: none;
   justify-content: center;
 }
 #blog-section .title {

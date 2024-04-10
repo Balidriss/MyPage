@@ -8,6 +8,7 @@
     </video>
     <main>
         <h1 class="heading">Blog</h1>
+        <p>Cette page sera complète quand j'aurai terminé mon app en back-office</p>
     </main>
     <?php require base_path('views/partials/footer.php'); ?>
 
