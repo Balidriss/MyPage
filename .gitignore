@@ -10,3 +10,4 @@ desktop.ini
 *.css.map
 *.gcloudignore
 app.yaml
+.htaccess
