@@ -21,6 +21,9 @@
                 <?php endif ?>
 
                 <h4><?= $profession['title'] ?></h4>
+                <?php if (isset($profession['place'])) : ?>
+                    <h5></br><?= $profession['place'] ?></h5>
+                <?php endif ?>
                 <p><?= $profession['desc'] ?></p>
                 <?php $lastDate = $currentDate; ?>
                 <?php endforeach ?>

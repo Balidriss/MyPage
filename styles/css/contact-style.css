@@ -137,7 +137,6 @@ article > * {
 
 .cta {
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
   padding: 1rem 2.5rem;
@@ -185,17 +184,20 @@ article > * {
 }
 .grid .desc h4 {
   text-transform: none;
-  margin: -0.375em 0 0.5em 0;
+  margin: -0.375em 0 0 0;
   line-height: 1.5em;
   font-size: 1.125em;
 }
 .grid .desc h5 {
-  margin: 0.5em 0;
+  line-height: 1.1em;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
 }
 .grid .desc p {
   font-size: 1em;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 header {
@@ -291,7 +293,6 @@ header nav menu {
   cursor: pointer;
   padding: 0.5em 1em;
   margin-top: 1em;
-  width: -moz-fit-content;
   width: fit-content;
 }
 

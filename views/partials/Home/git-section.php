@@ -26,7 +26,7 @@
                     <p>Autres</p>
                     <h3>Liens</h3>
                 </div><img src=<?= $imgs['work'] ?>>
-                <a href="/work" class="cta">Liens travaux</a>
+                <a href="/travaux" class="cta">Liens travaux</a>
             </div>
         </div>
     </article>

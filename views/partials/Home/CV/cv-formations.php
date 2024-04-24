@@ -19,8 +19,11 @@
 </div>
 <div class="desc">
 <?php endif ?>
-
 <h4><?= $formation['title'] ?></h4>
+<?php if (isset($formation['place'])) : ?>
+
+    <h5></br><?= $formation['place'] ?></h5>
+<?php endif ?>
 <p><?= $formation['desc'] ?></p>
 <?php $lastDate = $currentDate; ?>
 <?php endforeach ?>

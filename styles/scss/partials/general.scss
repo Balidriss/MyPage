@@ -220,19 +220,23 @@ article>* {
             $line-height: 1.5em;
             $font-size: 1.125em;
             text-transform: none;
-            margin: ($font-size - $line-height) 0 0.5em 0;
+            margin: ($font-size - $line-height) 0 0 0;
             line-height: 1.5em;
             font-size: 1.125em;
         }
 
         h5 {
-            margin: 0.5em 0;
+
+            line-height: 1.1em;
+            font-size: 0.8em;
+            margin-bottom: 1em;
+            text-transform: uppercase;
         }
 
         p {
             font-size: 1em;
             color: $secondaryColorWhite;
-            margin-bottom: 1em;
+            margin-bottom: 2em;
         }
 
     }
