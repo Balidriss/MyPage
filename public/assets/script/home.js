@@ -301,8 +301,8 @@ class CV {
 
             part.tab.addEventListener('click', () => CV.activateTab(part));
             part.tab.addEventListener('keydown', (event) => CV.handleKeyDown(event, index));
+            part.tab.addEventListener('keydown', (event) => CV.handlePanelScroll(event, part.content));
         });
-
 
         CV.activateTab(CV.pairTabContents[0]);
     }
@@ -315,6 +315,9 @@ class CV {
             part.content.hidden = !isSelected;
             part.tab.classList.toggle('show', isSelected);
             part.content.classList.toggle('show', isSelected);
+            if (isSelected) {
+                part.content.focus();
+            }
         });
     }
 
@@ -340,7 +343,19 @@ class CV {
         CV.pairTabContents[newIndex].tab.focus();
         CV.activateTab(CV.pairTabContents[newIndex]);
     }
+
+    static handlePanelScroll(event, panel) {
+        const scrollAmount = 30;
+        if (event.key === 'ArrowDown') {
+            panel.scrollTop += scrollAmount;
+            event.preventDefault();
+        } else if (event.key === 'ArrowUp') {
+            panel.scrollTop -= scrollAmount;
+            event.preventDefault();
+        }
+    }
 }
+
 
 window.addEventListener("load", () => {
     try {
