@@ -1,11 +1,11 @@
 <header>
     <?php
     if (!(isProd() === 'TRUE')) : ?>
-        <a style="font-size: 0.5rem; position:absolute; top: 100px" href="/clear">Clear Session</a>
+        <a style="font-size: 0.5rem; position:absolute; top: 100px" href="/clear">Clear Session</a inert>
 
     <?php endif; ?>
     <nav>
-        <div class="logo">
+        <div class="logo" inert>
             <a href="/">IB</a>
         </div>
         <menu>
