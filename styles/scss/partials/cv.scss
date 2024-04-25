@@ -134,6 +134,10 @@
                 display: block;
             }
 
+            h4 {
+                color: $primaryColorBlue;
+            }
+
             .grid {
                 display: grid;
                 grid-template-columns: 0.20fr 0.20fr 0.70fr;

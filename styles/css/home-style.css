@@ -510,6 +510,9 @@ header nav menu {
 #cv-section .cv-container article.show {
   display: block;
 }
+#cv-section .cv-container article h4 {
+  color: rgb(0, 212, 252);
+}
 #cv-section .cv-container article .grid {
   display: grid;
   grid-template-columns: 0.2fr 0.2fr 0.7fr;
