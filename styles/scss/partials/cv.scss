@@ -112,7 +112,9 @@
 
                 }
 
-                &:hover {
+                &:hover,
+                &:focus {
+                    outline: none;
                     border-bottom: 0.25em $primaryColorBlue solid;
                     border-right: 0.25em $primaryColorBlue solid;
                 }

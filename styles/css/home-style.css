@@ -494,7 +494,8 @@ header nav menu {
 #cv-section .cv-container .tabs-cv .tab-cv.show * {
   color: rgb(255, 255, 255);
 }
-#cv-section .cv-container .tabs-cv .tab-cv:hover {
+#cv-section .cv-container .tabs-cv .tab-cv:hover, #cv-section .cv-container .tabs-cv .tab-cv:focus {
+  outline: none;
   border-bottom: 0.25em rgb(0, 212, 252) solid;
   border-right: 0.25em rgb(0, 212, 252) solid;
 }

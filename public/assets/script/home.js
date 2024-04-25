@@ -282,36 +282,63 @@ class CVPart {
     }
 }
 class CV {
-    static formations;
-    static professions;
-    static projects;
     static pairTabContents;
 
     static init() {
-        CV.formations = new CVPart(document.querySelector('.tabs-cv .formations'), document.getElementById('formations'));
-        CV.professions = new CVPart(document.querySelector('.tabs-cv .professions'), document.getElementById('professions'));
-        CV.projects = new CVPart(document.querySelector('.tabs-cv .projects'), document.getElementById('projects'));
-        CV.pairTabContents = [CV.formations, CV.professions, CV.projects];
+        CV.pairTabContents = [
+            new CVPart(document.querySelector('.tabs-cv .formations'), document.getElementById('formations')),
+            new CVPart(document.querySelector('.tabs-cv .professions'), document.getElementById('professions')),
+            new CVPart(document.querySelector('.tabs-cv .projects'), document.getElementById('projects'))
+        ];
 
+        CV.pairTabContents.forEach((part, index) => {
+            part.tab.setAttribute('role', 'tab');
+            part.tab.setAttribute('tabindex', index === 0 ? '0' : '-1');
+            part.tab.setAttribute('aria-controls', part.content.id);
+            part.tab.setAttribute('aria-selected', 'false');
+            part.content.setAttribute('role', 'tabpanel');
+            part.content.setAttribute('aria-labelledby', part.tab.id);
+
+            part.tab.addEventListener('click', () => CV.activateTab(part));
+            part.tab.addEventListener('keydown', (event) => CV.handleKeyDown(event, index));
+        });
+
+
+        CV.activateTab(CV.pairTabContents[0]);
+    }
+
+    static activateTab(cvPart) {
         CV.pairTabContents.forEach(part => {
-            part.tab.addEventListener('click', () => {
-                CV.pairTabContents.forEach(part => {
-                    CV.display(part, false);
-                });
-                CV.display(part, true);
-            });
+            const isSelected = (part === cvPart);
+            part.tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            part.tab.tabIndex = isSelected ? 0 : -1;
+            part.content.hidden = !isSelected;
+            part.tab.classList.toggle('show', isSelected);
+            part.content.classList.toggle('show', isSelected);
         });
     }
 
-    static display(cvTab, show) {
-        if (show) {
-            cvTab.content.classList.add('show');
-            cvTab.tab.classList.add('show');
+    static handleKeyDown(event, index) {
+        let newIndex = index;
+        switch (event.key) {
+            case 'ArrowRight':
+                newIndex = (index + 1) % CV.pairTabContents.length;
+                break;
+            case 'ArrowLeft':
+                newIndex = (index - 1 + CV.pairTabContents.length) % CV.pairTabContents.length;
+                break;
+            case 'Home':
+                newIndex = 0;
+                break;
+            case 'End':
+                newIndex = CV.pairTabContents.length - 1;
+                break;
+            default:
+                return;
         }
-        else {
-            cvTab.content.classList.remove('show');
-            cvTab.tab.classList.remove('show');
-        }
+        event.preventDefault();
+        CV.pairTabContents[newIndex].tab.focus();
+        CV.activateTab(CV.pairTabContents[newIndex]);
     }
 }
 
