@@ -2,7 +2,7 @@
 ## No framework PHP8.2 project, will get updated frequently.
 ## Using XAMP on local.
 
-**Currently doing a landing page and/with qr code**
+**currently making the Quiz for small screen**
 _____
 Done : 
 * Home Page. |
@@ -11,6 +11,7 @@ Done :
 * Quiz. |
 * Work Page. |
 * Contact page. |
+* Accessibility (Keyboard/ Alternative text / Title). |
 ______
 TODO :
 
