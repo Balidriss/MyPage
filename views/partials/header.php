@@ -5,7 +5,7 @@
 
     <?php endif; ?>
     <nav>
-        <div class="logo" inert>
+        <div class="logo" tabindex="-1">
             <a href="/">IB</a>
         </div>
         <menu>
