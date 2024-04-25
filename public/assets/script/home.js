@@ -103,11 +103,22 @@ class Quiz {
         const debouncedSlide = debounce(Quiz.slide, 500);
 
         Quiz.sliderLeft.addEventListener('click', () => {
+
             debouncedSlide('left');
+        });
+        Quiz.sliderLeft.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                debouncedSlide('left');
+            }
         });
 
         Quiz.sliderRight.addEventListener('click', () => {
             debouncedSlide('right');
+        });
+        Quiz.sliderRight.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                debouncedSlide('right');
+            }
         });
 
         Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
@@ -184,9 +195,16 @@ class Quiz {
     //todo: extract and change to css selector
     show(show = true) {
         if (show) {
-            this.element.style.opacity = "1";
+            this.element.style.display = "flex";
+            setTimeout(() => {
+                this.element.style.opacity = "1";
+            }, 100);
         } else {
+
             this.element.style.opacity = "0";
+            setTimeout(() => {
+                this.element.style.display = "none";
+            }, 500);
         }
     }
     outLeft(isOut = true) {
@@ -202,9 +220,12 @@ class Quiz {
 
     allowInput(allow = true) {
         if (allow) {
+
+            this.element.inert = false;
             this.element.style.pointerEvents = "auto";
             this.element.style.userSelect = "auto";
         } else {
+            this.element.inert = true;
             this.element.style.pointerEvents = "none";
             this.element.style.userSelect = "none";
         }
