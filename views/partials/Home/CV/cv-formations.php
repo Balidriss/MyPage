@@ -19,7 +19,11 @@
 </div>
 <div class="desc">
 <?php endif ?>
-<h4><?= $formation['title'] ?></h4>
+<?php if (isset($formation['title'])) : ?>
+
+    <h4><?= $formation['title'] ?></h4>
+<?php endif ?>
+
 <?php if (isset($formation['place'])) : ?>
 
     <h5></br><?= $formation['place'] ?></h5>
