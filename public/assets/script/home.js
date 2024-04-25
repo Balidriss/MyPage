@@ -195,16 +195,13 @@ class Quiz {
     //todo: extract and change to css selector
     show(show = true) {
         if (show) {
-            this.element.style.display = "flex";
-            setTimeout(() => {
-                this.element.style.opacity = "1";
-            }, 100);
+
+            this.element.style.opacity = "1";
+
         } else {
 
             this.element.style.opacity = "0";
-            setTimeout(() => {
-                this.element.style.display = "none";
-            }, 500);
+
         }
     }
     outLeft(isOut = true) {
