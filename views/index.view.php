@@ -2,8 +2,8 @@
 
 <body>
     <?php require base_path('views/partials/header.php'); ?>
-    <div class="gradient-bg"></div>
-    <video autoplay muted loop id="myVideo">
+    <div class="gradient-bg" inert></div>
+    <video autoplay muted loop id="myVideo" inert>
         <source src="<?= assetPath('video', 'bgloop.mp4') ?>" type="video/mp4">
     </video>
 
