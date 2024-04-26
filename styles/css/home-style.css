@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/font/PlusJakartaSans/static/PlusJakartaSans-Regular.ttf") format("truetype");
+  src: url("/assets/font/PlusJakartaSans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: var(--font-weight);
+}
 * {
   margin: 0;
   padding: 0;
@@ -268,12 +274,6 @@ header nav menu {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.375rem;
   line-height: 2rem;
-}
-#intro-section p:first-child {
-  color: rgb(255, 255, 255);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
 }
 #intro-section *:last-child {
   margin-bottom: 0;
