@@ -1,0 +1,4 @@
+//path
+@function asset-path($type, $name) {
+    @return "/assets/#{$type}/#{$name}";
+}

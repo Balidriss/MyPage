@@ -10,12 +10,6 @@ $primaryColorOrange: rgb(252, 109, 38);
 $primaryColorBlue: rgb(0, 212, 252);
 $primaryGradientBlue: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
 
-//path
-@function asset-path($type, $name) {
-    @return "/assets/#{$type}/#{$name}";
-}
-
-
 // Responsive breakpoints
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 992px;
