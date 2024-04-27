@@ -312,8 +312,8 @@ class CV {
             part.content.hidden = !isSelected;
             part.tab.classList.toggle('show', isSelected);
             part.content.classList.toggle('show', isSelected);
-            if (isSelected) {
-                part.content.focus();
+            if (isSelected && !part.content.hidden) {
+                part.content.focus({ preventScroll: true });
             }
         });
     }
