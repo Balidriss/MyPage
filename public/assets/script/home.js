@@ -32,7 +32,6 @@ class Quiz {
     //px
     static swipeThreshold = 50;
     static startX = 0;
-    static currentTranslate = 0;
     //ms
     static delay = 500;
     //
@@ -148,7 +147,6 @@ class Quiz {
         e.preventDefault();
         Quiz.isDragging = true;
         Quiz.startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-
     }
 
     static dragAction(e) {
@@ -156,15 +154,21 @@ class Quiz {
         if (!Quiz.isDragging) return;
         const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
         const diff = Quiz.startX - x;
-
+        if (diff > 0) {
+            Quiz.tilt('left');
+        } else {
+            Quiz.tilt('right');
+        }
     }
 
     static dragEnd(e) {
         e.preventDefault();
         if (!Quiz.isDragging) return;
         Quiz.isDragging = false;
+        Quiz.tilt();
         const endX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
         const diff = Quiz.startX - endX;
+        Quiz.quiz[1].element.style.right = Quiz.frontPos + "%";
         if (Math.abs(diff) > Quiz.swipeThreshold) {
             if (diff > 0) {
                 Quiz.slide('left');
@@ -175,17 +179,17 @@ class Quiz {
 
     }
 
-    static slide(direction, length) {
+    static slide(direction) {
         switch (direction) {
             case 'right':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(guess.previewsIndex(), length);
+                    guess.move(guess.previewsIndex());
                 });
                 Quiz.update();
                 break;
             case 'left':
                 Quiz.quiz.forEach(guess => {
-                    guess.move(guess.nextIndex(), length);
+                    guess.move(guess.nextIndex());
                 });
                 Quiz.update();
                 break;
@@ -197,6 +201,21 @@ class Quiz {
 
         }
     }
+
+    static tilt(direction) {
+        switch (direction) {
+            case 'right':
+                Quiz.quiz[1].element.style.transform = 'rotate(10deg)';
+                break;
+            case 'left':
+                Quiz.quiz[1].element.style.transform = 'rotate(-10deg)';
+                break;
+            default:
+                Quiz.quiz[1].element.style.transform = 'rotate(0deg)';
+        };
+
+    }
+
 
     static posInPx(widthPourcent) {
         return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
@@ -226,7 +245,7 @@ class Quiz {
         Quiz.applyText(Quiz.quiz[1].answer, Quiz.quiz[1].element.querySelector('.answer'));
     }
 
-    move(nextIndex, length) {
+    move(nextIndex) {
         this.index = nextIndex;
     }
     //todo: extract and change to css selector

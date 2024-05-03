@@ -322,7 +322,7 @@ header nav menu {
   overflow-x: hidden;
   align-items: flex-start;
   width: 75%;
-  min-height: 30em;
+  min-height: 40em;
   height: 100%;
 }
 @media (max-width: 992px) {
@@ -335,6 +335,7 @@ header nav menu {
   transition: all ease-in-out 0.5s;
   position: absolute;
   right: 0;
+  top: 5em;
   width: 17em;
   background-color: black;
   box-sizing: border-box;
@@ -346,6 +347,11 @@ header nav menu {
   flex-direction: column;
   justify-content: space-between;
   height: 30em;
+}
+@media (max-width: 992px) {
+  #quiz-section .quiz-container form {
+    top: 1em;
+  }
 }
 #quiz-section .quiz-container form > * {
   margin: auto;
