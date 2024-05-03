@@ -144,13 +144,13 @@ class Quiz {
     }
 
     static dragStart(e) {
-        e.preventDefault();
+        // e.preventDefault();
         Quiz.isDragging = true;
         Quiz.startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
     }
 
     static dragAction(e) {
-        e.preventDefault();
+        // e.preventDefault();
         if (!Quiz.isDragging) return;
         const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
         const diff = Quiz.startX - x;
@@ -162,7 +162,7 @@ class Quiz {
     }
 
     static dragEnd(e) {
-        e.preventDefault();
+        // e.preventDefault();
         if (!Quiz.isDragging) return;
         Quiz.isDragging = false;
         Quiz.tilt();
