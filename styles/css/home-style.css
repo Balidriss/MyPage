@@ -294,11 +294,6 @@ header nav menu {
 }
 @media (max-width: 992px) {
   #quiz-section {
-    display: none;
-  }
-}
-@media (max-width: 992px) {
-  #quiz-section {
     width: 90%;
   }
 }

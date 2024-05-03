@@ -26,12 +26,17 @@ class Quiz {
     static currentIndex = 0;
     // %
     static gap = 20;
-    static swipeThreshold;
     static outPosLeft = 1000;
     static outPosRight = -1000;
     static frontPos = 5;
-    //sec
-    static delay = 1;
+    //px
+    static swipeThreshold = 50;
+    static startX = 0;
+    static currentTranslate = 0;
+    //ms
+    static delay = 500;
+    //
+    static isDragging = false;
 
 
 
@@ -100,7 +105,7 @@ class Quiz {
         }
     }
     static assignSliderEvents() {
-        const debouncedSlide = debounce(Quiz.slide, 500);
+        const debouncedSlide = debounce(Quiz.slide, Quiz.delay);
 
         Quiz.sliderLeft.addEventListener('click', () => {
 
@@ -121,16 +126,55 @@ class Quiz {
             }
         });
 
-        Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart);
+        // Touch events
+        Quiz.quizContainer.addEventListener('touchstart', Quiz.dragStart, { passive: false });
+        Quiz.quizContainer.addEventListener('touchmove', Quiz.dragAction, { passive: false });
         Quiz.quizContainer.addEventListener('touchend', Quiz.dragEnd);
-        Quiz.quizContainer.addEventListener('touchmove', Quiz.dragAction);
-        Quiz.quizContainer.addEventListener('transitionend', Quiz.checkIndex);
+
+        // Mouse events for dragging
+        Quiz.quizContainer.addEventListener('mousedown', Quiz.dragStart, { passive: false });
+        Quiz.quizContainer.addEventListener('mousemove', Quiz.dragAction, { passive: false });
+        Quiz.quizContainer.addEventListener('mouseup', Quiz.dragEnd);
+        Quiz.quizContainer.addEventListener('mouseleave', Quiz.dragEnd);
+
 
 
     }
     static add(index) {
         return new Quiz(index);
     }
+
+    static dragStart(e) {
+        e.preventDefault();
+        Quiz.isDragging = true;
+        Quiz.startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+
+    }
+
+    static dragAction(e) {
+        e.preventDefault();
+        if (!Quiz.isDragging) return;
+        const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const diff = Quiz.startX - x;
+
+    }
+
+    static dragEnd(e) {
+        e.preventDefault();
+        if (!Quiz.isDragging) return;
+        Quiz.isDragging = false;
+        const endX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
+        const diff = Quiz.startX - endX;
+        if (Math.abs(diff) > Quiz.swipeThreshold) {
+            if (diff > 0) {
+                Quiz.slide('left');
+            } else {
+                Quiz.slide('right');
+            }
+        }
+
+    }
+
     static slide(direction, length) {
         switch (direction) {
             case 'right':
@@ -153,15 +197,7 @@ class Quiz {
 
         }
     }
-    static dragStart(e) {
-        e.preventDefault();
-    }
-    static dragEnd(e) {
-        e.preventDefault();
-    }
-    static dragAction(e) {
-        e.preventDefault();
-    }
+
     static posInPx(widthPourcent) {
         return Quiz.quizContainer.offsetWidth * widthPourcent / 100;
 
@@ -189,9 +225,7 @@ class Quiz {
         Quiz.applyText(Quiz.quiz[1].helpMessage, Quiz.helpMessageElement);
         Quiz.applyText(Quiz.quiz[1].answer, Quiz.quiz[1].element.querySelector('.answer'));
     }
-    checkIndex(index) {
-        //
-    }
+
     move(nextIndex, length) {
         this.index = nextIndex;
     }
