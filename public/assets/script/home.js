@@ -137,15 +137,18 @@ class Quiz {
                 Quiz.quiz.forEach(guess => {
                     guess.move(guess.previewsIndex(), length);
                 });
+                Quiz.update();
                 break;
             case 'left':
                 Quiz.quiz.forEach(guess => {
                     guess.move(guess.nextIndex(), length);
                 });
+                Quiz.update();
                 break;
             default:
                 Quiz.quiz.forEach(guess, i => {
                     guess.move(i);
+                    Quiz.update();
                 });
 
         }
@@ -254,9 +257,8 @@ class Quiz {
                     Quiz.quiz[1].successMessage = data.success_message ?? null;
                     Quiz.applyText(Quiz.quiz[1].answer, this.querySelector('.answer'));
                     this.querySelector('.attempt-field').remove();
-                    console.log(Quiz.quiz[1].successMessage);
                     Quiz.applyText(Quiz.quiz[1].successMessage, this.querySelector('.success-message'));
-
+                    Quiz.update();
                 }
 
             })
@@ -353,15 +355,16 @@ class CV {
     }
 }
 
-
 window.addEventListener("load", () => {
     try {
         CV.init();
         Quiz.init();
-        setInterval(Quiz.update, 100);
 
     }
     catch (error) {
         console.error(error);
     }
+});
+window.addEventListener("resize", () => {
+    Quiz.update();
 });
