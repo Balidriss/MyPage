@@ -30,6 +30,7 @@ class Quiz {
     static outPosRight = -1000;
     static frontPos = 5;
     //px
+    static minTilt = 10;
     static swipeThreshold = 50;
     static startX = 0;
     //ms
@@ -144,25 +145,26 @@ class Quiz {
     }
 
     static dragStart(e) {
-        // e.preventDefault();
+
         Quiz.isDragging = true;
         Quiz.startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
     }
 
     static dragAction(e) {
-        // e.preventDefault();
+
         if (!Quiz.isDragging) return;
         const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
         const diff = Quiz.startX - x;
-        if (diff > 0) {
+        if (diff > Quiz.minTilt) {
             Quiz.tilt('left');
-        } else {
+            e.preventDefault();
+        } else if (diff < -Quiz.minTilt) {
             Quiz.tilt('right');
+            e.preventDefault();
         }
     }
 
     static dragEnd(e) {
-        // e.preventDefault();
         if (!Quiz.isDragging) return;
         Quiz.isDragging = false;
         Quiz.tilt();
