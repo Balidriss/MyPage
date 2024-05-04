@@ -30,6 +30,7 @@ class Quiz {
     static outPosRight = -1000;
     static frontPos = 5;
     //px
+    static disableScroll = 5;
     static minTilt = 10;
     static swipeThreshold = 50;
     static startX = 0;
@@ -155,12 +156,14 @@ class Quiz {
         if (!Quiz.isDragging) return;
         const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
         const diff = Quiz.startX - x;
+        if (Math.abs(diff) > Quiz.disableScroll) {
+            e.preventDefault();
+        }
         if (diff > Quiz.minTilt) {
             Quiz.tilt('left');
-            e.preventDefault();
+
         } else if (diff < -Quiz.minTilt) {
             Quiz.tilt('right');
-            e.preventDefault();
         }
     }
 
