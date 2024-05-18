@@ -26,7 +26,6 @@
                 <p><?= $tabRecents[2] ?></p>
             </div>
         </div>
-        <!-- TO DO : from db -->
         <?php require_once(__DIR__ . '/cv-formations.php'); ?>
         <?php require_once(__DIR__ . '/cv-professions.php'); ?>
         <?php require_once(__DIR__ . '/cv-projects.php'); ?>
