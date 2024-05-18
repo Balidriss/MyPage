@@ -1,6 +1,6 @@
 # Visit the website [IB](https://www.ibsoft.fr/) .
 ## No framework PHP8.2 project, will get updated frequently.
-## Using XAMP on local.
+## Using XAMPP on local.
 
 **currently making the Quiz for small screen**
 _____
@@ -15,7 +15,6 @@ Done :
 ______
 TODO :
 
-* Enable Quiz swiping |
 * Accessibility. |
 * Cleaner Responsive with js. |
 * Blueprint Blog Page. |
