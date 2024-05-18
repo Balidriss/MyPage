@@ -14,7 +14,7 @@
                 <form method="POST" action="/contact" class="">
                     <div>
                         <label for="email" class="email-label">Email</label>
-                        <input id="email" name="email" value="<?= old('email') ?: userEmail() ?? '' ?>" class="email-input" placeholder="your@email.com">
+                        <input id="email" name="email" value="<?= old('email') ?: userEmail() ?? '' ?>" class="email-input" placeholder="votre@email.com">
                         <?php if (isset($errors['email'])) : ?>
                             <p class="error"><?= $errors['email'] ?></p>
                         <?php endif; ?>
