@@ -19,4 +19,26 @@ footer {
 
 
     }
+
+    ul {
+        margin-top: 2.5em;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        color: $secondaryColorWhite;
+        font-size: 1em;
+        line-height: 1.5em;
+        letter-spacing: 0.04em;
+
+        img {
+            padding-right: 0.5em;
+        }
+    }
 }

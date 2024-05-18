@@ -276,3 +276,22 @@ footer .socials img {
   height: 2rem;
   margin: 0.5rem;
 }
+footer ul {
+  margin-top: 2.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+footer li {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+}
+footer li img {
+  padding-right: 0.5em;
+}
