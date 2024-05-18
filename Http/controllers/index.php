@@ -13,7 +13,7 @@ $formations = (new Core\CV())->formations;
 $professions = (new Core\CV())->professions;
 $projects = (new Core\CV())->projects;
 
-$recentFormation = dateFormat($formations[0], true) ?? dateFormat($formations[0], true);
+$recentFormation = dateFormat($formations[0], true) ?? dateFormat($formations[1], true);
 $recentProfession = dateFormat($professions[0], true) ?? dateFormat($professions[0], true);
 $recentProject = dateFormat($projects[0], true) ?? dateFormat($projects[1], true);
 
