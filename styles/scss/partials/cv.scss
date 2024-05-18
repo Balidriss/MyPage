@@ -11,10 +11,15 @@
 
     .main-text-section {
 
+
         p {
+            width: 90%;
+            letter-spacing: 0.02em;
 
             strong {
                 color: $primaryColorOrange;
+
+
             }
 
         }
@@ -26,6 +31,9 @@
 
         }
 
+        .cda {
+            color: $primaryColorBlue;
+        }
     }
 
     .cv-container {

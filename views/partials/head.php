@@ -10,5 +10,5 @@
     <link rel="stylesheet" href="<?= $style ?? assetPath('style', 'home-style.min.css') ?>" type="text/css" />
     <title>Idriss Balijon - <?= $heading ?? 'oups' ?></title>
     <meta name="google-site-verification" content="BBkrIcPlxffswSeklufhI470tEq0dI6U-ONTBV4b42U">
-    <meta name="description" content="Developpeur web et application, visitez le site pour me connaitre. Revenez pour suivre mon évolution !">
+    <meta name="description" content="Curieux et créatif, je recherche un stage du 13 Décembre 2024 au 14 Avril 2025 pour l'obtention du diplôme Concepteur Développeur d'Application.">
 </head>

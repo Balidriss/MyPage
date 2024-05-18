@@ -427,11 +427,18 @@ header nav menu {
     width: 100%;
   }
 }
+#cv-section .main-text-section p {
+  width: 90%;
+  letter-spacing: 0.02em;
+}
 #cv-section .main-text-section p strong {
   color: rgb(252, 109, 38);
 }
 #cv-section .main-text-section > * {
   margin-bottom: 2em;
+}
+#cv-section .main-text-section .cda {
+  color: rgb(0, 212, 252);
 }
 @media (max-width: 992px) {
   #cv-section .cv-container {

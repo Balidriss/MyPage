@@ -5,7 +5,7 @@
             <h2>Mon parcours</h2>
         </div>
         <!-- TO DO : from db -->
-        <p><strong>Curieux et créatif</strong>, je recherche un environnement stimulant pour accroître mes talents de développeur et participer à la réalisation de projets.</p>
+        <p><strong>Curieux et créatif</strong>, je recherche un stage du <strong> 13 Décembre 2024 </strong> au <strong> 14 Avril 2025 </strong> pour l'obtention du diplôme <strong class="cda">Concepteur Développeur d'Application</strong>.</p>
         <div class="download-button-container">
             <p id="download-description"></p>
             <a href=<?= $cvDownload ?> class="cta" download>Télécharger</a>
