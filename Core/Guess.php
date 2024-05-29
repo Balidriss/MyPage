@@ -46,9 +46,9 @@ class Guess
         $_SESSION['quiz'][$this->id][$key] = $value;
     }
 
-    public function attempt($userAtempt)
+    public function attempt($userAttempt)
     {
-        return $userAtempt === $this->answer;
+        return strtolower($userAttempt) === strtolower($this->answer);
     }
     public function success()
     {
