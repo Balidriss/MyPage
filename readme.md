@@ -1,8 +1,7 @@
 # Visit the website [IB](https://www.ibsoft.fr/) .
 ## No framework PHP8.2 project, will get updated frequently.
-## Using XAMPP on local.
 
-**currently making the Quiz for small screen**
+**Currently : on pause**
 _____
 Done : 
 * Home Page. |
@@ -17,6 +16,8 @@ TODO :
 
 * Accessibility. |
 * Cleaner Responsive with js. |
+* Filter/tags on project done.
+* Fancy css/js.
 * Blueprint Blog Page. |
 * English <> French |
 * Nightmode |
