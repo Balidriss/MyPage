@@ -9,7 +9,7 @@
             <a href="/">IB</a>
         </div>
         <menu>
-            <li><a href="/">Home</a></li>
+            <li><a href="/">Accueil</a></li>
             <li><a href="/#cv-section">CV</a></li>
             <li><a href="/#git-section">Git</a></li>
             <li><a href="/#about-section">À propos</a></li>
