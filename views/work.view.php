@@ -2,7 +2,7 @@
 
 <body>
     <?php require base_path('views/partials/header.php'); ?>
-    <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop id="myVideo" inert>
         <source src="<?= assetPath('video', 'bgloop.mp4') ?>" type="video/mp4">
     </video>
     <main>
