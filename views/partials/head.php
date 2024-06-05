@@ -5,6 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?= $ico ?? assetPath('icon', 'fav.ico') ?>" type="image/x-icon">
+    <link rel="canonical" href="<? $url ?>" />
     <script src="<?= $js ?? "" ?>" defer></script>
     <link rel="stylesheet" href="<?= $style ?? assetPath('style', 'home-style.min.css') ?>" type="text/css" />
     <title>Idriss Balijon - <?= $heading ?? 'oups' ?></title>

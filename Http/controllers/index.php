@@ -3,7 +3,7 @@ $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
 $compressedStyle = assetPath('style', "home-style.min.css");
 $style = $compressedStyle ?? assetPath('style', "home-style.css");
-
+$url = "https://ibsoft.fr";
 
 $cvDownload = assetPath('download', 'CV_Balijon(numerique&print).pdf');
 
