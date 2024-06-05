@@ -6,4 +6,5 @@ use Core\Session;
 $heading = 'Merci !';
 
 
-view("contact/success.view.php", ['heading' => $heading]);
+view("contact/success.view.php", ['heading' => $heading,
+'url' => $url]);

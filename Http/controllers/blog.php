@@ -7,5 +7,6 @@ $url = "https://ibsoft.fr/blog";
 view("blog.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => $style,
-    'heading' => 'Blog'
+    'heading' => 'Blog',
+    'url' => $url
 ]);

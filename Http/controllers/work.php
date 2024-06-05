@@ -15,5 +15,6 @@ view("work.view.php", [
     'js' => assetPath('script', "work.js"),
     'heading' => 'Mes travaux',
     'projects' => $projects,
-    'tags' => $tags
+    'tags' => $tags,
+    'url' => $url
 ]);

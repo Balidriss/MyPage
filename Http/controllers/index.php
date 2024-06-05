@@ -56,4 +56,5 @@ view("index.view.php", [
     'professions' => $professions,
     'projects' => $projects,
     'tabRecents' => $tabRecents,
+    'url' => $url
 ]);
