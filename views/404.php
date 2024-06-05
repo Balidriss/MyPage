@@ -3,7 +3,8 @@
 <div class="gradient-bg"></div>
 <main>
 
-    <h1 class="heading">Désolé, cette page n'éxiste pas.</h1>
+    <h1 class="heading">404</h1>
+    <p>Désolé, cette page n'éxiste pas.</p>
     <p>
         <a href="/">Revenir à l'accueil.</a>
     </p>
