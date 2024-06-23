@@ -312,12 +312,15 @@ header nav menu {
   padding-left: 2rem;
   cursor: pointer;
   user-select: none;
+  text-transform: initial;
+  letter-spacing: normal;
+  font-size: 1rem;
 }
 #section-form .consent-checkbox label:before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0.75rem;
   width: 1.5rem;
   height: 1.5rem;
   border: 0.1rem dotted rgb(0, 212, 252);
@@ -331,7 +334,8 @@ header nav menu {
   color: rgb(252, 109, 38);
   border-color: rgb(252, 109, 38);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 footer {

@@ -35,7 +35,7 @@
                     </div>
                     <div class="consent-checkbox">
                         <input type="checkbox" id="consent" name="consent">
-                        <label for="consent">En cochant cette case... ??</label>
+                        <label for="consent">J'accepte que mes informations soient utilisées pour me contacter dans le cadre de ma demande.</label>
                         <!-- <?php if (isset($errors['concent'])) : ?> -->
                         <p class="error"><?= $errors['consent'] ?? '' ?></p>
                         <!-- <?php endif; ?> -->
