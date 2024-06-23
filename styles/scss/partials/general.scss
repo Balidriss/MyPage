@@ -62,10 +62,17 @@ body {
     background-color: $mainBackgroundColor;
 }
 
+address {
+    display: inline;
+    text-decoration: none;
+    font-style: normal;
+}
+
 a {
     text-decoration: none;
     color: currentColor;
 }
+
 
 .phone-only {
     display: none;

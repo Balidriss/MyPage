@@ -1,10 +1,5 @@
 <?php
-
-use Core\Session;
-
-
-$heading = 'Merci !';
-
+$heading = 'Merci';
 $compressedStyle = assetPath('style', "contact-style.min.css");
 $style = $compressedStyle ?? assetPath('style', "contact-style.css");
 $url = "https://ibsoft.fr/contact";

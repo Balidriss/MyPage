@@ -61,6 +61,12 @@ body {
   background-color: rgb(17, 22, 23);
 }
 
+address {
+  display: inline;
+  text-decoration: none;
+  font-style: normal;
+}
+
 a {
   text-decoration: none;
   color: currentColor;
@@ -337,6 +343,50 @@ header nav menu {
   border-color: rgb(252, 109, 38);
   text-align: center;
   font-size: 1.75rem;
+  font-weight: 600;
+}
+
+#section-contact {
+  display: block;
+  margin-top: 1rem;
+}
+#section-contact * {
+  margin: auto;
+}
+#section-contact h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+#section-contact p {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+#section-contact p strong {
+  color: rgb(0, 212, 252);
+}
+#section-contact p.message {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+#section-contact p.message strong {
+  color: rgb(252, 109, 38);
+}
+#section-contact p.back {
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-left: 3rem;
+  margin-top: 4rem;
+  text-align: start;
+  color: rgb(0, 212, 252);
+  padding: 1rem;
+  width: fit-content;
+}
+#section-contact p.back::before {
+  content: "< <";
+  vertical-align: top;
   font-weight: 600;
 }
 
