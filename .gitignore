@@ -1,13 +1,6 @@
-node_modules/
-vendor/
-
-composer.phar
-composer.lock
 desktop.ini
 
 .vscode
 *.env
 *.css.map
-*.gcloudignore
-app.yaml
 .htaccess
