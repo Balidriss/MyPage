@@ -64,6 +64,7 @@
     .consent-checkbox {
         display: flex;
 
+
         input[type="checkbox"] {
             display: none;
         }
@@ -76,6 +77,8 @@
             text-transform: initial;
             letter-spacing: normal;
             font-size: 1rem;
+            background: none;
+            box-shadow: none;
 
             &:before {
                 content: '';

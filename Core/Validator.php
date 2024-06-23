@@ -20,4 +20,8 @@ class Validator
     {
         return $id1 === $id2;
     }
+    public static function bool($value)
+    {
+        return $value;
+    }
 }

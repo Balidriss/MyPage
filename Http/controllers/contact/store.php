@@ -7,8 +7,8 @@ use Core\Session;
 $body = $_POST['body'];
 $subject = $_POST['subject'];
 $email = $_POST['email'];
-
-Form::validate($attributes = ['email' => $email, 'subject' => $subject, 'body' => $body]);
+$consent = isset($_POST['consent']);
+Form::validate($attributes = ['email' => $email, 'subject' => $subject, 'body' => $body, 'consent' => $consent]);
 
 (new Contact())->store($email, $subject, $body);
 Session::formSubmission();

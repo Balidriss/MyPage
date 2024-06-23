@@ -34,11 +34,11 @@
                         <?php endif; ?>
                     </div>
                     <div class="consent-checkbox">
-                        <input type="checkbox" id="consent" name="consent">
+                        <input type="checkbox" id="consent" name="consent" value="consent">
                         <label for="consent">J'accepte que mes informations soient utilisées pour me contacter dans le cadre de ma demande.</label>
-                        <!-- <?php if (isset($errors['concent'])) : ?> -->
-                        <p class="error"><?= $errors['consent'] ?? '' ?></p>
-                        <!-- <?php endif; ?> -->
+                        <?php if (isset($errors['consent'])) : ?>
+                            <p class="error"><?= $errors['consent'] ?></p>
+                        <?php endif; ?>
                     </div>
                     <button type="submit" class="">Envoyer</button>
                 </form>

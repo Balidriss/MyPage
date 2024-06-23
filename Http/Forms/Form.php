@@ -21,6 +21,9 @@ class Form
         if (!Validator::string($attributes['body'], 1, 10000)) {
             $this->errors['body'] = 'Un message de moins de 10 000 caractères est nécessaire.';
         }
+        if (!Validator::bool($attributes['consent'])) {
+            $this->errors['consent'] = "Afin de traiter votre demande, le consentement est requis pour soumettre le formulaire.";
+        }
     }
 
     public static function validate($attributes)

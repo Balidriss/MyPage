@@ -315,6 +315,8 @@ header nav menu {
   text-transform: initial;
   letter-spacing: normal;
   font-size: 1rem;
+  background: none;
+  box-shadow: none;
 }
 #section-form .consent-checkbox label:before {
   content: "";
