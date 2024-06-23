@@ -61,4 +61,42 @@
         width: fit-content;
     }
 
+    .consent-checkbox {
+        display: flex;
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            position: relative;
+            padding-left: 2rem;
+            cursor: pointer;
+            user-select: none;
+
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+                border: 0.1rem dotted $primaryColorBlue;
+                background-color: #2c2c2c;
+            }
+        }
+
+        input[type="checkbox"]:checked+label:before {
+            content: '\2713';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $primaryColorOrange;
+            border-color: $primaryColorOrange;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+
 }

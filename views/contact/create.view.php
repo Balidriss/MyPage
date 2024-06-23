@@ -33,6 +33,13 @@
                             <p class="error"><?= $errors['body'] ?></p>
                         <?php endif; ?>
                     </div>
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent" name="consent">
+                        <label for="consent">En cochant cette case... ??</label>
+                        <!-- <?php if (isset($errors['concent'])) : ?> -->
+                        <p class="error"><?= $errors['consent'] ?? '' ?></p>
+                        <!-- <?php endif; ?> -->
+                    </div>
                     <button type="submit" class="">Envoyer</button>
                 </form>
             </div>
