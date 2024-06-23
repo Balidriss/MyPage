@@ -11,7 +11,7 @@ class Submitted
     public function handle()
     {
         if (!Session::get('submitted')) {
-            redirect('/');
+            abort('403');
         }
     }
 }
