@@ -28,7 +28,7 @@
                     </div>
                     <div class="">
                         <label for="message" class="">Votre message</label>
-                        <textarea id="message" name="body" rows="6" class="" placeholder="Laissez votre message."><?= old('message') ?></textarea>
+                        <textarea id="message" name="body" rows="6" class="" placeholder="Laissez votre message."><?= old('body') ?></textarea>
                         <?php if (isset($errors['body'])) : ?>
                             <p class="error"><?= $errors['body'] ?></p>
                         <?php endif; ?>
