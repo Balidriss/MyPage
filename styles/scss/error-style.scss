@@ -2,7 +2,6 @@
 @import "../scss/partials/font.scss";
 @import "../scss/partials/variables&mixins.scss";
 @import "../scss/partials/general.scss";
-@import "../scss/partials/footer.scss";
 
 .notfound {
     h1 {
@@ -14,17 +13,40 @@
     p {
         text-align: center;
         margin-bottom: 1rem;
+        padding: 0 1rem;
+
+        &.sorry {
+            font-size: 2em;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+
+            & strong {
+                color: $primaryColorOrange;
+            }
+        }
 
         &.back {
-            padding-left: 3rem;
+            background-color: $secondaryColorBlack;
+            margin-left: 3rem;
+            margin-top: 4rem;
             text-align: start;
             color: $primaryColorBlue;
+            padding: 1rem;
+
+
+            width: fit-content;
 
             &::before {
                 content: "< <";
                 vertical-align: top;
                 font-weight: 600;
+
             }
+        }
+
+        &.quote {
+            font-style: oblique;
         }
     }
 }

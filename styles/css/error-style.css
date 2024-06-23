@@ -206,40 +206,6 @@ article > * {
   margin-bottom: 2em;
 }
 
-footer {
-  text-align: center;
-}
-footer > * {
-  margin-bottom: 2rem;
-}
-footer .socials {
-  display: flex;
-  justify-content: center;
-}
-footer .socials img {
-  height: 2rem;
-  margin: 0.5rem;
-}
-footer ul {
-  margin-top: 2.5em;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1em;
-}
-footer li {
-  display: flex;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1em;
-  line-height: 1.5em;
-  letter-spacing: 0.04em;
-}
-footer li img {
-  padding-right: 0.5em;
-}
-
 .notfound h1 {
   text-align: center;
   font-size: 5rem;
@@ -247,14 +213,31 @@ footer li img {
 .notfound p {
   text-align: center;
   margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+.notfound p.sorry {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.notfound p.sorry strong {
+  color: rgb(252, 109, 38);
 }
 .notfound p.back {
-  padding-left: 3rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-left: 3rem;
+  margin-top: 4rem;
   text-align: start;
   color: rgb(0, 212, 252);
+  padding: 1rem;
+  width: fit-content;
 }
 .notfound p.back::before {
   content: "< <";
   vertical-align: top;
   font-weight: 600;
+}
+.notfound p.quote {
+  font-style: oblique;
 }
