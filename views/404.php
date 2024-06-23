@@ -1,12 +1,15 @@
-<?php require base_path('views/partials/head.php'); ?>
-<?php require base_path('views/partials/header.php'); ?>
+<?php require base_path('views/partials/head.php');
+?>
+<?php require base_path('Http/404.php'); ?>
+
 <div class="gradient-bg"></div>
-<main>
+<main class="notfound">
 
     <h1 class="heading">404</h1>
     <p>Désolé, cette page n'éxiste pas.</p>
-    <p>
-        <a href="/">Revenir à l'accueil.</a>
+    <p class="random"><?= $randomMessage ?></p>
+    <p class="back">
+        <a class="" href="/">Revenir à l'accueil.</a>
     </p>
 
 </main>

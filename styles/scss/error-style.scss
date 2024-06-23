@@ -1,0 +1,30 @@
+@import "../scss/partials/fonctions.scss";
+@import "../scss/partials/font.scss";
+@import "../scss/partials/variables&mixins.scss";
+@import "../scss/partials/general.scss";
+@import "../scss/partials/footer.scss";
+
+.notfound {
+    h1 {
+        text-align: center;
+        font-size: 5rem;
+    }
+
+
+    p {
+        text-align: center;
+        margin-bottom: 1rem;
+
+        &.back {
+            padding-left: 3rem;
+            text-align: start;
+            color: $primaryColorBlue;
+
+            &::before {
+                content: "< <";
+                vertical-align: top;
+                font-weight: 600;
+            }
+        }
+    }
+}
