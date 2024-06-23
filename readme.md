@@ -20,7 +20,7 @@ Done :
 
 TODO :
 
-- Refactoring (services)
+- Refactoring (services) (Js quiz)
 - meta og
 - Accessibility. |
 - Cleaner Responsive with js. |
