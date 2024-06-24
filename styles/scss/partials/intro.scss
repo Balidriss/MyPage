@@ -12,6 +12,11 @@
             line-height: 4.5rem;
         }
 
+        @include responsive('small') {
+            font-size: 4.5rem;
+            line-height: 4.5rem;
+        }
+
         sup {
             font-size: 0.25em;
             padding: 1em 0.5em;

@@ -6,11 +6,17 @@
     justify-content: center;
     min-height: $guesscardHeight +1em;
 
+
     @include responsive('medium') {
 
         width: 90%;
 
     }
+
+    @include responsive('small') {
+        min-height: $guesscardHeight/2;
+    }
+
 
     article {
         order: 1;
@@ -27,6 +33,10 @@
             width: 90%;
             min-height: 10rem;
             padding-left: 0;
+        }
+
+        @include responsive('small') {
+            min-height: $guesscardHeight/2 +1em;
         }
     }
 
@@ -49,7 +59,9 @@
 
         }
 
-
+        @include responsive('small') {
+            min-height: $guesscardHeight/2 +3em;
+        }
 
         form {
             transition: all ease-in-out 0.5s;
@@ -72,6 +84,12 @@
 
                 top: 1em;
 
+            }
+
+            @include responsive('small') {
+                font-size: 0.75em;
+                max-width: 8em;
+                height: $guesscardHeight/2;
             }
 
             &>* {
@@ -125,8 +143,12 @@
             }
 
             img {
-                width: 15em;
+                width: 10em;
                 filter: grayscale(1);
+
+                @include responsive('small') {
+                    width: 5em;
+                }
             }
         }
     }
