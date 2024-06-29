@@ -6,7 +6,7 @@
     <ul>
         <li><img src="assets/img/mail.svg" loading="lazy" alt="Envoyez un mail">
             <address>
-                <a href="mailto:contac@ibsoft.fr">contac@ibsoft.fr</a>
+                <a href="mailto:contact@ibsoft.fr">contact@ibsoft.fr</a>
             </address>
         </li>
     </ul>
