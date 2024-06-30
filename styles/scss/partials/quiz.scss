@@ -14,7 +14,7 @@
     }
 
     @include responsive('small') {
-        min-height: $guesscardHeight/2;
+        min-height: $guesscardHeight/1.5;
     }
 
 
@@ -36,7 +36,7 @@
         }
 
         @include responsive('small') {
-            min-height: $guesscardHeight/2 +1em;
+            min-height: $guesscardHeight/1.5 +1em;
         }
     }
 
@@ -60,7 +60,7 @@
         }
 
         @include responsive('small') {
-            min-height: $guesscardHeight/2 +3em;
+            min-height: $guesscardHeight/1.5 +3em;
         }
 
         form {
@@ -88,8 +88,8 @@
 
             @include responsive('small') {
                 font-size: 0.75em;
-                max-width: 8em;
-                height: $guesscardHeight/2;
+                max-width: 16em;
+                height: $guesscardHeight/1.5;
             }
 
             &>* {

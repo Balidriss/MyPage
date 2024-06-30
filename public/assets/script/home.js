@@ -28,7 +28,7 @@ class Quiz {
     static gap = 20;
     static outPosLeft = 1000;
     static outPosRight = -1000;
-    static frontPos = 15;
+    static frontPos = 5;
     //px
     static disableScroll = 3;
     static minTilt = 10;

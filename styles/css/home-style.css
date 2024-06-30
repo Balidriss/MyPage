@@ -311,7 +311,7 @@ header nav menu {
 }
 @media (max-width: 768px) {
   #quiz-section {
-    min-height: 15em;
+    min-height: 20em;
   }
 }
 #quiz-section article {
@@ -333,7 +333,7 @@ header nav menu {
 }
 @media (max-width: 768px) {
   #quiz-section article {
-    min-height: 16em;
+    min-height: 21em;
   }
 }
 #quiz-section .quiz-container {
@@ -355,7 +355,7 @@ header nav menu {
 }
 @media (max-width: 768px) {
   #quiz-section .quiz-container {
-    min-height: 18em;
+    min-height: 23em;
   }
 }
 #quiz-section .quiz-container form {
@@ -383,8 +383,8 @@ header nav menu {
 @media (max-width: 768px) {
   #quiz-section .quiz-container form {
     font-size: 0.75em;
-    max-width: 8em;
-    height: 15em;
+    max-width: 16em;
+    height: 20em;
   }
 }
 #quiz-section .quiz-container form > * {
