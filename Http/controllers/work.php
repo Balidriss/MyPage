@@ -2,9 +2,9 @@
 $projects = (new Core\CV())->projects;
 $tags = 'tag-to-do';
 $url = "https://ibsoft.fr/travaux";
-$compressedStyle = assetPath('script', "work.js" . '?' . Core\Version::STYLE_FILE);
+$compressedStyle = assetPath('style', "work-style.min.css" . '?' . Core\Version::STYLE_FILE);
 $style = $compressedStyle ?? assetPath('style', "work-style.css" . '?' . Core\Version::STYLE_FILE);
-$js = assetPath('script', "home.js" . '?' . Core\Version::JS_FILE);
+$js = assetPath('script', "work.js" . '?' . Core\Version::JS_FILE);
 view("work.view.php", [
     'ico' => assetPath('icon', "fav.ico"),
     'style' => $style,
