@@ -48,7 +48,7 @@ class Guess
 
     public function attempt($userAttempt)
     {
-        return strtolower($userAttempt) === strtolower($this->answer);
+        return mb_strtolower(remove_accent($userAttempt)) === mb_strtolower(remove_accent($this->answer));
     }
     public function success()
     {
