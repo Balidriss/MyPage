@@ -5,7 +5,7 @@ namespace Core;
 class Version
 {
 
-    const STYLE_FILE = 2;
-    const JS_FILE = 2;
+    const STYLE_FILE = 3;
+    const JS_FILE = 3;
     const GUESS = 2;
 }

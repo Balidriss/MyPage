@@ -97,6 +97,7 @@
             }
 
             .answer {
+
                 color: $primaryColorOrange;
             }
 
@@ -144,11 +145,12 @@
             }
 
             img {
-                width: 10em;
+                width: 15em;
                 filter: grayscale(1);
 
                 @include responsive('small') {
-                    width: 5em;
+                    width: 10em;
+                    margin-bottom: 1em;
                 }
             }
         }

@@ -427,12 +427,13 @@ header nav menu {
   color: rgb(0, 212, 252);
 }
 #quiz-section .quiz-container form img {
-  width: 10em;
+  width: 15em;
   filter: grayscale(1);
 }
 @media (max-width: 768px) {
   #quiz-section .quiz-container form img {
-    width: 5em;
+    width: 10em;
+    margin-bottom: 1em;
   }
 }
 #quiz-section .slider-buttons {
