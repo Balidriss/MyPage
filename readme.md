@@ -21,6 +21,7 @@ Done :
 TODO :
 
 - Refactoring (services) (Js quiz)
+- proper versioning (update user cache)
 - meta og
 - Accessibility. |
 - Cleaner Responsive with js. |
