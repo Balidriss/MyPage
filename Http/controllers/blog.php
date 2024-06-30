@@ -1,7 +1,7 @@
 <?php
 
-$compressedStyle = assetPath('style', "blog-style.min.css");
-$style = $compressedStyle ?? assetPath('style', "blog-style.css");
+$compressedStyle = assetPath('style', "blog-style.min.css" . '?' . Core\Version::STYLE_FILE);
+$style = $compressedStyle ?? assetPath('style', "blog-style.css" . '?' . Core\Version::STYLE_FILE);
 $url = "https://ibsoft.fr/blog";
 
 view("blog.view.php", [

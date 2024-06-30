@@ -1,8 +1,9 @@
 <?php
 $quiz = Core\App::resolve(Core\Quiz::class)->quiz;
 
-$compressedStyle = assetPath('style', "home-style.min.css");
-$style = $compressedStyle ?? assetPath('style', "home-style.css");
+$compressedStyle = assetPath('style', "home-style.min.css" . '?' . Core\Version::STYLE_FILE);
+$style = $compressedStyle ?? assetPath('style', "home-style.css" . '?' . Core\Version::STYLE_FILE);
+$js = assetPath('script', "home.js" . '?' . Core\Version::JS_FILE);
 $url = "https://ibsoft.fr";
 
 $cvDownload = assetPath('download', 'CV_Balijon(numerique&print).pdf');
@@ -43,7 +44,7 @@ view("index.view.php", [
         'github' => assetPath('img', "github.svg"),
         'work' => assetPath('img', "qrcodeblue.png")
     ],
-    'js' => assetPath('script', "home.js"),
+    'js' => $js,
     'heading' => 'Accueil',
     'quiz' => $quiz,
     'placeholders' => $placeholders ?? '',
