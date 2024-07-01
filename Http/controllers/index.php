@@ -6,7 +6,7 @@ $style = $compressedStyle ?? assetPath('style', "home-style.css" . '?' . Core\Ve
 $js = assetPath('script', "home.js" . '?' . Core\Version::JS_FILE);
 $url = "https://ibsoft.fr";
 
-$cvDownload = assetPath('download', 'CV_Balijon(numerique&print).pdf');
+$cvDownload = assetPath('download', 'CV_Balijon.pdf');
 
 $answers = [count($quiz)];
 $tabRecent = [];
