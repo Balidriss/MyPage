@@ -4,7 +4,7 @@
         foreach ($quiz as $i => $guess) : ?>
             <form class="<?php echo 'guess-' . strval($i)  ?>" method="post" action="" onsubmit="">
                 <input type='hidden' name='index' value='<?php echo strval($i) ?>'>
-                <img src="<?php echo 'assets/img/quiz/guess-' . strval($i) . '.png' . '?' . Core\Version::GUESS ?>" title="<?= $helpMessages[$i] ?? '' ?>" alt="<?= $helpMessages[$i] ?? '' ?>">
+                <img src="<?php echo 'assets/img/quiz/guess-' . strval($i) . '.webp' . '?' . Core\Version::GUESS ?>" title="<?= $helpMessages[$i] ?? '' ?>" alt="<?= $helpMessages[$i] ?? '' ?>">
                 <p class="answer"><?= $answers[$i] ?? '' ?></p>
                 <?php if (empty($answers[$i])) : ?>
                     <div class="attempt-field"><input type='text' id='attempt' name='attempt' title="<?= $placeholders[$i] ?>" placeholder="<?= $placeholders[$i] ?>">

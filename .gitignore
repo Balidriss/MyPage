@@ -4,3 +4,6 @@ desktop.ini
 *.env
 *.css.map
 .htaccess
+
+Env.php
+Env.php
