@@ -5,7 +5,12 @@
             <h2>Mon parcours</h2>
         </div>
         <!-- TO DO : from db -->
-        <p><strong>Curieux et créatif</strong>, je recherche un stage du <strong> 13 Décembre 2024 </strong> au <strong> 14 Avril 2025 </strong> pour la préparation au titre professionnel NIVEAU 6 - BAC +4 </br> <strong class="cda">Concepteur Développeur d'Application</strong>.</p>
+        <p><strong>Curieux et créatif</strong>, je suis actuellement en formation pour obtenir le titre professionnel
+            NIVEAU 6 - BAC +4 </br> <strong class="cda">Concepteur Développeur d'Applications</strong>. </p>
+        <p>À partir du
+            <strong>14 avril 2025</strong>, je serai disponible pour relever de nouveaux défis professionnels et
+            contribuer à des projets ambitieux.
+        </p>
         <div class="download-button-container">
             <p id="download-description"></p>
             <a href=<?= $cvDownload ?> class="cta" download>Télécharger</a>
