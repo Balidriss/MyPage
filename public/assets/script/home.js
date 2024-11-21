@@ -372,7 +372,6 @@ class CV {
       part.tab.setAttribute('tabindex', index === 0 ? '0' : '-1');
       part.tab.setAttribute('aria-controls', part.content.id);
       part.tab.setAttribute('aria-selected', 'false');
-      part.content.setAttribute('role', 'tabpanel');
       part.content.setAttribute('aria-labelledby', part.tab.id);
 
       part.tab.addEventListener('click', () => CV.activateTab(part));

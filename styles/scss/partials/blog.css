@@ -1,0 +1,11 @@
+#blog-section {
+  display: none;
+  justify-content: center;
+}
+#blog-section .title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+#blog-section img {
+  width: 100%;
+}/*# sourceMappingURL=blog.css.map */

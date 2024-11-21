@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/font/PlusJakartaSans/static/PlusJakartaSans-Regular.ttf") format("truetype");
+  src: url("/assets/font/PlusJakartaSans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: var(--font-weight);
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: -1;
+  background: radial-gradient(circle at 0% 50%, rgb(17, 27, 27) 5%, rgb(17, 22, 23) 25%);
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.1;
+  filter: grayscale(1);
+  mix-blend-mode: darken;
+}
+
+nav,
+main,
+footer {
+  max-width: 1440px;
+  margin: auto;
+}
+
+menu,
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+h2 {
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+
+ul,
+menu {
+  list-style: none;
+}
+
+body {
+  background-color: rgb(17, 22, 23);
+}
+
+address {
+  display: inline;
+  text-decoration: none;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.phone-only {
+  display: none;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .phone-only {
+    display: block;
+  }
+}
+
+.heading {
+  margin: 1em;
+  text-shadow: 0em 0em 3em rgb(0, 212, 252);
+}
+@media (max-width: 992px) {
+  .heading {
+    margin: 1em;
+  }
+}
+
+section {
+  display: flex;
+  margin: 15rem auto;
+  width: 90%;
+}
+@media (max-width: 992px) {
+  section {
+    flex-direction: column;
+    margin: 7rem auto;
+  }
+}
+section:first-of-type {
+  margin-top: 7rem;
+}
+@media (max-width: 992px) {
+  section:first-of-type {
+    margin-top: 2rem;
+  }
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3.6rem;
+  letter-spacing: 0.06rem;
+}
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+h3 {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  padding-left: 1em;
+}
+
+article > * {
+  margin-bottom: 1rem;
+}
+
+.title p:first-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.cta {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-image: linear-gradient(277deg, rgb(0, 212, 252) 6.75%, rgb(0, 254, 227) 95.73%);
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  color: rgb(37, 37, 37);
+  font-weight: 700;
+  letter-spacing: 0.045rem;
+  margin: 1rem 0;
+}
+
+.main-text-section > p:last-of-type {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  letter-spacing: -0.05rem;
+  margin-top: 2rem;
+}
+
+.logo a {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  line-height: 4.5rem;
+  letter-spacing: 0.12rem;
+}
+
+.link-out {
+  position: relative;
+}
+.link-out::after {
+  content: "🌎";
+  padding-left: 1em;
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.7fr;
+}
+.grid .date {
+  margin: 0;
+  line-height: 1.25em;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.grid .desc h4 {
+  text-transform: none;
+  margin: -0.375em 0 0 0;
+  line-height: 1.5em;
+  font-size: 1.125em;
+}
+.grid .desc h5 {
+  line-height: 1.1em;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+.grid .desc p {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2em;
+}
+
+.notfound h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+.notfound p {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+.notfound p.sorry {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.notfound p.sorry strong {
+  color: rgb(252, 109, 38);
+}
+.notfound p.back {
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-left: 3rem;
+  margin-top: 4rem;
+  text-align: start;
+  color: rgb(0, 212, 252);
+  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.notfound p.back::before {
+  content: "< <";
+  vertical-align: top;
+  font-weight: 600;
+}
+.notfound p.quote {
+  font-style: oblique;
+}/*# sourceMappingURL=error-style.css.map */
